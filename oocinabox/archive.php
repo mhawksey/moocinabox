@@ -137,5 +137,5 @@ if (cat_is_ancestor_of(get_cat_id($root_cat), get_query_var('cat')) || is_catego
       
         </div><!-- end of #content-archive -->
         
-<?php get_sidebar(); ?>
+<?php get_sidebar('archive'); ?>
 <?php get_footer(); ?>
