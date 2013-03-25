@@ -7,9 +7,9 @@ if ( !defined('ABSPATH')) exit;
  * Main Widget Template
  *
  *
- * @file           sidebar.php
+ * @file           sidebar-reader.php
  * @package        Responsive 
- * @author         Emil Uzelac 
+ * @author         Martin Hawksey 
  * @copyright      2003 - 2013 ThemeID
  * @license        license.txt
  * @version        Release: 1.0
@@ -30,7 +30,7 @@ if ( 'full-width-page' == responsive_get_layout() ) {
 <div id="widgets" class="<?php echo implode( ' ', responsive_get_sidebar_classes() ); ?>">
 	<?php responsive_widgets(); // above widgets hook ?>
 		
-		<?php if (!dynamic_sidebar('archive-sidebar')) : ?>
+		<?php if (!dynamic_sidebar('reader-sidebar')) : ?>
 		<div class="widget-wrapper">
 		
 			<div class="widget-title"><?php _e('In Archive', 'responsive'); ?></div>

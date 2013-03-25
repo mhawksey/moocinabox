@@ -55,9 +55,9 @@ add_action('wp_ajax_nopriv_ajaxify', 'ajaxify');
 add_action( 'wp_head', 'infintieHeader' );
 add_action('wp_enqueue_scripts', 'my_scripts_method');
 register_sidebar(array(
-	'name' => __('Archive Sidebar', 'responsive'),
-	'description' => __('Area 2 - sidebar-archive.php', 'responsive'),
-	'id' => 'archive',
+	'name' => __('Reader Sidebar', 'responsive'),
+	'description' => __('Area 2 - sidebar-reader.php', 'responsive'),
+	'id' => 'reader',
 	'before_title' => '<div class="widget-title">',
 	'after_title' => '</div>',
 	'before_widget' => '<div id="%1$s" class="widget-wrapper %2$s">',
