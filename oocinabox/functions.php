@@ -2,6 +2,93 @@
 /**
  * Add theme support for infinity scroll
  */
+global $root_cat; 
+$root_cat = "reader"; 
+add_action( 'init', 'infinite_scroll_init' );
+//add_action( 'wp_footer', 'infiniteFooter' );
+add_action('wp_ajax_ajaxify', 'ajaxify');           // for logged in user  
+add_action('wp_ajax_nopriv_ajaxify', 'ajaxify'); 
+add_action('wp_ajax_ajaxFeedSearch', 'ajaxFeedSearch');  
+//add_action('wp_ajax_nopriv_ajaxify', 'ajaxFeedSearch');
+//add_action( 'wp_head', 'infintieHeader' );
+add_action('wp_enqueue_scripts', 'my_scripts_method');
+add_filter('user_contactmethods','add_hide_profile_fields',10,1);
+add_action('profile_update', 'update_extra_profile_fields');
+ 
+function update_extra_profile_fields($user_id) {
+	$linkid = get_user_meta($user_id, 'link_id', true);
+	//$print_r($linkid);
+	$blogurl = $_POST['blog'];
+	$blogrss = $_POST['blogrss'];
+	if ($blogrss != "" && $blogurl == "") $blogurl = $blogrss;
+	if ($blogrss != "" && $blogurl != ""){ 
+		$newid = make_link($user_id, $blogurl, $blogrss, $linkid);
+		update_user_meta($user_id, 'link_id', $newid);
+	}
+}
+function make_link($user_id, $blogurl, $blogrss, $linkid = false) {
+	// a lot of this was inspired by http://wrapping.marthaburtis.net/2012/08/22/perfecting-the-syndicated-blog-sign-up/
+	remove_filter('pre_link_rss', 'wp_filter_kses');
+	remove_filter('pre_link_url', 'wp_filter_kses');
+	$link_notes = 'map authors: name\n*\n'.$user_id;
+	$new_link = array(
+			'link_name' => $blogurl,
+			'link_url' => $blogurl,
+			'link_rss' => $blogrss
+			);
+	if( !function_exists( 'wp_insert_link' ) )
+		include_once( ABSPATH . '/wp-admin/includes/bookmark.php' );	
+			
+	if (!($linkid)) { // if no link insert new link
+		$linkid = wp_insert_link($new_link);
+		// update new link with notes
+		global $wpdb;
+		$esc_link_notes = $wpdb->escape($link_notes);
+		$result = $wpdb->query("
+			UPDATE $wpdb->links
+			SET link_notes = \"".$esc_link_notes."\" 
+			WHERE link_id='$linkid'
+		");
+	} else {
+		//update existing link
+		$new_link['link_id'] = $linkid;
+		$linkid = wp_insert_link($new_link);
+	}
+	return $linkid;
+}
+
+
+function add_hide_profile_fields( $contactmethods ) {
+	unset($contactmethods['aim']);
+	unset($contactmethods['jabber']);
+	unset($contactmethods['yim']);
+	$contactmethods['twitter'] = 'Twitter';
+	$contactmethods['facebook'] = 'Facebook';
+	$contactmethods['googleplus'] = 'Google+';
+	$contactmethods['blog'] = 'Blog';
+	$contactmethods['blogrss'] = 'Blog RSS Feed';
+return $contactmethods;
+}
+
+register_sidebar(array(
+	'name' => __('Archive Sidebar', 'responsive'),
+	'description' => __('Area 2 - sidebar-archive.php', 'responsive'),
+	'id' => 'archive',
+	'before_title' => '<div class="widget-title">',
+	'after_title' => '</div>',
+	'before_widget' => '<div id="%1$s" class="widget-wrapper %2$s">',
+	'after_widget' => '</div>'
+));
+register_sidebar(array(
+	'name' => __('Forum Sidebar', 'responsive'),
+	'description' => __('Area 2 - sidebar-bbpress.php', 'responsive'),
+	'id' => 'bbpress',
+	'before_title' => '<div class="widget-title">',
+	'after_title' => '</div>',
+	'before_widget' => '<div id="%1$s" class="widget-wrapper %2$s">',
+	'after_widget' => '</div>'
+));
+ 
 function infinite_scroll_init() {
 	add_theme_support( 'infinite-scroll', array(
 		'container' => 'accordion',
@@ -10,33 +97,6 @@ function infinite_scroll_init() {
 		'footer'    => false
 	) );
 }
-//
-if (!is_admin() && $_GET['action'] == "profile"){
-	get_currentuserinfo();
-	//$location("/forums");
-	//wp_redirect( $location);
-	//exit;
-}
-//echo "<pre>"; print_r($_GET['action']); echo "</pre>";
-
-add_filter('user_contactmethods','add_hide_profile_fields',10,1);
-
-function add_hide_profile_fields( $contactmethods ) {
-unset($contactmethods['aim']);
-unset($contactmethods['jabber']);
-unset($contactmethods['yim']);
-// Add Twitter
-$contactmethods['twitter'] = 'Twitter';
-//add Facebook
-$contactmethods['facebook'] = 'Facebook';
-$contactmethods['googleplus'] = 'Google+';
-
-return $contactmethods;
-}
-
-
-add_action( 'init', 'infinite_scroll_init' );
-
 
 /**
  * Set the code to be rendered on for calling posts,
@@ -48,21 +108,6 @@ function infinite_scroll_render() {
 	get_template_part( 'content' );
 }
 
-add_action( 'wp_footer', 'infiniteFooter' );
-
-add_action('wp_ajax_ajaxify', 'ajaxify');           // for logged in user  
-add_action('wp_ajax_nopriv_ajaxify', 'ajaxify'); 
-add_action( 'wp_head', 'infintieHeader' );
-add_action('wp_enqueue_scripts', 'my_scripts_method');
-register_sidebar(array(
-	'name' => __('Reader Sidebar', 'responsive'),
-	'description' => __('Area 2 - sidebar-reader.php', 'responsive'),
-	'id' => 'reader',
-	'before_title' => '<div class="widget-title">',
-	'after_title' => '</div>',
-	'before_widget' => '<div id="%1$s" class="widget-wrapper %2$s">',
-	'after_widget' => '</div>'
-));
 
 function my_scripts_method() {
 if ( !is_admin() ) {
@@ -76,6 +121,48 @@ if (get_option('readerlite_mark_as_read') != 'true'){
 	readerlite_mar_install();
 	add_option('readerlite_mark_as_read','true');
 }
+
+function ajaxFeedSearch() {
+  	$url = $_POST['blog'];
+	$output = '<select name="blogrss" id="blogrss" class="regular-text" tabindex="110" style="width:229px">';
+	// stolen from Alan Levine (@cogdog)
+    if($html = @DOMDocument::loadHTML(file_get_contents($url))) {
+  
+        $xpath = new DOMXPath($html);
+        $options = false;
+         
+        // find RSS 2.0 feeds
+        $feeds = $xpath->query("//head/link[@href][@type='application/rss+xml']/@href");
+        foreach($feeds as $feed) {
+            //$results[] = $feed->nodeValue;
+			$urlStr = $feed->nodeValue;
+			$parsed = parse_url($urlStr);
+			if (empty($parsed['scheme'])) $urlStr = untrailingslashit($url).$urlStr;
+			$options .= '<option value="'.$urlStr.'">'.$urlStr.'</option>';
+        }
+  
+         // find Atom feeds
+        $feeds = $xpath->query("//head/link[@href][@type='application/atom+xml']/@href");
+        foreach($feeds as $feed) {
+            //$results[] = $feed->nodeValue;
+			$urlStr = $feed->nodeValue;
+			$parsed = parse_url($urlStr);
+			if (empty($parsed['scheme'])) $urlStr = untrailingslashit($url).$urlStr;
+			$options .= '<option value="'.$urlStr.'">'.$urlStr.'</option>';
+        }
+		
+        //$single_rss_url = $results[0];
+        //return $single_rss_url;
+    }
+	
+	$options .= '<option value="Other">Other</option>';
+	$output .= $options.'</select>';
+	$output .= '<input id="other_feed" name="other_feed" type="text" placeholder="Enter other feed" />';
+	
+    echo $output;
+	die(1);;
+}
+
 
 function ajaxify() { // loads post content into accordion
     $post_id = $_POST['post_id'];
@@ -117,83 +204,5 @@ function ajaxify() { // loads post content into accordion
 	echo $output;
 
 	die(1);
-}
-function infiniteFooter(){ 
-?>
-	<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-    <script type="text/javascript">function pop(title,url,optH,optW){ // script to handle social share popup
-	h = optH || 500;
-	w = optW || 680;
-	sh = window.innerHeight || document.body.clientHeight;
-	sw = window.innerWidth || document.body.clientWidth;
-	wd = window.open(url, title,'scrollbars=no,menubar=no,height='+h+',width='+w+',resizable=yes,toolbar=no,location=no,status=no,top='+((sh/2)-(h/2))+',left='+((sw/2)-(w/2)));
-}</script>
-<?php
-}
-
-function infintieHeader(){
-global $wp_query;
-if (!is_single() || !is_page()): 
-   echo '<script src="'.get_stylesheet_directory_uri().'/js/readerlite.js"></script>';
-?>
-<script type="text/javascript">
-jQuery(document).ready(function($) {
-
-	$( "#accordion" ).accordion({active: false, collapsible: true, heightStyle: "content"});
-	customAccordionHooks();	
-	$( "#accordion" ).show();
-	$( "#accordionLoader" ).hide();
-	
-	// shared count getter https://gist.github.com/yahelc/1413508#file-jquery-sharedcount-js
-	
-	$( document.body ).on( 'post-load', function(){
-		$('.infinite-loader').remove();
-		var opened = $("#accordion").accordion( "option", "active" );
-		$("#accordion").accordion('destroy');
-		$("#accordion").accordion({active: opened, collapsible: true, heightStyle: "content"});
-		customAccordionHooks();	
-	});
-
-	$("#accordion").on("click", ".ajaxed", function(event){
-		event.preventDefault(); 
-		var post_id = $(this).attr("id");
-		var post_url  = $(this).attr("url");
-		// clean post url removing GA utm_ for shared count
-		post_url = post_url.replace(/\?([^#]*)/, function(_, search) {
-						search = search.split('&').map(function(v) {
-						  return !/^utm_/.test(v) && v;
-						}).filter(Boolean).join('&'); // omg filter(Boolean) so dope.
-						return search ? '?' + search : '';
-						});
-		$.ajax({
-			type: 'POST',
-			url: "<?php bloginfo('wpurl') ?>/wp-admin/admin-ajax.php",
-			data: ({
-				action : 'ajaxify',
-				post_id: post_id
-				}),
-			success:function(response){
-				$("#post-"+post_id).html(response);
-				twttr.widgets.load();
-				$("#accordion").accordion("refresh");
-				$("#accordion h3[aria-controls='post-"+post_id+"']").addClass("read");
-				// added sharedcount.com data to accordion foot
-				$.sharedCount(post_url, function(data){
-						$("#post-"+post_id+" span#tw-count").text(data.Twitter);
-						$("#post-"+post_id+" span#fb-count").text(data.Facebook.like_count);
-						$("#post-"+post_id+" span#gp-count").text(data.GooglePlusOne);
-						$("#post-"+post_id+" span#li-count").text(data.LinkedIn);
-						$("#post-"+post_id+" span#del-count").text(data.Delicious);
-				});
-				
-			}
-		});
-	});
-});
-
-</script>
-<!-- end infinite scroll pagination -->
-<?php endif; ?>	
-<?php
 }
 ?>

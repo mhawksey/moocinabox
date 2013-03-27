@@ -1,4 +1,59 @@
 // JavaScript Document
+jQuery(document).ready(function($) {
+    $( ".searchsubmit.bbpsw-search-submit").val("Go");
+	$( ".widget-wrapper.widget_bbpress_search").children().eq(0).hide();
+	$( "#accordion" ).accordion({active: false, collapsible: true, heightStyle: "content"});
+	customAccordionHooks();	
+	$( "#accordion" ).show();
+	$( "#accordionLoader" ).hide();
+	
+	// shared count getter https://gist.github.com/yahelc/1413508#file-jquery-sharedcount-js
+	
+	$( document.body ).on( 'post-load', function(){
+		$('.infinite-loader').remove();
+		var opened = $("#accordion").accordion( "option", "active" );
+		$("#accordion").accordion('destroy');
+		$("#accordion").accordion({active: opened, collapsible: true, heightStyle: "content"});
+		customAccordionHooks();	
+	});
+
+	$("#accordion").on("click", ".ajaxed", function(event){
+		event.preventDefault(); 
+		var post_id = $(this).attr("id");
+		var post_url  = $(this).attr("url");
+		// clean post url removing GA utm_ for shared count
+		post_url = post_url.replace(/\?([^#]*)/, function(_, search) {
+						search = search.split('&').map(function(v) {
+						  return !/^utm_/.test(v) && v;
+						}).filter(Boolean).join('&'); // omg filter(Boolean) so dope.
+						return search ? '?' + search : '';
+						});
+		$.ajax({
+			type: 'POST',
+			url: "/wp-admin/admin-ajax.php",
+			data: ({
+				action : 'ajaxify',
+				post_id: post_id
+				}),
+			success:function(response){
+				$("#post-"+post_id).html(response);
+				twttr.widgets.load();
+				$("#accordion").accordion("refresh");
+				$("#accordion h3[aria-controls='post-"+post_id+"']").addClass("read");
+				// added sharedcount.com data to accordion foot
+				$.sharedCount(post_url, function(data){
+						$("#post-"+post_id+" span#tw-count").text(data.Twitter);
+						$("#post-"+post_id+" span#fb-count").text(data.Facebook.like_count);
+						$("#post-"+post_id+" span#gp-count").text(data.GooglePlusOne);
+						$("#post-"+post_id+" span#li-count").text(data.LinkedIn);
+						$("#post-"+post_id+" span#del-count").text(data.Delicious);
+				});
+				
+			}
+		});
+	});
+});
+
 function customAccordionHooks(){
 	jQuery('.jump_to_url').on("click", function(event){
 		event.stopImmediatePropagation();
@@ -82,3 +137,10 @@ jQuery.sharedCount = function(url, fn) {
 	}
 	return jQuery.ajax(arg);
 };
+function pop(title,url,optH,optW){ // script to handle social share popup
+	h = optH || 500;
+	w = optW || 680;
+	sh = window.innerHeight || document.body.clientHeight;
+	sw = window.innerWidth || document.body.clientWidth;
+	wd = window.open(url, title,'scrollbars=no,menubar=no,height='+h+',width='+w+',resizable=yes,toolbar=no,location=no,status=no,top='+((sh/2)-(h/2))+',left='+((sw/2)-(w/2)));
+}
