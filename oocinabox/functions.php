@@ -165,7 +165,7 @@ if ( !is_admin() ) {
 // record if post has been read in the reader view
 include("include/readerlite_mark_post_as_read.php");
 if (get_option('readerlite_mark_as_read') != 'true'){
-	include("installation.php");
+	include("include/installation.php");
 	readerlite_mar_install();
 	add_option('readerlite_mark_as_read','true');
 }
