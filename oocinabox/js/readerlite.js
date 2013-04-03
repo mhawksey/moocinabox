@@ -17,40 +17,48 @@ jQuery(document).ready(function($) {
 		customAccordionHooks();	
 	});
 
-	$("#accordion").on("click", ".ajaxed", function(event){
+	$("#accordion").on("accordionactivate", function(event ,ui){
 		event.preventDefault(); 
-		var post_id = $(this).attr("id");
-		var post_url  = $(this).attr("url");
-		// clean post url removing GA utm_ for shared count
-		post_url = post_url.replace(/\?([^#]*)/, function(_, search) {
-						search = search.split('&').map(function(v) {
-						  return !/^utm_/.test(v) && v;
-						}).filter(Boolean).join('&'); // omg filter(Boolean) so dope.
-						return search ? '?' + search : '';
-						});
-		$.ajax({
-			type: 'POST',
-			url: "/wp-admin/admin-ajax.php",
-			data: ({
-				action : 'ajaxify',
-				post_id: post_id
-				}),
-			success:function(response){
-				$("#post-"+post_id).html(response);
-				twttr.widgets.load();
-				$("#accordion").accordion("refresh");
-				$("#accordion h3[aria-controls='post-"+post_id+"']").addClass("read");
-				// added sharedcount.com data to accordion foot
-				$.sharedCount(post_url, function(data){
-						$("#post-"+post_id+" span#tw-count").text(data.Twitter);
-						$("#post-"+post_id+" span#fb-count").text(data.Facebook.like_count);
-						$("#post-"+post_id+" span#gp-count").text(data.GooglePlusOne);
-						$("#post-"+post_id+" span#li-count").text(data.LinkedIn);
-						$("#post-"+post_id+" span#del-count").text(data.Delicious);
-				});
-				
-			}
-		});
+		var accor = $('.ajaxed', ui.newHeader);
+		var loaded_post = $('.loaded-post', ui.newPanel);
+		if (!loaded_post.hasClass('true') && loaded_post.length > 0){ 
+			var post_id = accor.attr("id");
+			var post_url  = accor.attr("url");
+			var post_type = accor.attr("type");
+			// clean post url removing GA utm_ for shared count
+			post_url = post_url.replace(/\?([^#]*)/, function(_, search) {
+							search = search.split('&').map(function(v) {
+							  return !/^utm_/.test(v) && v;
+							}).filter(Boolean).join('&'); // omg filter(Boolean) so dope.
+							return search ? '?' + search : '';
+							});
+			$.ajax({
+				type: 'POST',
+				url: "/wp-admin/admin-ajax.php",
+				data: ({
+					action : 'ajaxify',
+					post_id: post_id,
+					post_type: post_type
+					}),
+				success:function(response){
+					if (post_type == "summary")	$("#post-"+post_id).html(response);
+					twttr.widgets.load();
+					$("#accordion").accordion("refresh");
+					$("#accordion h3[aria-controls='post-"+post_id+"']").addClass("read");
+					$("#post-"+post_id+" .loaded-post").addClass('true');
+					// added sharedcount.com data to accordion foot
+					$.sharedCount(post_url, function(data){
+							$("#post-"+post_id+" span#tw-count").text(data.Twitter);
+							$("#post-"+post_id+" span#fb-count").text(data.Facebook.like_count);
+							$("#post-"+post_id+" span#gp-count").text(data.GooglePlusOne);
+							$("#post-"+post_id+" span#li-count").text(data.LinkedIn);
+							$("#post-"+post_id+" span#del-count").text(data.Delicious);
+					});
+					
+					
+				}
+			});
+		}
 	});
 });
 

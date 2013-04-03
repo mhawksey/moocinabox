@@ -33,7 +33,7 @@
 		</div>
 
 		<div>
-			<label for="nickname"><?php _e( 'Nickname', 'bbpress' ); ?></label>
+			<label for="nickname"><?php _e( 'Username', 'bbpress' ); ?></label>
 			<input type="text" name="nickname" id="nickname" value="<?php echo esc_attr( bbp_get_displayed_user_field( 'nickname' ) ); ?>" class="regular-text" tabindex="<?php bbp_tab_index(); ?>" />
 		</div>
 
@@ -61,6 +61,20 @@
 	<?php do_action( 'bbp_user_edit_after' ); ?>
 </div>
 
+<?php 
+if (class_exists('MailPress')):
+	?>
+    
+  <div id="bbp-user-profile" class="bbp-user bbp-user-profile">
+   <h2 class="entry-title">Newsletter Subscription</h2>
+<?php
+	global $wpdb;
+	$user_info = get_userdata(bbp_get_displayed_user_id());
+	$user_email = $user_info->user_email;
+	get_mailpress_mlink($user_email);
+?>
+   </div>
+<?php endif; ?>
 <div id="bbp-user-links" class="bbp-user bbp-user-links">
 	<h2 class="entry-title"><?php _e( 'Links', 'bbpress' ) ?></h2>
 

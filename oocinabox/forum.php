@@ -59,7 +59,7 @@ if ( !defined('ABSPATH')) exit;
                 </div><!-- end of .post-data -->
                 <?php endif; ?>             
             
-            
+            <div class="post-edit"><?php edit_post_link(__('Edit', 'responsive')); ?></div> 
             </div><!-- end of #post-<?php the_ID(); ?> -->
             
             <?php comments_template( '', true ); ?>
@@ -94,4 +94,10 @@ if ( !defined('ABSPATH')) exit;
         </div><!-- end of #content -->
 
 <?php get_sidebar('bbpress'); ?>
+<script>
+jQuery(document).ready(function($) {
+    $( ".searchsubmit.bbpsw-search-submit").val("Go");
+	$( ".widget-wrapper.widget_bbpress_search").children().eq(0).hide();
+});
+</script>
 <?php get_footer(); ?>

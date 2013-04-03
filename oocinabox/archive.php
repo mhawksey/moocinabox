@@ -54,10 +54,11 @@ if (cat_is_ancestor_of(get_cat_id($root_cat), get_query_var('cat')) || is_catego
                 <?php elseif ( $is_readerlite ) : ?>
 					<?php _e( 'Course Reader', 'responsive' ); ?>
 				<?php else : ?>
-					<?php _e( 'Blog Archives', 'responsive' ); ?>
+					<?php _e( 'Blog Archives', 'responsive' ); 
+					?>
 				<?php endif; ?>
 			</h6>
-     <?php if ($is_readerlite){ ?>
+     <?php if ($is_readerlite || is_author()){ ?>
      <?php  echo '<script src="'.get_stylesheet_directory_uri().'/js/readerlite.js"></script>'; ?>
             <div id="content">  
             <?php if ( !is_user_logged_in() ) { ?>
@@ -67,7 +68,11 @@ if (cat_is_ancestor_of(get_cat_id($root_cat), get_query_var('cat')) || is_catego
                <div id="accordionLoader" class="inifiniteLoader">Loading... </div>
               <div id="accordion">        
         <?php  
-        		get_template_part( 'content', get_post_format() );
+        	if(!$ajaxedload){
+				get_template_part( 'content' );
+			} else {
+				get_template_part( 'content-ajaxed' );
+			}
         ?> 
                </div>
             </div>
