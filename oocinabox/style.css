@@ -1171,6 +1171,10 @@ clear:none;
 margin:0;
 }
 
+.bbp-reply-content p {
+margin: 1.4em 0 !important;	
+}
+
 #bloginstruc {
 display:block;
 }
@@ -1261,7 +1265,12 @@ background-position:-80px -160px;
 margin:0;
 }
 
-
+.user-submitted-error{
+	clear:left;
+	color:#F30;
+	font-style:italic;
+	text-align:center;	
+}
 
 /* Media Print
 -------------------------------------------------------------- */

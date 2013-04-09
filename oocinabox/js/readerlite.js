@@ -21,10 +21,13 @@ jQuery(document).ready(function($) {
 		event.preventDefault(); 
 		var accor = $('.ajaxed', ui.newHeader);
 		var loaded_post = $('.loaded-post', ui.newPanel);
+		var post_id = accor.attr("id");
+		var post_url  = accor.attr("url");
+		var post_type = accor.attr("type");
+		var _gaq = _gaq || [];
+		_gaq.push(['_trackEvent', 'Course Reader', 'read', post_url]);
 		if (!loaded_post.hasClass('true') && loaded_post.length > 0){ 
-			var post_id = accor.attr("id");
-			var post_url  = accor.attr("url");
-			var post_type = accor.attr("type");
+
 			// clean post url removing GA utm_ for shared count
 			post_url = post_url.replace(/\?([^#]*)/, function(_, search) {
 							search = search.split('&').map(function(v) {

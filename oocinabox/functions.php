@@ -6,9 +6,78 @@ global $root_cat;
 $root_cat = "reader"; 
 global $ajaxedload;
 $ajaxedload = false;
-
+//BBP_Topics_Widget::widget(array('title'=>'test'));
 //require_once(ABSPATH . 'wp-content/plugins/bbpress/includes/common/template-tags.php');
 
+// custom redirect on user submitted posts		
+add_filter('the_permalink','my_permalink_redirect');
+add_filter('post_link', 'my_permalink_redirect', /*priority=*/ 1);
+function my_permalink_redirect($permalink) {
+    global $post;
+    if ( get_post_meta($post->ID, 'user_submit_url', true)) {
+		return get_post_meta($post->ID, 'user_submit_url', true); 
+    } else {
+		return $permalink;
+	}
+}
+
+if (function_exists('user_submitted_posts')) add_action( 'added_post_meta', 'add_course_reader_to_other', 10, 4 );
+// http://wordpress.stackexchange.com/a/16840
+function add_course_reader_to_other( $meta_id, $post_id, $meta_key, $meta_value )
+{
+    if ( 'is_submission' == $meta_key ) {
+        wpse16835_do_something( $post_id );
+    }
+}
+
+function wpse16835_do_something( $post_id ){
+	$category = wp_get_post_categories($post_id); 
+	$newcat    = get_category_by_slug('reader');
+	array_push( $category, $newcat->term_id );
+	wp_set_post_categories( $post_id, $category );
+	add_post_meta($post_id, 'syndication_source', 'submission form', true);
+	add_post_meta($post_id, 'syndication_source_uri', '#', true);
+	add_post_meta($post_id, 'testi', $category, true);
+}
+
+function update_post_terms( $post_id ) {
+	global $usp_post_meta_IsSubmission;
+	if (!get_post_meta($newPost, $usp_post_meta_IsSubmission, true))
+		break;
+		
+    if ( $parent = wp_is_post_revision( $post_id ) )
+        $post_id = $parent;
+    $post = get_post( $post_id );
+    if ( $post->post_type != 'post' )
+        return;
+    // add a tag
+    wp_set_post_terms( $post_id, 'new tag', 'post_tag', true );
+    // add a category
+    $categories = wp_get_post_categories( $post_id );
+    $newcat    = get_term_by( 'name', 'reader', 'category' );
+    array_push( $categories, $newcat->term_id );
+    wp_set_post_categories( $post_id, $categories );
+}
+function add_course_reader_to_othered($post_id){
+
+	global $usp_post_meta_IsSubmission;
+	if (get_post_meta($post_id, 'is_submission', true))
+		return;
+	//if (!has_category("other", $post))
+	//	return;
+		
+    // add a category
+	//$cat = get_category_by_slug( 'reader' );
+	$category = wp_get_post_categories($post_id); 
+	
+    $newcat    = get_category_by_slug('reader');
+    array_push( $category, $newcat->term_id );
+    wp_set_post_categories( $post_id, $category );
+	add_post_meta($post_id, 'syndication_source', 'submission form', true);
+	add_post_meta($post_id, 'syndication_source_uri', '#', true);
+	add_post_meta($post_id, 'testi', $category, true);
+}
+				
 add_action( 'init', 'infinite_scroll_init' );
 //add_action( 'wp_footer', 'infiniteFooter' );
 add_action('wp_ajax_ajaxify', 'ajaxify');           // for logged in user  
@@ -36,6 +105,20 @@ function update_extra_profile_fields($user_id) {
 	//$print_r($linkid);
 	$blogurl = $_POST['blog'];
 	$blogrss = $_POST['blogrss'];
+	$onlist = $_POST['_show_on_list'];
+	$current_role = $_POST['_current_subscriber_role'];
+	if ($onlist != $current_role && ($current_role == "subscriber" || $current_role=="subscriber-unlisted")){
+		// http://wordpress.stackexchange.com/a/4727
+		$u = new WP_User( $user_id );
+		// Remove role
+		$u->remove_role( $current_role );
+		// Add role
+		if ($onlist == "subscriber"){
+			$u->add_role( 'subscriber' );
+		} else {
+			$u->add_role( 'subscriber-unlisted' );
+		}
+	}
 	if ($blogrss != "" && $blogurl == "") $blogurl = $blogrss;
 	if ($blogrss != "" && $blogurl != ""){ 
 		$newid = make_link($user_id, $blogurl, $blogrss, $linkid);
@@ -225,13 +308,13 @@ function ajaxify() { // loads post content into accordion
 		$posturlen = urlencode($posturl);
 		$title = html_entity_decode(get_the_title($post_id),ENT_QUOTES,'UTF-8');
 		$titleen = rawurlencode($title);
-		$buttons = '<div class="share_widget post-'.$post_id.'">Share: ' 
-			. '<div class="gplusbut"><g:plusone size="small" annotation="none" href="'.$posturl.'"></g:plusone><script type="text/javascript">  window.___gcfg = {lang: "en-GB"};  (function() { var po = document.createElement("script"); po.type = "text/javascript"; po.async = true;    po.src = "https://apis.google.com/js/plusone.js";    var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(po, s);  })();</script></div><span class="share-count"><i></i><u></u><span id="gp-count">-</span></span>'
-			. ' | <a href="javascript:void(0);" onclick="pop(\'ShareWin\',\'https://www.facebook.com/sharer.php?u='.$posturlen.'\')" >Facebook</a><span class="share-count"><i></i><u></u><span id="fb-count">--</span></span>'
+		$buttons = '<div class="share_widget post-'.$post_id.'">Share: '  
+			.' | <a href="javascript:void(0);" onclick="pop(\'ShareWin\',\'https://plus.google.com/share?url='.$posturlen.'\')" ><img src="https://www.gstatic.com/images/icons/gplus-16.png" alt="Share on Google+"/></a><span class="share-count"><i></i><u></u><span id="gp-count">--</span></span>'
+            .' | <a href="javascript:void(0);" onclick="pop(\'ShareWin\',\'https://www.facebook.com/sharer.php?u='.$posturlen.'\')" >Facebook</a><span class="share-count"><i></i><u></u><span id="fb-count">--</span></span>'
 			.' | <a href="javascript:void(0);" onclick="pop(\'ShareWin\',\'https://twitter.com/intent/tweet?text='.$titleen.'%20'.$posturlen.'\')">Twitter</a><span class="share-count"><i></i><u></u><span id="tw-count">--</span></span>'
 			.' | <a href="javascript:void(0);" onclick="pop(\'ShareWin\',\'https://www.linkedin.com/shareArticle?mini=true&url='.$posturlen.'&source=MASHe&summary='.$titleen.'\')" >LinkedIn</a><span class="share-count"><i></i><u></u><span id="li-count">--</span></span>'
 			.' | <a href="javascript:void(0);" onclick="pop(\'ShareWin\',\'https://delicious.com/post?v=4&url='.$posturlen.'\')" >Delicious</a><span class="share-count"><i></i><u></u><span id="del-count">--</span></span>';
-		 ?>
+			 ?>
 		   <div class="loaded-post">
 			<div class="post-meta">
 			<?php responsive_post_meta_data(); ?> from <a href="<?php the_syndication_source_link(); ?>" target="_blank"><?php print $source; ?></a><br/>
@@ -257,4 +340,6 @@ function ajaxify() { // loads post content into accordion
 	echo $output;
 	die(1);
 }
+
+
 ?>

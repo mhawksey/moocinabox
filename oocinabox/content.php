@@ -26,9 +26,9 @@
 		    $posturlen = urlencode(get_permalink());
 			$title = html_entity_decode(get_the_title(),ENT_QUOTES,'UTF-8');
 			$titleen = rawurlencode($title);
-		    $buttons = '<div class="share_widget post-'.$post_id.'">Share: ' 
-			. '<div class="gplusbut"><g:plusone size="small" annotation="none" href="'.$posturl.'"></g:plusone><script type="text/javascript">  window.___gcfg = {lang: "en-GB"};  (function() { var po = document.createElement("script"); po.type = "text/javascript"; po.async = true;    po.src = "https://apis.google.com/js/plusone.js";    var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(po, s);  })();</script></div><span class="share-count"><i></i><u></u><span id="gp-count">-</span></span>'
-			. ' | <a href="javascript:void(0);" onclick="pop(\'ShareWin\',\'https://www.facebook.com/sharer.php?u='.$posturlen.'\')" >Facebook</a><span class="share-count"><i></i><u></u><span id="fb-count">--</span></span>'
+		    $buttons = '<div class="share_widget post-'.$post_id.'">Share: '  
+			.' | <a href="javascript:void(0);" onclick="pop(\'ShareWin\',\'https://plus.google.com/share?url='.$posturlen.'\')" ><img src="https://www.gstatic.com/images/icons/gplus-16.png" alt="Share on Google+"/></a><span class="share-count"><i></i><u></u><span id="gp-count">--</span></span>'
+            .' | <a href="javascript:void(0);" onclick="pop(\'ShareWin\',\'https://www.facebook.com/sharer.php?u='.$posturlen.'\')" >Facebook</a><span class="share-count"><i></i><u></u><span id="fb-count">--</span></span>'
 			.' | <a href="javascript:void(0);" onclick="pop(\'ShareWin\',\'https://twitter.com/intent/tweet?text='.$titleen.'%20'.$posturlen.'\')">Twitter</a><span class="share-count"><i></i><u></u><span id="tw-count">--</span></span>'
 			.' | <a href="javascript:void(0);" onclick="pop(\'ShareWin\',\'https://www.linkedin.com/shareArticle?mini=true&url='.$posturlen.'&source=MASHe&summary='.$titleen.'\')" >LinkedIn</a><span class="share-count"><i></i><u></u><span id="li-count">--</span></span>'
 			.' | <a href="javascript:void(0);" onclick="pop(\'ShareWin\',\'https://delicious.com/post?v=4&url='.$posturlen.'\')" >Delicious</a><span class="share-count"><i></i><u></u><span id="del-count">--</span></span>';
