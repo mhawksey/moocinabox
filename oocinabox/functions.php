@@ -6,8 +6,6 @@ global $root_cat;
 $root_cat = "reader"; 
 global $ajaxedload;
 $ajaxedload = false;
-//BBP_Topics_Widget::widget(array('title'=>'test'));
-//require_once(ABSPATH . 'wp-content/plugins/bbpress/includes/common/template-tags.php');
 
 // custom redirect on user submitted posts		
 add_filter('the_permalink','my_permalink_redirect');
@@ -21,10 +19,10 @@ function my_permalink_redirect($permalink) {
 	}
 }
 
-if (function_exists('user_submitted_posts')) add_action( 'added_post_meta', 'add_course_reader_to_other', 10, 4 );
+if (function_exists('user_submitted_posts')) 
+	add_action( 'added_post_meta', 'add_course_reader_to_other', 10, 4 );
 // http://wordpress.stackexchange.com/a/16840
-function add_course_reader_to_other( $meta_id, $post_id, $meta_key, $meta_value )
-{
+function add_course_reader_to_other( $meta_id, $post_id, $meta_key, $meta_value ){
     if ( 'is_submission' == $meta_key ) {
         wpse16835_do_something( $post_id );
     }
@@ -39,52 +37,11 @@ function wpse16835_do_something( $post_id ){
 	add_post_meta($post_id, 'syndication_source_uri', '#', true);
 	add_post_meta($post_id, 'testi', $category, true);
 }
-
-function update_post_terms( $post_id ) {
-	global $usp_post_meta_IsSubmission;
-	if (!get_post_meta($newPost, $usp_post_meta_IsSubmission, true))
-		break;
-		
-    if ( $parent = wp_is_post_revision( $post_id ) )
-        $post_id = $parent;
-    $post = get_post( $post_id );
-    if ( $post->post_type != 'post' )
-        return;
-    // add a tag
-    wp_set_post_terms( $post_id, 'new tag', 'post_tag', true );
-    // add a category
-    $categories = wp_get_post_categories( $post_id );
-    $newcat    = get_term_by( 'name', 'reader', 'category' );
-    array_push( $categories, $newcat->term_id );
-    wp_set_post_categories( $post_id, $categories );
-}
-function add_course_reader_to_othered($post_id){
-
-	global $usp_post_meta_IsSubmission;
-	if (get_post_meta($post_id, 'is_submission', true))
-		return;
-	//if (!has_category("other", $post))
-	//	return;
-		
-    // add a category
-	//$cat = get_category_by_slug( 'reader' );
-	$category = wp_get_post_categories($post_id); 
-	
-    $newcat    = get_category_by_slug('reader');
-    array_push( $category, $newcat->term_id );
-    wp_set_post_categories( $post_id, $category );
-	add_post_meta($post_id, 'syndication_source', 'submission form', true);
-	add_post_meta($post_id, 'syndication_source_uri', '#', true);
-	add_post_meta($post_id, 'testi', $category, true);
-}
 				
 add_action( 'init', 'infinite_scroll_init' );
-//add_action( 'wp_footer', 'infiniteFooter' );
 add_action('wp_ajax_ajaxify', 'ajaxify');           // for logged in user  
 add_action('wp_ajax_nopriv_ajaxify', 'ajaxify'); 
 add_action('wp_ajax_ajaxFeedSearch', 'ajaxFeedSearch');  
-//add_action('wp_ajax_nopriv_ajaxify', 'ajaxFeedSearch');
-//add_action( 'wp_head', 'infintieHeader' );
 add_action('wp_enqueue_scripts', 'my_scripts_method');
 add_filter('user_contactmethods','add_hide_profile_fields',10,1);
 add_action('profile_update', 'update_extra_profile_fields');
