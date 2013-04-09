@@ -33,9 +33,10 @@
 		</div>
 
 		<div>
-			<label for="nickname"><?php _e( 'Username', 'bbpress' ); ?></label>
+			<label for="nickname"><?php _e( 'Nickname', 'bbpress' ); ?></label>
 			<input type="text" name="nickname" id="nickname" value="<?php echo esc_attr( bbp_get_displayed_user_field( 'nickname' ) ); ?>" class="regular-text" tabindex="<?php bbp_tab_index(); ?>" />
 		</div>
+
 
 		<div>
 			<label for="display_name"><?php _e( 'Display Name', 'bbpress' ) ?></label>
@@ -50,7 +51,24 @@
 			<label for="description"><?php _e( 'Biographical Info', 'bbpress' ); ?></label>
 			<textarea name="description" id="description" rows="5" cols="30" tabindex="<?php bbp_tab_index(); ?>"><?php echo esc_attr( bbp_get_displayed_user_field( 'description' ) ); ?></textarea>
 		</div>
-
+		<?php $user = new WP_User( bbp_get_displayed_user_id() );
+    $listed = "";
+	$display_block = false;
+    if ( !empty( $user->roles ) && is_array( $user->roles ) ) {
+        foreach ( $user->roles as $role ){
+            if ($role=="subscriber") 
+                $listed = "checked";
+			if ($role=="subscriber" || $role=="subscriber-unlisted") 
+				$display_block = true;
+		}
+    }
+	if ($display_block):
+	?><div>
+        <input id="_show_on_list" name="_show_on_list" type="checkbox" value="subscriber" <?php echo $listed ?> style="width:20px;margin-top: 10px;"/>
+		<label for="_show_on_list">Appear on participant list</label>
+        <input name="_current_subscriber_role" type="hidden" value="<?php if ($listed) { echo "subscriber"; } else { echo "subscriber-unlisted"; } ?>" />
+	   </div>
+    <?php endif; ?>
 		<?php do_action( 'bbp_user_edit_after_about' ); ?>
 		
 		<?php do_action( 'bbp_user_edit_after_name' ); ?>
