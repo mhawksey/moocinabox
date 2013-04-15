@@ -50,6 +50,61 @@ add_filter( 'the_excerpt', 'custom_excerpt' );
 function custom_excerpt_length( $length ) {
 	return 20;
 }
+
+function get_user_blogs($key){
+	global $wpdb;
+	$users_id = $wpdb->get_col( $wpdb->prepare("SELECT user_id FROM $wpdb->usermeta WHERE meta_key='%s' AND meta_value <>  ''", $key ));
+	foreach ( $users_id as $user_id ) :
+		$usermeta = array_map( function( $a ){ return $a[0]; }, get_user_meta($user_id));
+		$user = get_userdata( $user_id );
+		$tmp = array();
+		$tmp['id'] = $user_id;
+		$tmp['first_name'] = $user->first_name;
+		$tmp['last_name'] = $user->last_name;
+		$tmp['blog'] = $usermeta['blog'];
+		$tmp['blogrss'] = $usermeta['blogrss'];
+		$result[] = $tmp;
+	endforeach; // end the users loop.
+	usort($result, function($a, $b) {
+    	return strcmp($a['last_name'], $b['last_name']);
+	});
+	return $result;
+}
+function display_user_blogs( $atts ) {
+	 $blogs = get_user_blogs ('blog');
+	 $output = "";
+	 $output .= '<ul class="blogs">';
+	 foreach ($blogs as $user){
+		 if (isValidURL($user['blog'])){
+			 $rssfeed = "";
+			 if ($user['blogrss']!=="" && isValidURL($user['blogrss']))
+				$rssfeed = '[<a href="'.$user['blogrss'].'" title="RSS for '.$user['blog'].' target="_blank">RSS Feed</a>]';
+			 $output .=  '<li>'.ucwords( strtolower( $user['first_name'] . ' ' . $user['last_name'] ) ).' - <a href="'.$user['blog'].'" target="_blank">'.$user['blog'].'</a> '.$rssfeed.'</li>';
+		 }
+	 }
+     $output .=  '</ul>';
+	 return $output;
+}
+function isValidURL($url) {
+    if (filter_var($url, FILTER_VALIDATE_URL, FILTER_FLAG_HOST_REQUIRED)) return true;
+    else return false;
+}
+add_shortcode('display_user_blogs', 'display_user_blogs');
+
+function edit_profile_link($atts){
+	$text = "edit your profile";
+	$link = "/login/";
+	
+	if ( is_user_logged_in() ) {
+		global $current_user;
+      	get_currentuserinfo();
+		$link = "/forums/users/".$current_user->user_login."/edit";
+	}
+	$output = '<a href="'.$link.'">'.$text.'</a>';
+	return $output;
+}
+add_shortcode('edit_profile_link', 'edit_profile_link');
+
 function custom_excerpt($text){
    $text = strip_tags( $text );
    $tags = array("<p>", "</p>", "<br>", "<br />");

@@ -93,7 +93,7 @@ if (class_exists('MailPress')):
 ?>
    </div>
 <?php endif; ?>
-<div id="bbp-user-links" class="bbp-user bbp-user-links">
+<div id="bbp-user-links" class="bbp-user bbp-user-links"><a name="links" id="links"></a>
 	<h2 class="entry-title"><?php _e( 'Links', 'bbpress' ) ?></h2>
 
 	<fieldset class="bbp-form">

@@ -13,7 +13,13 @@
     		$curauthmeta = array_map( function( $a ){ return $a[0]; }, get_user_meta(bbp_get_displayed_user_id()));
 			$curauth = get_userdata( bbp_get_displayed_user_id() ) ;
 	?>
+<?php if ($curauthmeta['blog'] && !$curauthmeta['blogrss'] && bbp_is_user_home()):?>
 
+	<div class="bbp-profile-notice">
+		<p>We notice you have a <?php printf( '<a href="%s" target="_blank" rel="nofollow">blog</a>', $curauthmeta['blog'])?> which is not registered with the <a href="/category/reader/">Course Reader</a>. If you would like your posts to be included please register the Blog RSS Feed in the <a href="<?php bbp_user_profile_edit_url(); ?>#links">Links section</a></p>
+	</div>
+
+<?php endif; ?>
 <div id="bbp-user-profile" class="bbp-user bbp-user-profile">
   <h2 class="entry-title">
     <?php _e( 'Profile', 'bbpress' ); ?>
@@ -85,16 +91,22 @@
   </div>
 </div>
 <?php if ( bbp_is_user_home() && function_exists('user_submitted_posts')): ?>
-<div id="bbp-user-forum" class="bbp-user bbp-user-content">
+<div id="bbp-user-forum" class="bbp-user bbp-user-links">
   <h2 class="entry-title">
     <?php _e( 'Course Reader Submission', 'bbpress' ); ?>
   </h2>
   <div class="bbp-user-section">
-    <div class="bbp-row bbp-user-post-add"><strong>Important:</strong> Before using this form please check that if you have a blog with a valid feed posts can be pulled into the Course Reader. To set this up <a href="<?php bbp_user_profile_edit_url(); ?>" title="<?php printf( __( 'Edit Profile of User %s', 'bbpress' ), esc_attr( bbp_get_displayed_user_field( 'display_name' ) ) ); ?>">
-      <?php _e( 'edit your profile', 'bbpress' ); ?>
-      </a>.
-      If you don't have a blog or would like to submit an <strong>individual item</strong> to the Course Reader please use the form below:
-      <?php if (function_exists('user_submitted_posts')) user_submitted_posts(); ?>
+    <div class="bbp-row bbp-user-post-add"><p>This form lets you submit individual links to the <a href="/category/reader/">Course Reader</a>.</p>
+    <p> 
+    <?php if ($curauthmeta['blogrss']):?>
+    <strong>Note:</strong> We notice that you've registered your blog with us. Any posts with ocTEL in the body or title will automatically appear in the Course Reader and you shouldn't need to submit them individually.
+    <?php elseif ($curauthmeta['blog'] && !$curauthmeta['blogrss']):?>
+     <strong>Note:</strong> We notice that you've registered your blog with us but not it's RSS Feed. If you would like your blog posts to be automatically included in the Course Reader please register the Blog RSS Feed in the <a href="<?php bbp_user_profile_edit_url(); ?>#links">Links section</a>.
+    <?php else: ?>
+     <strong>Note:</strong>  If you have a blog we can automatically include posts in the Course Reader if you register the blog and feed in the <a href="<?php bbp_user_profile_edit_url(); ?>#links">Links section</a>.	
+    <?php endif; ?>
+    </p>
+      <?php user_submitted_posts(); ?>
     </div>
   </div>
 </div>

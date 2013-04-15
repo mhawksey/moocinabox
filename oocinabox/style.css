@@ -1174,7 +1174,16 @@ margin:0;
 .bbp-reply-content p {
 margin: 1.4em 0 !important;	
 }
-
+.bbp-profile-notice {
+border-width: 1px;
+border-style: solid;
+padding: 0 0.6em;
+margin: 5px 0 15px;
+border-radius: 3px;
+background-color: #ffffe0;
+border-color: #e6db55;
+color: #000;
+}
 #bloginstruc {
 display:block;
 }
