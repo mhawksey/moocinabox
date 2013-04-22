@@ -50,39 +50,58 @@ add_filter( 'the_excerpt', 'custom_excerpt' );
 function custom_excerpt_length( $length ) {
 	return 20;
 }
-
+function is_subscriber($userid){
+	$user = new WP_User( $userid );
+	$is_sub = false;
+    if ( !empty( $user->roles ) && is_array( $user->roles ) ) {
+        foreach ( $user->roles as $role ){
+            if ($role=="subscriber") 
+                $is_sub = true;
+				return $is_sub;
+		}
+    }
+	return $is_sub;
+}
+	
 function get_user_blogs($key){
 	global $wpdb;
 	$users_id = $wpdb->get_col( $wpdb->prepare("SELECT user_id FROM $wpdb->usermeta WHERE meta_key='%s' AND meta_value <>  ''", $key ));
 	foreach ( $users_id as $user_id ) :
+	  if (is_subscriber($user_id)):
 		$usermeta = array_map( function( $a ){ return $a[0]; }, get_user_meta($user_id));
 		$user = get_userdata( $user_id );
 		$tmp = array();
 		$tmp['id'] = $user_id;
+		$tmp['user_login'] = $user->user_login;
 		$tmp['first_name'] = $user->first_name;
 		$tmp['last_name'] = $user->last_name;
 		$tmp['blog'] = $usermeta['blog'];
 		$tmp['blogrss'] = $usermeta['blogrss'];
 		$result[] = $tmp;
+	  endif;
 	endforeach; // end the users loop.
-	usort($result, function($a, $b) {
-    	return strcmp($a['last_name'], $b['last_name']);
-	});
+	if ($result) {
+		usort($result, function($a, $b) {
+			return strcmp($a['last_name'], $b['last_name']);
+		});
+	}
 	return $result;
 }
 function display_user_blogs( $atts ) {
 	 $blogs = get_user_blogs ('blog');
-	 $output = "";
-	 $output .= '<ul class="blogs">';
-	 foreach ($blogs as $user){
-		 if (isValidURL($user['blog'])){
-			 $rssfeed = "";
-			 if ($user['blogrss']!=="" && isValidURL($user['blogrss']))
-				$rssfeed = '[<a href="'.$user['blogrss'].'" title="RSS for '.$user['blog'].' target="_blank">RSS Feed</a>]';
-			 $output .=  '<li>'.ucwords( strtolower( $user['first_name'] . ' ' . $user['last_name'] ) ).' - <a href="'.$user['blog'].'" target="_blank">'.$user['blog'].'</a> '.$rssfeed.'</li>';
+	 $output = "";	
+	 if ($blogs):
+		 $output .= '<ul class="blogs">';
+		 foreach ($blogs as $user){
+			 if (isValidURL($user['blog'])){
+				 $rssfeed = "";
+				 if ($user['blogrss']!=="" && isValidURL($user['blogrss']))
+					$rssfeed = '[<a href="'.$user['blogrss'].'" title="RSS for '.$user['blog'].' target="_blank">RSS Feed</a>]';
+				 $output .=  '<li><a href="/'.bbp_get_user_slug().'/'.$user['user_login'].'">'.ucwords( strtolower( $user['first_name'] . ' ' . $user['last_name'] ) ).'</a> - <a href="'.$user['blog'].'" target="_blank">'.$user['blog'].'</a> '.$rssfeed.'</li>';
+			 }
 		 }
-	 }
-     $output .=  '</ul>';
+		 $output .=  '</ul>';
+	 endif;
 	 return $output;
 }
 function isValidURL($url) {
@@ -353,5 +372,15 @@ function ajaxify() { // loads post content into accordion
 	die(1);
 }
 
-
+//load feed template
+function create_txt_feed() {
+    load_template( get_stylesheet_directory() . '/customfeed.php'); 
+	
+}
+add_action('do_feed_txt', 'create_txt_feed', 10, 1);
+function create_txt_forum_feed() {
+    load_template( get_stylesheet_directory() . '/customfeedforum.php'); 
+	
+}
+add_action('do_feed_txt-forum', 'create_txt_forum_feed', 10, 1);
 ?>

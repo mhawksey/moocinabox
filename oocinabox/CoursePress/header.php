@@ -30,11 +30,11 @@
 
 				</table>
 
-				<table <?php $this->classes('nopmb htdate'); ?>>
+				<table <?php $this->classes('nopmb cp_htdate'); ?>>
 
 					<tr>
 
-						<td <?php $this->classes('hdate'); ?>>
+						<td <?php $this->classes('cp_hdate'); ?>>
 
 							<?php echo mysql2date('F j, Y', current_time('mysql')); ?>
 

@@ -1,8 +1,7 @@
 <?php /* MailPress */
 $_classes = array(
 
-'body'		=> "	color:#efefef;
-				font-family: Arial, Helvetica, sans-serif;
+'body'		=> "font-family: Arial, Helvetica, sans-serif;
 				background:none repeat scroll 0 0 #f0f0f0;",
 
 'button'		=> "	background-color:#6D8C82;
@@ -41,7 +40,7 @@ $_classes = array(
 'logo'		=> "	border:none;
 				padding:0",
 
-'htdate'		=> "	width:100%;
+'cp_htdate'		=> "	width:100%;
 				padding:0;
 				margin:0;
 				
@@ -53,11 +52,12 @@ $_classes = array(
 				background-image: -o-linear-gradient(top, #585858, #3d3d3d);
 				background-image: linear-gradient(top, #585858, #3d3d3d);",
 
-'hdate'		=> "padding:4px;
+'cp_hdate'		=> "padding:4px;
 				margin:10px 0;
 				border:none;
 				color:#fff;
 				font-size:16px;
+				font-family:Verdana,Sans-Serif;
 				text-align:right;",
 
 'main'		=> "margin:0;
@@ -67,18 +67,17 @@ $_classes = array(
 
 'content'		=> "margin:0;
 				padding:0;
-				border:0;
-				float:left;",
+				border:0;",
 // content
-'csum'			=>"float:right;
+'cp_recent_act'	=>"float:right;
 				background-color: #efefef;
 				margin: 10px 0;
 				padding: 3px 10px;
 				border: 1px solid #ddd;
 				width: 250px;
-				",
+				font-size:0.8em",
 				
-'csection'		=> "
+'cp_section_head'		=> "
 				border: none;
 				border-spacing: 0px;
 				border-collapse: collapse;
@@ -88,25 +87,40 @@ $_classes = array(
 				background: #e6e6e6;
 				font-weight: bold;
 				font-size: 16px;
+				font-family:Verdana,Sans-Serif;
 				color: #555;
 				padding: 4px 3px;
 			",
 
-'ctable'		=> ";
+'cp_ctable'		=> ";
 				padding-right:20px;",
+				
+'cp_ctable'		=> "",
 
-'ctd'			=> "	margin:2px;
+'cp_ctd'		=> "	margin:2px;
 				padding:0;
 				border:none;
 				color:#333333;
 				text-align:left;
 				vertical-align:top;
 				font-family:Verdana,Sans-Serif;",
+				
+'cp_onetd'		=> "padding: 5px;
+				border:none;
+				vertical-align:top;
+				font-family:Verdana,Sans-Serif;",
+				
+'cp_div'		=>"font-size:0.9em",
 
-'cdiv'		=> "padding: 10px;
+'cp_cdiv'		=> "padding: 10px;
 				border: none",
+				
+'cp_onecell'		=> "
+				border: none;
+				width:330px;
+				font-size:12px",
 
-'ch2'			=> "	margin:0;
+'cp_ch2'		=> "	margin:0;
 				padding:0;
 				border:none;
 				color:#333;
@@ -114,19 +128,19 @@ $_classes = array(
 				font-weight:bold;
 				font-family:Verdana,Sans-Serif;",
 
-'cdate'		=> "	line-height:2em;
+'cp_cdate'		=> "	line-height:2em;
 				color:#777;
 				font-size:1em;
-				font-family:Arial,Sans-Serif;",
+				font-family:Arial,Sans-Serif",
 
-'extext'		=> "text-align: justify;",
+'cp_extext'		=> "text-align: justify;",
 
 'cp'			=> "	line-height:1.4em;
 				font-size:0.85em;",
 
-'clink'		=> "	text-decoration:none;
+'cp_clink'		=> "	text-decoration:none;
 				color:#333;",
-'noinfo'		=> "font-style: italic;
+'cp_noinfo'		=> "font-style: italic;
 					font-weight: bold;
 					text-align: center;",
 // sidebar
