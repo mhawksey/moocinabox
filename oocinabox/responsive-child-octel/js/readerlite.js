@@ -1,4 +1,5 @@
 // JavaScript Document
+var _gaq = _gaq || [];
 jQuery(document).ready(function($) {
     $( ".searchsubmit.bbpsw-search-submit").val("Go");
 	$( ".widget-wrapper.widget_bbpress_search").children().eq(0).hide();
@@ -24,7 +25,6 @@ jQuery(document).ready(function($) {
 		var post_id = accor.attr("id");
 		var post_url  = accor.attr("url");
 		var post_type = accor.attr("type");
-		var _gaq = _gaq || [];
 		_gaq.push(['_trackEvent', 'Course Reader', 'read', post_url]);
 		if (!loaded_post.hasClass('true') && loaded_post.length > 0){ 
 
@@ -112,6 +112,9 @@ function wpfp_after_ajax( dhis ){
 	if (action == "add"){
 		dhis.parent().removeClass("remove");
 		dhis.parent().addClass("add");
+		var params = qs(dhis.attr('href'));
+		var post_url = jQuery('div[id^="'+params.postid+'"]').attr('url');
+		_gaq.push(['_trackEvent', 'Course Reader', 'fav', post_url]);
 	} else {
 		dhis.parent().removeClass("add");
 		dhis.parent().addClass("remove");

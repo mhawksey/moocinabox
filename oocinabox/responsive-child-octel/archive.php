@@ -58,13 +58,13 @@ if (cat_is_ancestor_of(get_cat_id($root_cat), get_query_var('cat')) || is_catego
 					?>
 				<?php endif; ?>
 			</h6>
-     <?php if ($is_readerlite || is_author()){ ?>
+     <?php if ($is_readerlite || is_author() || is_day() || is_month() || is_year() ){ ?>
      <?php  echo '<script src="'.get_stylesheet_directory_uri().'/js/readerlite.js"></script>'; ?>
             <div id="content">  
             <?php if ( !is_user_logged_in() ) { ?>
             <p><strong>Note:</strong> You're not logged in so your favourites and read items will not be saved. <a href="/login/">Login</a> or <a href="/login/?action=register">Register</a></p>
             <?php }; ?>
-            <p><small>Below is content posted outside the course on participants own blogs or to other social networks. Click on titles to load the content. If you would like your content added/removed from this please contact us.</small></p> 
+            <p><small>Below is content posted outside the course on participants own blogs or to other social networks. Click on titles to load the content. If you would like your content added/removed from this please contact us.</small> <a href="#" onClick="_gaq.push(['_trackEvent', 'Videos', 'Play', 'Baby\'s First Birthday']);">Play</a></p> 
                <div id="accordionLoader" class="inifiniteLoader">Loading... </div>
               <div id="accordion">        
         <?php  

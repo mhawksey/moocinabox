@@ -40,4 +40,3 @@
 	</div><!-- #bbp-user-favorites -->
 
 	<?php do_action( 'bbp_template_after_user_favorites' ); ?>
-<script type="text/javascript" src="<?php echo get_stylesheet_directory_uri(); ?>/js/readerlite.js"></script>

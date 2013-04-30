@@ -1086,6 +1086,23 @@ height:15px;
 display:inline-block;
 }
 
+.wpf_custom_widget {
+list-style-type:none;
+padding-left:0px !important;
+
+}
+.wpf_custom_star{
+float:left;	
+
+}
+.wpf_custom_star a {
+	display:inline-block !important;
+}
+.wpf_custom_div{
+padding-left: 20px;
+padding-bottom:7px;
+}
+
 a:hover.wpfp-link {
 background-position:-25px;
 }

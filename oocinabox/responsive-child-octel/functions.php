@@ -3,7 +3,7 @@
  * Add theme support for infinity scroll
  */
 global $root_cat; 
-$root_cat = "reader"; 
+$root_cat = "Course Reader"; 
 global $ajaxedload;
 $ajaxedload = false;
 
@@ -110,9 +110,53 @@ function isValidURL($url) {
 }
 add_shortcode('display_user_blogs', 'display_user_blogs');
 
+function display_top_authors( $atts ) {
+	extract( shortcode_atts( array(
+	      'limit' => '10',
+		  'type' => 'post'
+     ), $atts ) );
+	// http://wordpress.org/support/topic/how-to-show-top-authors-with-avatar-and-count#post-1408011
+	global $wpdb;
+	$output = "";
+	$top_authors = $wpdb->get_results("
+		SELECT u.ID, count(post_author) as posts FROM {$wpdb->posts} as p
+		LEFT JOIN {$wpdb->users} as u ON p.post_author = u.ID
+		INNER JOIN $wpdb->usermeta m ON m.user_id = u.ID
+		WHERE p.post_status = 'publish'
+		AND p.post_type = '{$type}'
+		AND m.meta_key = 'wp_capabilities'
+		AND m.meta_value LIKE '%subscriber%'
+		GROUP by p.post_author
+		ORDER by posts DESC
+		LIMIT 0,{$limit}
+	");
+	if( !empty( $top_authors ) ) {
+		$output .= '<ul>';
+		foreach( $top_authors as $key => $author ) {
+			if ($type == 'reply'){
+				$url = bbp_get_user_profile_url( $author->ID ).'replies/';
+			} else {
+				$url = get_author_posts_url( $author->ID );
+			}
+			$output .= '
+			<li>
+				' . get_avatar( $author->ID , 16 ) . ' <a href="' . $url . '">' . get_the_author_meta( 'user_nicename' , $author->ID ) . '</a>
+				(' . $author->posts . ') 
+			</li>
+			';
+		}
+		$output .= '</ul>';
+	}
+	return $output;
+}
+
+add_shortcode('display_top_authors', 'display_top_authors');
+
 function edit_profile_link($atts){
-	$text = "edit your profile";
-	$link = "/login/";
+		extract( shortcode_atts( array(
+	      'text' => 'edit your profile',
+		  'link' => '/login/'
+     ), $atts ) );
 	
 	if ( is_user_logged_in() ) {
 		global $current_user;
@@ -372,6 +416,7 @@ function ajaxify() { // loads post content into accordion
 	die(1);
 }
 
+
 //load feed template
 function create_txt_feed() {
     load_template( get_stylesheet_directory() . '/customfeed.php'); 
@@ -383,4 +428,37 @@ function create_txt_forum_feed() {
 	
 }
 add_action('do_feed_txt-forum', 'create_txt_forum_feed', 10, 1);
+function create_forum_activity_feed() {
+    load_template( get_stylesheet_directory() . '/customfeedforumactivity.php'); 
+	
+}
+add_action('do_feed_forum-activity', 'create_forum_activity_feed', 10, 1);
+
+function wpfp_list_most_favorited_with_star($limit=5) {
+    global $wpdb;
+
+    $query = "SELECT post_id, meta_value, post_status FROM $wpdb->postmeta";
+    $query .= " LEFT JOIN $wpdb->posts ON post_id=$wpdb->posts.ID";
+    $query .= " WHERE post_status='publish' AND meta_key='".WPFP_META_KEY."' AND meta_value > 0 ORDER BY ROUND(meta_value) DESC LIMIT 0, $limit";
+    $results = $wpdb->get_results($query);
+    if ($results) {
+        echo "<ul class='wpf_custom_widget'>";
+        foreach ($results as $o):
+            $p = get_post($o->post_id);
+            echo "<li>".wpfp_show_star($o->post_id)."<div class='wpf_custom_div'>";
+            echo " <a href='".get_permalink($o->post_id)."' title='". $p->post_title ."'>" . $p->post_title . "</a> ($o->meta_value) ";
+            echo "</div></li>";
+        endforeach;
+        echo "</ul>";
+    }
+}
+
+function wpfp_show_star($post_id) {
+	$str = "<div class='wpfp-span wpf_custom_star'>";
+	$str .= wpfp_link(1, "", 0, array( 'post_id' => $post_id ) );
+	$str .= "</div>";
+	return $str;
+}
+
+
 ?>
