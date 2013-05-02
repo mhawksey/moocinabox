@@ -63,8 +63,8 @@ query_posts( $the_query );
 		<content type="<?php html_type_rss(); ?>" xml:base="<?php the_permalink_rss() ?>"><![CDATA[<?php the_content_feed('atom') ?>]]></content>
 <?php endif; ?>
 <?php atom_enclosure(); ?>
-<?php do_action('atom_entry'); ?>
-		<link rel="replies" type="<?php bloginfo_rss('html_type'); ?>" href="<?php echo bbp_get_reply_url() ?>" thr:count="<?php bbp_topic_reply_count();?>"/>
+<?php do_action('atom_entry'); ?>  
+		<link rel="parent" type="<?php bloginfo_rss('html_type'); ?>" href="<?php echo get_permalink($post->post_parent) ?>"/>
 	</entry>
 	<?php endwhile ; ?>
 </feed>
