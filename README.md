@@ -1,13 +1,13 @@
 # (m)oocinabox 
-Contributors: mhawksey
-Author URI: http://mashe.hawksey.info
-Theme URI: https://github.com/mhawksey/moocinabox
-Tags: open course, mooc, cmooc, reader, feed reader
-Requires at least: 3.0.1
-Tested up to: 3.4
-Stable tag: 0.10
-License: GNU General Public License
-License URI: license.txt 
+Contributors: mhawksey  
+Author URI: http://mashe.hawksey.info  
+Theme URI: https://github.com/mhawksey/moocinabox  
+Tags: open course, mooc, cmooc, reader, feed reader  
+Requires at least: 3.0.1  
+Tested up to: 3.4  
+Stable tag: 0.10  
+License: GNU General Public License  
+License URI: license.txt   
 
 Collection of WordPress plugins and a custom theme educators might find useful if running an open online course (small and massive)
 
