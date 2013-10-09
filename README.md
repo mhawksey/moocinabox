@@ -1,4 +1,4 @@
-=== (m)oocinabox ===
+# (m)oocinabox 
 Contributors: mhawksey
 Author URI: http://mashe.hawksey.info
 Theme URI: https://github.com/mhawksey/moocinabox
@@ -11,7 +11,7 @@ License URI: license.txt
 
 Collection of WordPress plugins and a custom theme educators might find useful if running an open online course (small and massive)
 
-== Description ==
+## Description
 
 This is a custom child theme based on [Responsive WordPress Theme](http://themeid.com/responsive-theme/) which uses a collection of additional plugins to make a interface for browsing course content aggregated as part of (massive) open online courses. This theme relies on having the following plugins/themes: 
 * Jetpack (Infinite Scroll)
@@ -24,7 +24,7 @@ This is a custom child theme based on [Responsive WordPress Theme](http://themei
 * Theme My Login
 
 
-== Installation ==
+## Installation 
 
 Basic installation instructions below. A more detailed set of steps to be added later.
 
@@ -35,7 +35,7 @@ Basic installation instructions below. A more detailed set of steps to be added 
 
 To install the MailPress Newsletter template upload the CoursePress folder to /wp-content/plugins/mailpress/wp-content/themes/
 
-== Changelog ==
+## Changelog 
 
-= 0.1.0 =
+### 0.1.0 
 * Initial release (alpha) 
