@@ -28,9 +28,12 @@ This is a custom child theme based on [Responsive WordPress Theme](http://themei
 
 Basic installation instructions below. A more detailed set of steps to be added later.
 
-1. Upload the theme .zip through the Appearance > Themes > Install Themes > Upload interface (http://yourblog.com/wp-admin/theme-install.php?tab=upload) or extract and upload to wp-content/themes
+1. Extract and install version 1.8.9.3 of the Resonsive Theme (included in this repository)
+1. Upload the responsive-child-octel folder to your themes folder /wp-content/themes/
 1. Activate the theme through the 'Themes' menu in WordPress
 1. Pray
+
+To install the MailPress Newsletter template upload the CoursePress folder to /wp-content/plugins/mailpress/wp-content/themes/
 
 == Changelog ==
 
