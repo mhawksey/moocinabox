@@ -13,24 +13,20 @@ Collection of WordPress plugins and a custom theme educators might find useful i
 
 ## Description
 
-This is a custom child theme based on [Responsive WordPress Theme](http://themeid.com/responsive-theme/) which uses a collection of additional plugins to make a interface for browsing course content aggregated as part of (massive) open online courses. This theme relies on having the following plugins/themes: 
+There are two components a Buddypress Default child theme and a plugin that renders the Course Reader. The theme relies on having the following plugins/themes: 
 * Jetpack (Infinite Scroll)
-* WP Favorite Posts
-* Responsive WordPress Theme
+
 
 **Optional** (but highlighly recommended):
-* FeedWordPress
 * bbPress
-* Theme My Login
 
 
 ## Installation 
 
 Basic installation instructions below. A more detailed set of steps to be added later.
 
-1. Extract and install version 1.8.9.3 of the Resonsive Theme (included in this repository)
-1. Upload the responsive-child-octel folder to your themes folder /wp-content/themes/
-1. Activate the theme through the 'Themes' menu in WordPress
+1. Extract and install the plugin and theme seperately
+1. Activate the theme through the 'Themes' and Plugin menu in WordPress
 1. Pray
 
 To install the MailPress Newsletter template upload the CoursePress folder to /wp-content/plugins/mailpress/wp-content/themes/

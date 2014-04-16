@@ -1,0 +1,172 @@
+/* 
+Theme Name: ALT
+Description: BuddyPress child theme configured for the Association for Learning Technology
+Author: mhawksey
+Author URI: http://mashe.hawksey.info
+
+Template: bp-default
+Parent Theme Name: BuddyPress Default
+Parent Theme URI: http://buddypress.org/extend/themes/
+Parent Version: 1.8
+Parent Author: the BuddyPress team
+Parent Author URI: http://buddypress.org
+License: GNU General Public License
+License URI: license.txt
+*/
+
+#header-widget-area{
+text-align:right;
+padding: 5px 5px 10px 5px;
+background:#FFF;
+}
+#footer-widget-area{
+max-width:400px;
+text-align:center;
+margin: 0 auto;	
+}
+#header {
+background:#fff;
+margin-bottom:0px;
+padding-top:0px;	
+}
+#header h1 {
+float:right;
+}
+
+#header #search-bar {
+text-align:left;	
+margin-top:0px
+}
+#header #search-bar .padder {
+padding-top:1px;	
+}
+#header #search-form{
+margin-top:25px;
+}
+#header #navigation{
+clear:right;	
+}
+#nav {
+float: left;
+margin-top: 0px
+}
+#nav ul{
+border:none;
+
+border-radius:5px;
+-webkit-border-radius:5px;		
+}
+#nav li a, #nav .sfhover ul li > a, #nav :hover ul li > a {
+background-image:none;
+background-color:#079948;	
+}
+#nav ul.sub-menu {
+border-radius:5px;
+-webkit-border-radius:5px;
+border:1px solid #ccc;
+}
+#nav ul.sub-menu li a {
+background-image:none;
+color:#4D4D4D;
+background-color:#fff;	
+border-top:1px solid #ccc;
+}
+#nav ul.sub-menu li a:hover{
+background: #079948;
+color:#fff;
+}
+div#container {
+border:none;
+border-radius:0px;
+border-top:1px solid #079948;
+-webkit-border-radius:0px;	
+}
+#homestream{
+	width:48%;
+	float:left;
+	margin-top:0px;
+	
+}
+#homestream.r{
+ float:right;	
+}
+#homestream li {
+list-style:none;	
+}
+
+a {
+color: #079948;
+}
+div.item-list-tabs ul li a span {
+background: #079948;
+}
+#navigation-drop select{
+	width:100%;	
+}
+ul.children{
+padding-left: 10px;
+}
+.bbp-body .hentry.bbppu-unread>li:first-child {
+border-left-color: #079948;
+}
+
+@media only screen and (max-width: 768px){
+	#navigation-drop {
+		display:block;
+		
+	}
+	#navigation, #primary_links {
+		display:none;	
+	}
+	#bp-default div.post div.author-box {
+		float:left;	
+		margin-bottom: 5px;
+	}
+	h2.posttitle{
+		min-height:112px;
+	}
+	div.post-content {
+		margin-left:0px;	
+	}
+	#homestream{
+		float:none;
+		width:100%;	
+	}
+}
+@media only screen and (min-width: 768px){
+	#navigation-drop {
+		display:none;
+	}
+	
+}
+.call-to-action a {
+color: #fff;
+font-size:22px;
+padding: 5px 15px;
+-webkit-appearance: none;
+margin: 10px 0 0 0;
+text-shadow: 0 1px 0 rgba(0,0,0,.2);
+border: 1px solid rgba(87,121,63,.8);
+-moz-border-radius: 3px;
+-webkit-border-radius: 3px;
+border-radius: 3px;
+-moz-background-clip: padding;
+-webkit-background-clip: padding-box;
+background-clip: padding-box;
+-webkit-box-shadow: 0 1px 2px rgba(0,0,0,.4), inset 0 1px 0 rgba(255,255,255,.25);
+box-shadow: 0 1px 2px rgba(0,0,0,.4), inset 0 1px 0 rgba(255,255,255,.25);
+background-image: -moz-linear-gradient(bottom, rgba(0,0,0,.15) -17%, rgba(255,255,255,.15) 117%);
+background-image: -o-linear-gradient(bottom, rgba(0,0,0,.15) -17%, rgba(255,255,255,.15) 117%);
+background-image: -webkit-linear-gradient(bottom, rgba(0,0,0,.15) -17%, rgba(255,255,255,.15) 117%);
+text-decoration:none;
+background-color: rgb(7, 153, 72);
+}
+.call-to-action a:hover {
+-moz-box-shadow: 0 1px 2px rgba(0,0,0,.4), inset 0 1px 0 rgba(255,255,255,.25);
+-webkit-box-shadow: 0 1px 2px rgba(0,0,0,.4), inset 0 1px 0 rgba(255,255,255,.25);
+box-shadow: 0 1px 2px rgba(0,0,0,.4), inset 0 1px 0 rgba(255,255,255,.25);
+background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJod…Igd2lkdGg9IjEwMCIgaGVpZ2h0PSIxMDAiIGZpbGw9InVybCgjaGF0MCkiIC8+Cjwvc3ZnPg==);
+background-image: -moz-linear-gradient(top, rgba(0,0,0,.05) -17%, rgba(255,255,255,.05) 117%);
+background-image: -o-linear-gradient(top, rgba(0,0,0,.05) -17%, rgba(255,255,255,.05) 117%);
+background-image: -webkit-linear-gradient(top, rgba(0,0,0,.05) -17%, rgba(255,255,255,.05) 117%);
+}
