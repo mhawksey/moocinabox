@@ -1,0 +1,80 @@
+<?php /* radio */ ?>
+<settings>
+	<attributes>
+		<items>
+			<type>
+				<radio>
+					<text>type=</text>
+					<values><![CDATA[<?php echo serialize(array('radio' => '"radio"')); ?>]]></values>
+					<disabled><![CDATA[<?php echo serialize(array('radio')); ?>]]></disabled>
+					<default>radio</default>
+				</radio>
+				<hidden>
+					<value>radio</value>
+				</hidden>
+			</type>
+		</items>
+		<items>
+			<name><text></text></name>
+		</items>
+		<items>
+			<value><text></text></value>
+		</items>
+		<items>
+			<class><text></text></class>
+		</items>
+		<items>
+			<style><text></text></style>
+		</items>
+		<items>
+			<is>
+				<is>
+					<values><![CDATA[<?php echo serialize(array('checked', 'disabled')); ?>]]></values>
+					<disabled><![CDATA[<?php echo serialize( array() ); ?>]]></disabled>
+				</is>
+			</is>
+		</items>
+		<items>
+			<misc><misc><![CDATA[<?php _e("other attributes except 'id'", MP_TXTDOM); ?>]]></misc></misc>
+		</items>
+	</attributes>
+	<controls>
+		<items>
+			<required>
+				<checkbox>
+					<text><![CDATA[<?php _e('Required', MP_TXTDOM); ?>]]></text>
+					<value>1</value>
+					<disabled>0</disabled>
+					<class>controls</class>
+				</checkbox>
+			</required>
+		</items>
+	</controls>
+<?php if ($this->field->form_incopy) : ?>
+	<options>
+		<items>
+			<incopy>
+				<checkbox>
+					<text><![CDATA[<?php _e('In copy', MP_TXTDOM); ?>]]></text>
+					<value>1</value>
+					<disabled>0</disabled>
+				</checkbox>
+			</incopy>
+		</items>
+	</options>
+<?php endif; ?>
+<?php if ($protected) : ?>
+	<hiddens>
+		<options>
+			<protected></protected>
+		</options>
+	</hiddens>
+<?php endif; ?>
+	<tabs>
+		<attributes><![CDATA[<?php _e('Attributes', MP_TXTDOM); ?>]]></attributes>
+		<controls><![CDATA[<?php _e('Controls', MP_TXTDOM); ?>]]></controls>
+<?php if ($this->field->form_incopy) : ?>
+		<options><![CDATA[<?php _e('Options', MP_TXTDOM); ?>]]></options>
+<?php endif; ?>
+	</tabs>
+</settings>

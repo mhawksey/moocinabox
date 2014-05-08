@@ -1,0 +1,9 @@
+/* autorefresh */
+div#mp_message {
+	float:right;
+	margin-right:20px;
+}
+div#mp_message div#message p {
+	padding:2px;
+	margin:0;
+}

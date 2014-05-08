@@ -50,10 +50,10 @@
 			</div>
 			<div id="navigation-drop" role="navigation">
             <?php
-			if (!is_user_logged_in())
+			/*if (!is_user_logged_in())
 					$profilelink = '<option value="/login/">Login</option>';
 			else
-					$profilelink = '<option value="' . bp_loggedin_user_domain( '/' ) . '">' . __('My Profile') . '</option>';
+					$profilelink = '<option value="' . bp_loggedin_user_domain( '/' ) . '">' . __('My Profile') . '</option>';*/
 			?>
             	<?php wp_nav_menu( array( 
 									'container' => false, 

@@ -1,0 +1,1 @@
+<?php if (!class_exists('MP_theme_html_2012')) require_once('MP_theme_html_2012.class.php');

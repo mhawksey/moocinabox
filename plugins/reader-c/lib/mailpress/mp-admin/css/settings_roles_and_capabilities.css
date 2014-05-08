@@ -1,0 +1,13 @@
+.crok {
+	background-color:#dfd;
+}
+.crko {
+	background-color:#fdd;
+}
+.capacity {
+	border-bottom:none !important;
+	padding:2px 10px !important;
+}
+.rc-table td, .rc-table th {
+	width:auto;
+}

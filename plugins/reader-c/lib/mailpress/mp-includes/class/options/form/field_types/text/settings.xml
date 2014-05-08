@@ -1,0 +1,122 @@
+<?php $visitor_name = ( isset($this->field->settings['options']['visitor_name']) ); /* text */ ?>
+<settings>
+	<attributes>
+		<items>
+			<type>
+<?php if ($visitor_name) : ?>
+				<radio>
+					<text>type=</text>
+					<values><![CDATA[<?php echo serialize(array('text' => '"text"')); ?>]]></values>
+					<disabled><![CDATA[<?php echo serialize(array('text')); ?>]]></disabled>
+					<default>text</default>
+				</radio>
+				<hidden>
+					<value>text</value>
+				</hidden>
+<?php else : ?>
+				<radio>
+					<text>type=</text>
+					<values><![CDATA[<?php echo serialize(array('text' => '"text"', 'password' => '"password"', 'hidden' => '"hidden"')); ?>]]></values>
+					<disabled><![CDATA[<?php echo serialize(array()); ?>]]></disabled>
+					<default>text</default>
+				</radio>
+<?php endif; ?>
+			</type>
+		</items>
+		<items>
+			<size>
+				<select_num>
+					<text>size=</text>
+					<min>1</min>
+					<max>100</max>
+					<default>22</default>
+				</select_num>
+			</size>
+		</items>
+		<items>
+			<value><text></text></value>
+		</items>
+		<items>
+			<class><text></text></class>
+		</items>
+		<items>
+			<style><text></text></style>
+		</items>
+		<items>
+			<is>
+				<is>
+					<values><![CDATA[<?php echo serialize(array('disabled', 'readonly')); ?>]]></values>
+					<disabled><![CDATA[<?php echo serialize( ($visitor_name) ? array('disabled', 'readonly') : array() ); ?>]]></disabled>
+				</is>
+			</is>
+		</items>
+		<items>
+			<misc><misc><![CDATA[<?php _e("other attributes except 'name' & 'id'", MP_TXTDOM); ?>]]></misc></misc>
+		</items>
+	</attributes>
+	<controls>
+		<items>
+			<required>
+				<checkbox>
+					<text><![CDATA[<?php _e('Required', MP_TXTDOM); ?>]]></text>
+					<value>1</value>
+					<disabled><?php echo ($visitor_name) ? '1' : '0'; ?></disabled>
+					<class>controls</class>
+				</checkbox>
+			</required>
+			<numeric>
+				<checkbox>
+					<text><![CDATA[<?php _e('Numeric', MP_TXTDOM); ?>]]></text>
+					<value>1</value>
+					<disabled><?php echo ($visitor_name) ? '1' : '0'; ?></disabled>
+					<class>controls</class>
+				</checkbox>
+			</numeric>
+		</items>
+	</controls>
+<?php if ($visitor_name || $this->field->form_incopy) : ?>
+	<options>
+<?php if ($visitor_name) : ?>
+		<items>
+			<visitor_name>
+				<radio>
+					<text><![CDATA[<?php _e('Filled if found : ', MP_TXTDOM); ?>]]></text>
+					<values><![CDATA[<?php echo serialize(array(1 => __('yes', MP_TXTDOM), 0 => __('no', MP_TXTDOM))); ?>]]></values>
+					<disabled><![CDATA[<?php echo serialize(array()); ?>]]></disabled>
+					<default>1</default>
+				</radio>
+			</visitor_name>
+		</items>
+<?php endif; ?>
+<?php if ($this->field->form_incopy) : ?>
+		<items>
+			<incopy>
+				<checkbox>
+					<text><![CDATA[<?php _e('In copy', MP_TXTDOM); ?>]]></text>
+					<value>1</value>
+					<disabled><?php echo ($visitor_name) ? '1' : '0'; ?></disabled>
+				</checkbox>
+			</incopy>
+		</items>
+<?php endif; ?>
+	</options>
+<?php endif; ?>
+<?php if ($visitor_name || $protected) : ?>
+	<hiddens>
+		<controls>
+<?php if ($visitor_name) : ?><required></required><?php endif; ?>
+		</controls>
+		<options>
+<?php if ($protected) : ?><protected></protected><?php endif; ?>
+<?php if ($visitor_name) : ?><incopy></incopy><?php endif; ?>
+		</options>
+	</hiddens>
+<?php endif; ?>
+	<tabs>
+		<attributes><![CDATA[<?php _e('Attributes', MP_TXTDOM); ?>]]></attributes>
+		<controls><![CDATA[<?php _e('Controls', MP_TXTDOM); ?>]]></controls>
+<?php if ($visitor_name || $this->field->form_incopy) : ?>
+		<options><![CDATA[<?php _e('Options', MP_TXTDOM); ?>]]></options>
+<?php endif; ?>
+	</tabs>
+</settings>

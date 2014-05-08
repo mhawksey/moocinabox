@@ -1,0 +1,11 @@
+div.MailPress div.mp-container, div.MailPress div.mp-formdiv {
+	position:relative;
+}
+
+div.MailPress div.mp-loading, div.MailPress div.mp-message  {
+	position:absolute;
+	filter:alpha(opacity=0); // IE
+       -moz-opacity:0;
+       -khtml-opacity: 0;
+	opacity:0;
+}

@@ -1,0 +1,159 @@
+﻿
+<!-- HTML TAGS -->
+
+<?php foreach(array('applet', 'area', 'canvas', 'dele', 'embed', 'form', 'head', 'noembed', 'noframes', 'noscript', 'object', 'style', 'script') as $v) { ?>
+	<!-- <<?php echo $v; ?>> -->
+		<item>
+			<s><?php $this->get_tag_content($v); ?></s>
+			<r><![CDATA[ ]]></r>
+		</item>
+<?php } ?>
+
+	<!-- <body> -->
+		<item>
+			<s><?php $this->get_tag_content('body'); ?></s>
+			<r><![CDATA[$1]]></r>
+		</item>
+
+	<!-- <a> -->
+		<item>
+			<s><![CDATA[/<a [^>]*href=[\'"]([^\'"]+)[\'"][^>]*>(.*?)<\/a>/ie]]></s>
+			<r><![CDATA[$this->format_text('$1', '$2')]]></r>
+		</item>
+	<!-- <abbr> -->
+		<item>
+			<s><![CDATA[/<abbr [^>]*title=(?:"(.*?)"|\'(.*?)\')[^>]*>(.*?)<\/abbr>/ie]]></s>
+			<r><![CDATA[$this->format_text('$2$1', '$3', '%2$s (%1$s)')]]></r>
+		</item>
+	<!-- <blockquote> -->
+		<item>
+			<s><?php $this->get_tag_content('blockquote'); ?></s>
+			<r><![CDATA[ "$1" ]]></r>
+		</item>
+	<!-- <br> -->
+		<item>
+			<s><![CDATA[/<br[^>]*>/i]]></s>
+			<r><![CDATA[<?php echo "\n"; ?>]]></r>
+		</item>
+	<!-- <b> -->
+		<item>
+			<s><?php $this->get_tag_content('b', 'ie'); ?></s>
+			<r><![CDATA[strtoupper('$1')]]></r>
+		</item>
+	<!-- <cite> -->
+		<item>
+			<s><?php $this->get_tag_content('cite'); ?></s>
+			<r><![CDATA[_$1_]]></r>
+		</item>
+	<!-- <dfn> -->
+		<item>
+			<s><?php $this->get_tag_content('dfn'); ?></s>
+			<r><![CDATA[_$1_]]></r>
+		</item>
+	<!-- <dl> -->
+		<item>
+			<s><?php $this->get_tag_content('dl'); ?></s>
+			<r><![CDATA[ [$1] ]]></r>
+		</item>
+	<!-- <dt> -->
+		<item>
+			<s><?php $this->get_tag_content('dt'); ?></s>
+			<r><![CDATA[ [$1] ]]></r>
+		</item>
+	<!-- <em> -->
+		<item>
+			<s><?php $this->get_tag_content('em'); ?></s>
+			<r><![CDATA[_$1_]]></r>
+		</item>
+	<!-- h1 - 3 -->
+		<item>
+			<s><?php $this->get_tag_content('h[123]', 'ie'); ?></s>
+			<r><![CDATA[strtoupper('<?php echo "\n\n$1\n\n"; ?>')]]></r>
+		</item>
+	<!-- h4 - 6 -->
+		<item>
+			<s><?php $this->get_tag_content('h[456]', 'ie'); ?></s>
+			<r><![CDATA[ucwords(strtolower('<?php echo "\n$1\n"; ?>'))]]></r>
+		</item>
+	<!-- <hr> -->
+		<item>
+			<s><![CDATA[/<hr[^>]*>/i]]></s>
+			<r><![CDATA[<?php echo "\n" . str_repeat('_', $this->width) . "\n\n"; ?>]]></r>
+		</item>
+	<!-- <ins> -->
+		<item>
+			<s><?php $this->get_tag_content('ins'); ?></s>
+			<r><![CDATA[&gt;$1&lt;]]></r>
+		</item>
+	<!-- <i> -->
+		<item>
+			<s><?php $this->get_tag_content('i'); ?></s>
+			<r><![CDATA[_$1_]]></r>
+		</item>
+	<!-- <li> -->
+		<item>
+			<s><![CDATA[/<li[^>]*>/i]]></s>
+			<r><![CDATA[<?php echo "\n\t"; ?>* ]]></r>
+		</item>
+	<!-- <ol> & </ol> -->
+		<item>
+			<s><![CDATA[/(<ol[^>]*>|<\/ol>)/i]]></s>
+			<r><![CDATA[<?php echo "\n\n"; ?>]]></r>
+		</item>
+	<!-- <p> -->
+		<item>
+			<s><![CDATA[/<p[^>]*>/i]]></s>
+			<r><![CDATA[<?php echo "\n\n\t"; ?>]]></r>
+		</item>
+	<!-- <q> -->
+		<item>
+			<s><?php $this->get_tag_content('q'); ?></s>
+			<r><![CDATA[ "$1" ]]></r>
+		</item>
+	<!-- <strong> -->
+		<item>
+			<s><?php $this->get_tag_content('strong', 'ie'); ?></s>
+			<r><![CDATA[strtoupper('$1')]]></r>
+		</item>
+	<!-- <table> -->
+		<item>
+			<s><?php $this->get_tag_content('table'); ?></s>
+			<r><![CDATA[<?php echo "\n\n\n"; ?><?php echo str_repeat('- = ', 10); ?> $1 <?php echo str_repeat('- = ', 10); ?><?php echo "\n\n\n"; ?>]]></r>
+		</item>
+	<!-- <td> -->
+		<item>
+			<s><?php $this->get_tag_content('td'); ?></s>
+			<r><![CDATA[ | $1 | ]]></r>
+		</item>
+	<!-- <th> -->
+		<item>
+			<s><?php $this->get_tag_content('th', 'ie'); ?></s>
+   			<r><![CDATA[strtoupper('| $1 | ')]]></r>
+		</item>
+	<!-- <tr> -->
+		<item>
+			<s><?php $this->get_tag_content('tr'); ?></s>
+			<r><![CDATA[<?php echo "\n"; ?>$1<?php echo "\n"; ?>]]></r>
+		</item>
+	<!-- <ul> & </ul> -->
+		<item>
+			<s><?php $this->get_tag_content('ul'); ?></s>
+			<r><![CDATA[<?php echo "\n\n"; ?> $1 <?php echo "\n\n"; ?>]]></r>
+		</item>
+	<!-- <var> -->
+		<item>
+			<s><?php $this->get_tag_content('var'); ?></s>
+			<r><![CDATA[_$1_]]></r>
+		</item>
+
+	<!-- strip_tags -->
+		<item>
+			<s><![CDATA[/<([^<>]*)>/]]></s>
+			<r><![CDATA[]]></r>
+		</item>
+
+	<!-- Runs of spaces -->
+		<item>
+			<s><![CDATA[/[ ]{2,}/]]></s>
+			<r><![CDATA[ ]]></r>
+		</item>

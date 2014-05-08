@@ -1,0 +1,31 @@
+<?php /* recaptcha */ ?>
+<settings>
+	<keys>
+		<items>
+			<only_text>
+				<only_text><![CDATA[<?php printf(__('Create a reCAPTCHA <a href="%1$s" target="new">key</a>', MP_TXTDOM), 'https://www.google.com/recaptcha/admin/create'); ?>]]></only_text>
+			</only_text>
+		</items>
+		<items>
+			<publickey>
+				<text>
+					<text><![CDATA[<?php _e('Public Key :', MP_TXTDOM); ?>]]></text>
+					<size>38</size>
+					<default></default>
+				</text>
+			</publickey>
+		</items>
+		<items>
+			<privatekey>
+				<text>
+					<text><![CDATA[<?php _e('Private Key :', MP_TXTDOM); ?>]]></text>
+					<size>38</size>
+					<default></default>
+				</text>
+			</privatekey>
+		</items>
+	</keys>
+	<tabs>
+		<keys><![CDATA[<?php _e('Keys', MP_TXTDOM); ?>]]></keys>
+	</tabs>
+</settings>

@@ -1,0 +1,110 @@
+<?php /* time */ 
+
+$xformat_time[0] = __('22:10', MP_TXTDOM);
+$xformat_time[1] = __('10:10 am/pm', MP_TXTDOM);
+
+$xformat_init_value[0] = __('Server current time', MP_TXTDOM);
+$xformat_init_value[1] = __('Browser current time', MP_TXTDOM);
+?>
+<settings>
+	<attributes>
+		<items>
+			<class><text></text></class>
+		</items>
+		<items>
+			<style><text></text></style>
+		</items>
+		<items>
+			<is>
+				<is>
+					<values><![CDATA[<?php echo serialize(array('disabled', 'readonly')); ?>]]></values>
+					<disabled><![CDATA[<?php echo serialize( array() ); ?>]]></disabled>
+				</is>
+			</is>
+		</items>
+		<items>
+			<misc><misc><![CDATA[<?php _e("other attributes except 'name' & 'id'", MP_TXTDOM); ?>]]></misc></misc>
+		</items>
+	</attributes>
+	<controls>
+		<items>
+			<required>
+				<checkbox>
+					<text><![CDATA[<?php _e('Required', MP_TXTDOM); ?>]]></text>
+					<value>1</value>
+					<disabled>0</disabled>
+					<class>controls</class>
+				</checkbox>
+			</required>
+		</items>
+	</controls>
+	<options>
+		<items>
+			<only_text>
+				<only_text><![CDATA[<b><?php _e('Format in form :', MP_TXTDOM); ?></b>]]></only_text>
+			</only_text>
+		</items>
+		<items>
+			<form_time_format>
+				<select_opt>
+					<text><![CDATA[<?php _e('Time : ', MP_TXTDOM); ?>]]></text>
+					<values><![CDATA[<?php echo serialize($xformat_time); ?>]]></values>
+					<default>0</default>
+				</select_opt>
+			</form_time_format>
+			<form_timezones>
+				<checkbox>
+					<text><![CDATA[<?php _e('with Time zones', MP_TXTDOM); ?>]]></text>
+					<value>1</value>
+					<disabled>0</disabled>
+				</checkbox>
+			</form_timezones>
+		</items>
+		<items>
+			<form_time_init_value>
+				<select_opt>
+					<text><![CDATA[<?php _e('Initial value : ', MP_TXTDOM); ?>]]></text>
+					<values><![CDATA[<?php echo serialize($xformat_init_value); ?>]]></values>
+					<default>0</default>
+				</select_opt>
+			</form_time_init_value>
+		</items>
+		<items>
+			<only_text>
+				<only_text><![CDATA[<b><?php _e('Format in mail :', MP_TXTDOM); ?></b>]]></only_text>
+			</only_text>
+		</items>
+		<items>
+			<mail_time_format>
+				<text>
+					<text></text>
+					<size>15</size>
+					<default><![CDATA[<?php echo get_option('time_format'); ?>]]></default>
+				</text>
+			</mail_time_format>
+		</items>
+<?php if ($this->field->form_incopy) : ?>
+		<items>
+			<incopy>
+				<checkbox>
+					<text><![CDATA[<?php _e('In copy', MP_TXTDOM); ?>]]></text>
+					<value>1</value>
+					<disabled>0</disabled>
+				</checkbox>
+			</incopy>
+		</items>
+<?php endif; ?>
+	</options>
+<?php if ($protected) : ?>
+	<hiddens>
+		<options>
+			<protected></protected>
+		</options>
+	</hiddens>
+<?php endif; ?>
+	<tabs>
+		<attributes><![CDATA[<?php _e('Attributes', MP_TXTDOM); ?>]]></attributes>
+		<controls><![CDATA[<?php _e('Controls', MP_TXTDOM); ?>]]></controls>
+		<options><![CDATA[<?php _e('Options', MP_TXTDOM); ?>]]></options>
+	</tabs>
+</settings>

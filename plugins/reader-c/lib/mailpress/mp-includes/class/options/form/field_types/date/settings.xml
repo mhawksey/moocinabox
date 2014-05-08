@@ -1,0 +1,142 @@
+<?php /* date */ 
+
+$xformat_month['n'] = __('numbers', MP_TXTDOM);
+$xformat_month['s'] = __('short text', MP_TXTDOM);
+$xformat_month['f'] = __('full text', MP_TXTDOM);
+
+$xformat_date['ymd'] = __('y m d', MP_TXTDOM);
+$xformat_date['dmy'] = __('d m y', MP_TXTDOM);
+$xformat_date['mdy'] = __('m d y', MP_TXTDOM);
+?>
+<settings>
+	<attributes>
+		<items>
+			<class><text></text></class>
+		</items>
+		<items>
+			<style><text></text></style>
+		</items>
+		<items>
+			<is>
+				<is>
+					<values><![CDATA[<?php echo serialize(array('disabled', 'readonly')); ?>]]></values>
+					<disabled><![CDATA[<?php echo serialize( array() ); ?>]]></disabled>
+				</is>
+			</is>
+		</items>
+		<items>
+			<misc><misc><![CDATA[<?php _e("other attributes except 'name' & 'id'", MP_TXTDOM); ?>]]></misc></misc>
+		</items>
+	</attributes>
+	<controls>
+		<items>
+			<required>
+				<checkbox>
+					<text><![CDATA[<?php _e('Required', MP_TXTDOM); ?>]]></text>
+					<value>1</value>
+					<disabled>0</disabled>
+					<class>controls</class>
+				</checkbox>
+			</required>
+		</items>
+	</controls>
+	<options>
+		<items>
+			<only_text>
+				<only_text><![CDATA[<?php _e('Format in form :', MP_TXTDOM); ?>]]></only_text>
+			</only_text>
+		</items>
+		<items>
+			<form_date_format>
+				<select_opt>
+					<text><![CDATA[<?php _e('Date : ', MP_TXTDOM); ?>]]></text>
+					<values><![CDATA[<?php echo serialize($xformat_date); ?>]]></values>
+					<default>0</default>
+				</select_opt>
+			</form_date_format>
+			<form_month_format>
+				<select_opt>
+					<text><![CDATA[<?php _e('Month : ', MP_TXTDOM); ?>]]></text>
+					<values><![CDATA[<?php echo serialize($xformat_month); ?>]]></values>
+					<default>0</default>
+				</select_opt>
+			</form_month_format>
+		</items>
+		<items>
+			<only_text>
+				<only_text><![CDATA[<?php _e('Years selection :', MP_TXTDOM); ?>]]></only_text>
+			</only_text>
+		</items>
+		<items>
+			<year_start>
+				<select_num>
+					<text><![CDATA[<?php _e('starting at : ', MP_TXTDOM); ?>]]></text>
+					<min><?php echo( date('Y') - 120 ); ?></min>
+					<max><?php echo( date('Y') +  50 ); ?></max>
+					<default><?php echo(date('Y') - 50); ?></default>
+				</select_num>
+			</year_start>
+			<year_start_c>
+				<checkbox>
+					<text><![CDATA[<?php _e('or current year', MP_TXTDOM); ?>]]></text>
+					<value>1</value>
+					<disabled>0</disabled>
+				</checkbox>
+			</year_start_c>
+		</items>
+		<items>
+			<year_end>
+				<select_num>
+					<text><![CDATA[<?php _e('&#160;ending at : ', MP_TXTDOM); ?>]]></text>
+					<min><?php echo( date('Y') - 120 ); ?></min>
+					<max><?php echo( date('Y') +  50 ); ?></max>
+					<default><?php echo(date('Y')); ?></default>
+				</select_num>
+			</year_end>
+			<year_end_c>
+				<checkbox>
+					<text><![CDATA[<?php _e('or current year', MP_TXTDOM); ?>]]></text>
+					<value>1</value>
+					<disabled>0</disabled>
+				</checkbox>
+			</year_end_c>
+		</items>
+		<items>
+			<only_text>
+				<only_text><![CDATA[<?php _e('Format in mail :', MP_TXTDOM); ?>]]></only_text>
+			</only_text>
+		</items>
+		<items>
+			<mail_date_format>
+				<text>
+					<text></text>
+					<size>15</size>
+					<default><![CDATA[<?php echo get_option('date_format'); ?>]]></default>
+				</text>
+			</mail_date_format>
+		</items>
+<?php if ($this->field->form_incopy) : ?>
+		<items>
+			<incopy>
+				<checkbox>
+					<text><![CDATA[<?php _e('In copy', MP_TXTDOM); ?>]]></text>
+					<value>1</value>
+					<disabled>0</disabled>
+				</checkbox>
+			</incopy>
+		</items>
+<?php endif; ?>
+	</options>
+<?php if ($protected) : ?>
+	<hiddens>
+		<options>
+			<protected></protected>
+		</options>
+	</hiddens>
+<?php endif; ?>
+	<tabs>
+		<attributes><![CDATA[<?php _e('Attributes', MP_TXTDOM); ?>]]></attributes>
+		<controls><![CDATA[<?php _e('Controls', MP_TXTDOM); ?>]]></controls>
+		<options><![CDATA[<?php _e('Options', MP_TXTDOM); ?>]]></options>
+	</tabs>
+</settings>

@@ -1,0 +1,258 @@
+
+2014-04-17 09:58:49 000000 --  **** Start logging **** mp_mail *** level : 8191 **** (5.4) **** /octel2/wp-cron.php?doing_wp_cron=1397728729.6465630531311035156250
+2014-04-17 09:58:49 000000 -- MAILPRESS [ERROR] - No recipient
+2014-04-17 09:58:49 000000 --  **** End   logging **** mp_mail *** level : 8191 **** status : FALSE 
+
+2014-04-17 10:04:38 000000 --  **** Start logging **** mp_mail *** level : 8191 **** (5.4) **** /octel2/wp-admin/options-general.php?page=mailpress_settings
+2014-04-17 10:04:38 000000 -- PHP [E_NOTICE] 8 : Undefined variable: catcount in /home/hawkseyi/public_html/sites/wp-content/plugins/mailpress/mp-content/themes/CoursePress/_loop.php at line 15 
+2014-04-17 10:04:38 000000 -- PHP [E_NOTICE] 8 : Undefined index: Google Alerts in /home/hawkseyi/public_html/sites/wp-content/plugins/mailpress/mp-content/themes/CoursePress/_loop.php at line 15 
+2014-04-17 10:04:38 000000 -- PHP [E_NOTICE] 8 : Undefined variable: col in /home/hawkseyi/public_html/sites/wp-content/plugins/mailpress/mp-content/themes/CoursePress/_loop.php at line 120 
+2014-04-17 10:04:38 000000 --  
+
+ ------------------- start of mail -------------------   
+ From : Newsletter Test <m.hawksey@gmail.com>  
+ To   : martin <m.hawksey@gmail.com>  
+ Subject : Connection test : Test site for octel2 - Template : daily 
+   ------------------- plaintext -------------------  
+ Test site for octel2
+Just another Hawksey Lab&#039;s site
+
+
+* ~~~~ *
+! test !
+* ~~~~ *
+http://sites.hawksey.info/octel2/test/
+April 15, 2014
+
+							this mail is brought to you by MailPress
+
+View [http://sites.hawksey.info/octel2/newsletter-subscription/?view=58f20b26f550a8a035f4cdc3597c5f2e&id=2]
+Unsubscribe [http://sites.hawksey.info/octel2/newsletter-subscription/?del=58f20b26f550a8a035f4cdc3597c5f2e] 
+
+ ------------------- text/html -------------------  
+ <!DOCTYPE html>
+<html lang="en-US">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<title>Test site for octel2 > Connection test : Test site for octel2 - Template : daily > m.hawksey@gmail.com</title>
+<style type='text/css' media='all'>
+/*
+Theme Name: MailPress template
+Description: theme used as template
+*/
+
+
+td.mp_twitter_link a.mp_twitter_date {
+text-decoration: none;
+color: #999;
+}
+td.mp_twitter_link a.mp_twitter_date:hover {
+text-decoration: underline !important;
+color: #777 !important;
+}
+
+td.mp_twitter_link ul li a b {
+text-decoration: none;
+color: #999;
+}
+td.mp_twitter_link ul li a:hover b {
+text-decoration: underline !important;
+color: #777 !important;
+}
+
+td.mp_twitter_link a {
+text-decoration: none;
+color: #666;
+}
+td.mp_twitter_link a:hover {
+text-decoration: underline !important;
+color: #444 !important;
+}
+
+a.mp_twitter_author_id:hover {
+text-decoration: underline !important;
+color: #000 !important;
+}</style>
+<style type='text/css' media='all'>
+/*
+
+Theme Name: CoursePress (ocTEL)
+
+Theme URI: 
+
+Description: 
+
+Version: beta
+
+Author: Martin Hawksey
+
+Author URI: http://mashe.hawksey.info
+
+Template: _template
+
+*/
+
+
+</style>
+	</head>
+	<body>
+
+		<div style="font-family: Arial, Helvetica, sans-serif;background:none repeat scroll 0 0 #f0f0f0;">
+
+			<div style="margin:0 auto;border:none;padding:0;width:700px;background:none repeat scroll 0 0 #fff;">
+
+
+			<div style="background:none repeat scroll 0 0 transparent;border:0 none;clear:both;color:#666;font-family:Verdana,Arial,sans-serif;font-size:10px;font-style:italic;line-height:5px;margin:0;padding:5px 0;text-align:center;vertical-align:baseline;margin:0px;">
+
+				<p>Email not displaying correctly? <a href='http://sites.hawksey.info/octel2/newsletter-subscription/?view=58f20b26f550a8a035f4cdc3597c5f2e&id=2' style="color:#666;color:#6D8C82;text-decoration:underline;">View it in your browser</a></p>
+                <p>Too many emails? <a href='http://sites.hawksey.info/octel2/newsletter-subscription/?del=58f20b26f550a8a035f4cdc3597c5f2e'  style="color:#666;color:#6D8C82;text-decoration:underline;">manage your subscriptions</a></p>
+
+			</div>
+
+
+				<table style="border:none;border-spacing: 0px;border-collapse: collapse;margin:0;padding:0;background:#fff;width:100%;height:60px;">	
+
+					<tr>
+
+						<td style="border:none;border-spacing: 0px;border-collapse: collapse;margin:0;padding:0;text-align:center;">
+
+							<img src='http://altc2013.alt.ac.uk/wp-content/uploads/2013/08/pageHeaderTitleImage_en_US.png' style="border:none;padding:0;" alt='img' />
+
+						</td>
+
+					</tr>
+
+				</table>
+
+				<table style="border:none;border-spacing: 0px;border-collapse: collapse;margin:0;padding:0;width:100%;padding:0;margin:0;background-color: #585858;background-image: -webkit-gradient(linear, left top, left bottom, from(#585858), to(#3d3d3d));background-image: -webkit-linear-gradient(top, #585858, #3d3d3d);background-image: -moz-linear-gradient(top, #585858, #3d3d3d);background-image: -ms-linear-gradient(top, #585858, #3d3d3d);background-image: -o-linear-gradient(top, #585858, #3d3d3d);background-image: linear-gradient(top, #585858, #3d3d3d);">
+
+					<tr>
+
+						<td style="padding:4px;margin:10px 0;border:none;color:#fff;font-size:16px;font-family:Verdana,Sans-Serif;text-align:right;">
+
+							April 17, 2014
+						</td>
+
+					</tr>
+
+				</table>
+
+				<div  style="margin:0;padding:20px 10px;border:0;text-align:left;">
+
+					<div  style="margin:0;padding:0;border:0;">
+
+<!-- end header -->
+<table style="border:none;border-spacing: 0px;border-collapse: collapse;margin:0;padding:0;">
+    <tr>
+    <td style="border: none;border-spacing: 0px;border-collapse: collapse;margin: 0;padding: 0;border: 1px solid #d3d3d3;background: #e6e6e6;font-weight: bold;font-size: 12px;font-family:Verdana,Sans-Serif;color: #555;padding: 4px 3px;">Conference Information <small>(<a href="http://sites.hawksey.info/octel2/category/conference-information?utm_source=mailpress&utm_medium=email_link&utm_content=CoursePress_daily_2&utm_campaign=2014-04-17T10:04:38+00:00">Visit on site</a>)</small></td>
+  </tr>
+    <tr>
+    <td style="border:none;border-spacing: 0px;border-collapse: collapse;margin:0;padding:0;margin:2px;padding:0;border:none;color:#333333;text-align:left;vertical-align:top;font-family:Verdana,Sans-Serif;"><div style="float:right;background-color: #efefef;margin: 10px 0;padding: 3px 10px;border: 1px solid #ddd;width: 250px;font-size:0.8em;"><strong>Recent Activity</strong> (numbers in brackets indicate new posts)
+        <ul>
+          	<li style="margin:0"><a href="http://sites.hawksey.info/octel2/category/reader/?utm_source=mailpress&utm_medium=email_link&utm_content=CoursePress_daily_2&utm_campaign=2014-04-17T10:04:38+00:00" title="View all posts filed under Reader">Reader</a>
+<ul style="padding-left:20px;">
+	<li style="margin:0"><a href="http://sites.hawksey.info/octel2/category/reader/blog-post/?utm_source=mailpress&utm_medium=email_link&utm_content=CoursePress_daily_2&utm_campaign=2014-04-17T10:04:38+00:00" title="View all posts filed under Blog post">Blog post</a>
+</li>
+	<li style="margin:0"><a href="http://sites.hawksey.info/octel2/category/reader/weak-signals/?utm_source=mailpress&utm_medium=email_link&utm_content=CoursePress_daily_2&utm_campaign=2014-04-17T10:04:38+00:00" title="View all posts filed under Weak signals">Weak signals</a>
+	<ul style="padding-left:20px;">
+	<li style="margin:0"><a href="http://sites.hawksey.info/octel2/category/reader/weak-signals/google-alerts/?utm_source=mailpress&utm_medium=email_link&utm_content=CoursePress_daily_2&utm_campaign=2014-04-17T10:04:38+00:00" title="View all posts filed under Google Alerts">Google Alerts</a> (<strong>1</strong>)
+</li>
+	</ul>
+</li>
+</ul>
+</li>
+        </ul>
+      </div>
+                              <div style="padding: 10px;border: none;">
+        <div style="border:none;border-spacing: 0px;border-collapse: collapse;margin:0;padding:0;">
+          <p style="border:none;border-spacing: 0px;border-collapse: collapse;margin:0;padding:0;">No new conference information in this newsletter</p>
+        </div>
+      </div>
+      </td>
+  </tr>
+  <tr>
+    <td style="border:none;border-spacing: 0px;border-collapse: collapse;margin:0;padding:0;border: none;border-spacing: 0px;border-collapse: collapse;margin: 0;padding: 0;border: 1px solid #d3d3d3;background: #e6e6e6;font-weight: bold;font-size: 12px;font-family:Verdana,Sans-Serif;color: #555;padding: 4px 3px;">Activity Stream <small>(<a href="http://sites.hawksey.info/octel2/activity?utm_source=mailpress&utm_medium=email_link&utm_content=CoursePress_daily_2&utm_campaign=2014-04-17T10:04:38+00:00">Visit on site</a>)</small></td>
+  </tr>
+  <tr>
+    <td style="border:none;border-spacing: 0px;border-collapse: collapse;margin:0;padding:0;margin:2px;padding:0;border:none;color:#333333;text-align:left;vertical-align:top;font-family:Verdana,Sans-Serif;">
+    		<h2 style="margin:0;padding:0;border:none;color:#333;font-size: 12px;font-weight:bold;font-family:Verdana,Sans-Serif;">Recent Activity (last 10)</h2>
+		  
+      </td>
+  </tr>
+    <tr>
+    <td style="border: none;border-spacing: 0px;border-collapse: collapse;margin: 0;padding: 0;border: 1px solid #d3d3d3;background: #e6e6e6;font-weight: bold;font-size: 12px;font-family:Verdana,Sans-Serif;color: #555;padding: 4px 3px;">Participant Blog Posts <small>(<a href="http://sites.hawksey.info/octel2/category/blog-posts?utm_source=mailpress&utm_medium=email_link&utm_content=CoursePress_daily_2&utm_campaign=2014-04-17T10:04:38+00:00">Visit on site</a>)</small></td>
+  </tr>
+  <tr><td>
+  <table style="border:none;border-spacing: 0px;border-collapse: collapse;margin:0;padding:0;">
+              <tr><td>
+   <div style="padding: 10px;border: none;">
+        <div style="border:none;border-spacing: 0px;border-collapse: collapse;margin:0;padding:0;">
+          <p style="border:none;border-spacing: 0px;border-collapse: collapse;margin:0;padding:0;">No new participant posts in this newsletter</p>
+        </div>
+   </div>
+   </td></tr>
+      </table>
+  </td></tr>
+  </table><!-- start footer -->
+
+				</div>
+
+
+			</div>
+
+			<div style='clear:both;'></div>
+
+			<table style="border:none;border-spacing: 0px;border-collapse: collapse;margin:0;padding:0;margin:0;padding:10px 20px;border-top:1px solid #DEDEDE;width:100%;">
+
+				<tr>	
+
+					<td style="font-family:Verdana,sans-serif;color:#2583AD;font-size:10px;">
+
+						<b>
+
+							This mail is brought to you by MailPress.
+
+						</b>
+
+					</td>
+
+					<td style="font-family:Georgia,Times,serif;color:#8c8c8c;font-size:14px;text-align:right;">
+
+						<b>
+
+							MAIL IS SHARING POETRY
+
+						</b>
+
+					</td>	
+
+				</tr>
+
+			</table>
+
+		</div>
+
+
+			<div style="background:none repeat scroll 0 0 transparent;border:0 none;clear:both;color:#666;font-family:Verdana,Arial,sans-serif;font-size:10px;font-style:italic;line-height:5px;margin:0;padding:5px 0;text-align:center;vertical-align:baseline;margin:0px;">
+
+				<a href='http://sites.hawksey.info/octel2/newsletter-subscription/?del=58f20b26f550a8a035f4cdc3597c5f2e'  style="color:#666;color:#6D8C82;text-decoration:underline;">Manage your subscriptions</a>
+
+			</div>
+
+
+		</div>
+
+	</body>
+
+</html> 
+
+ ------------------ end of mail ------------------  
+
+
+2014-04-17 10:04:38 000000 -- MAILPRESS [NOTICE] - Disconnecting from hawkseyi_wp2 (MP_Mail)
+2014-04-17 10:04:38 000000 -- MAILPRESS [NOTICE] - Disconnected (MP_Mail)
+2014-04-17 10:04:38 000000 -- MAILPRESS [NOTICE] - Connecting to hawkseyi_wp2 (MP_Mail)
+2014-04-17 10:04:38 000000 -- MAILPRESS [NOTICE] - Connected (MP_Mail)
+2014-04-17 10:04:38 000000 -- MAILPRESS [NOTICE] - :::: Mail not saved as required ::::
+2014-04-17 10:04:38 000000 --  **** End   logging **** mp_mail *** level : 8191 **** status : TRUE 

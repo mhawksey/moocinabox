@@ -1,6 +1,19 @@
 <?php 
 $root_cat = "Reader";
 require ( get_stylesheet_directory() . '/includes/XProfile_FWP.php' );
+add_filter('badgeos_public_submissions', 'set_public_badge_submission', 999, 1);
+
+function set_public_badge_submission($public){
+	$public = true;	
+	return $public;
+}
+function create_forum_activity_feed() {
+    load_template( get_stylesheet_directory() . '/customfeedforumactivity.php'); 
+	
+}
+if (function_exists('bbp_get_reply_post_type')){
+	add_action('do_feed_forum-activity', 'create_forum_activity_feed', 10, 1);
+}
 
 /**
  * Register postMessage support.
@@ -43,6 +56,25 @@ function lost_password_link(){
 	//echo ("<p>Online delegates can <a href=\"/register\" title=\"Create an account\">request an account</a> (if you've registered to attend the conference and have not received login details please use the <a href=\"javascript:void(0)\" onclick=\"usernoise.window.show()\">Feedback</a> form).</p>");
 }
 add_filter('bp_after_sidebar_login_form', 'lost_password_link');
+
+if (function_exists('sc_render_login_form_social_connect')){
+	function do_socialconnect(){
+		return do_action('social_connect_form');
+	}
+	add_filter('bp_sidebar_login_form', 'do_socialconnect');
+}
+
+/**
+ * Redirect back to homepage and not allow access to 
+ * WP admin for Subscribers.
+ */
+function themeblvd_redirect_admin(){
+	if ( ! current_user_can( 'edit_posts' ) && is_admin() && $_SERVER['PHP_SELF'] != '/wp-admin/admin-ajax.php' ){
+		wp_redirect( bp_core_get_user_domain(bp_loggedin_user_id()) );
+		exit;		
+	}
+}
+add_action( 'admin_init', 'themeblvd_redirect_admin' );
 
 function alt_widgets_init() {
 	register_sidebar( array(
@@ -123,10 +155,76 @@ if (class_exists('MailPress') && function_exists('get_mailpress_mlink')){
 
 // http://wordpress.org/support/topic/some-very-useful-tips-for-mailpress
 function get_mailpress_mlink($user_email) {
-  global $wpdb;
-  $mailpress_user_key = $wpdb->get_var($wpdb->prepare("SELECT confkey FROM wp_mailpress_users WHERE email = '%s';", $user_email));
-  	echo 'To manage your conference newsletter subscription goto <a href="/newsletter-subscription/?action=mail_link&del=' . $mailpress_user_key . '">Manage Newsletter Subscriptions</a>';
+  	echo 'To manage your newsletter subscription goto <a href="'.MP_User::get_unsubscribe_url(MP_User::get_key_by_email($user_email)).'">Manage Newsletter Subscriptions</a>';
 }
+/**
+ * Checks if a particular user has a role. 
+ * Returns true if a match was found.
+ *
+ * @param string $role Role name.
+ * @param int $user_id (Optional) The ID of a user. Defaults to the current user.
+ * @return bool
+ */
+function appthemes_check_user_role( $role, $user_id = null ) {
+ 
+    if ( is_numeric( $user_id ) )
+	$user = get_userdata( $user_id );
+    else
+        $user = wp_get_current_user();
+ 
+    if ( empty( $user ) )
+	return false;
+ 
+    return in_array( $role, (array) $user->roles );
+}
+
+function get_user_blogs($key){
+	global $wpdb;
+	$blog_id = get_current_blog_id();
+	$users_id = $wpdb->get_col( $wpdb->prepare("SELECT user_id FROM $wpdb->usermeta WHERE meta_key='%s' AND meta_value <>  ''", $key ));
+	foreach ( $users_id as $user_id ) :
+	  if (is_user_member_of_blog($user_id, $blog_id)):
+		$usermeta = array_map( function( $a ){ return $a[0]; }, get_user_meta($user_id));
+		$user = get_userdata( $user_id );
+		$tmp = array();
+		$tmp['id'] = $user_id;
+		$tmp['user_login'] = $user->user_login;
+		$tmp['first_name'] = $user->first_name;
+		$tmp['last_name'] = $user->last_name;
+		$tmp['blog'] = $usermeta['blog'];
+		$tmp['blogrss'] = $usermeta['blogrss'];
+		$result[] = $tmp;
+	  endif;
+	endforeach; // end the users loop.
+	if ($result) {
+		usort($result, function($a, $b) {
+			return strcmp($a['last_name'], $b['last_name']);
+		});
+	}
+	return $result;
+}
+function display_user_blogs( $atts ) {
+	 $blogs = get_user_blogs ('blog');
+	 $output = "";	
+	 if ($blogs):
+		 $output .= '<ul class="blogs">';
+		 foreach ($blogs as $user){
+			 if (isValidURL($user['blog'])){
+				 $rssfeed = "";
+				 if ($user['blogrss']!=="" && isValidURL($user['blogrss']))
+					$rssfeed = '[<a href="'.$user['blogrss'].'" title="RSS for '.$user['blog'].' target="_blank">RSS Feed</a>]';
+				 $output .=  '<li><a href="/'.bbp_get_user_slug().'/'.$user['user_login'].'">'.ucwords( strtolower( $user['first_name'] . ' ' . $user['last_name'] ) ).'</a> - <a href="'.$user['blog'].'" target="_blank">'.$user['blog'].'</a> '.$rssfeed.'</li>';
+			 }
+		 }
+		 $output .=  '</ul>';
+	 endif;
+	 return $output;
+}
+function isValidURL($url) {
+    if (filter_var($url, FILTER_VALIDATE_URL, FILTER_FLAG_HOST_REQUIRED)) return true;
+    else return false;
+}
+add_shortcode('display_user_blogs', 'display_user_blogs');
 
 /**
  * Nav Menu Dropdown

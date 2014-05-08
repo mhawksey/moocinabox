@@ -37,12 +37,15 @@ jQuery(document).ready(function($) {
 						$(othersOption).html($("#other_feed").val()); 
 					} 
 				});
-				$('#bbp-your-profile').submit(function() {
+				$('#profile-edit-form').submit(function() {
 					var othersOption = $('.field_blog-rss').find('option:selected');
 					if(othersOption.val() == "Other")
 					{
 						// replace select value with text field value
-						othersOption.val($("#other_feed").val());
+						var field = $('.field_blog-rss').find('select');
+						var field_id = field.attr('id');
+						field.remove();
+						$("#other_feed").attr("id", field_id).attr("name", field_id);
 					}
 				});
 			}

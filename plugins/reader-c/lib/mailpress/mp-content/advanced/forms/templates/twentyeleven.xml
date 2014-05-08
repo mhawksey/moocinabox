@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates>
+  <fields>
+    <label_required><![CDATA[<p class="comment-form-author"><label for="{{field_id}}">{{label}}</label><span class="required">*</span>{{field}}</p>]]></label_required>
+    <label><![CDATA[<p class="comment-form-author"><label for="{{field_id}}">{{label}}</label>{{field}}</p>]]></label>
+    <checkbox_mail><![CDATA[<div style="clear:both;"><label for="{{field_id}}">{{field}}<span>{{label}}</span></label></div>]]></checkbox_mail>
+    <submit><![CDATA[<p class='form-submit'>{{field}}</p>]]></submit>
+  </fields>
+  <fields_on_error>
+    <label_required><![CDATA[<p class="comment-form-author"><label for="{{field_id}}">{{label}}</label><span class="required" style="text-decoration: blink;">*</span>{{field}}</p>]]></label_required>
+    <label><![CDATA[<p class="comment-form-author"><label for="{{field_id}}">{{label}}</label>{{field}}</p>]]></label>
+    <checkbox_mail><![CDATA[<div style="clear:both;"><label for="{{field_id}}">{{field}}<span>{{label}}</span></label></div>]]></checkbox_mail>
+    <submit><![CDATA[<p class='form-submit'>{{field}}</p>]]></submit>
+  </fields_on_error>
+  <groups>
+    <radio>
+      <before><![CDATA[<!--before--><div>]]></before>
+      <first><![CDATA[<!--first--><span>{{field}}</span>]]></first>
+      <radio><![CDATA[<span>{{field}}</span>]]></radio>
+      <last><![CDATA[<span>{{field}}</span><!--last-->]]></last>
+      <after><![CDATA[</div><!--after--><br />]]></after>
+    </radio>
+    <button>
+      <before><![CDATA[<!--before--><div>]]></before>
+      <first><![CDATA[<!--first--><span>{{field}}</span>]]></first>
+      <button><![CDATA[<span>{{field}}</span>]]></button>
+      <last><![CDATA[<span>{{field}}</span><!--last-->]]></last>
+      <after><![CDATA[</div><!--after--><br />]]></after>
+    </button>
+  </groups>
+  <composite>
+    <captcha_gd1><![CDATA[{{img}}<br />{{input}}]]></captcha_gd1>
+    <captcha_gd2><![CDATA[{{img}}<br />{{input}}]]></captcha_gd2>
+    <recaptcha><![CDATA[<div id='{{id}}'>{{img}}</div>]]></recaptcha>
+    <date>
+      <ymd><![CDATA[{{y}}&#160;{{m}}&#160;{{d}}]]></ymd>
+      <dmy><![CDATA[{{d}}&#160;{{m}}&#160;{{y}}]]></dmy>
+      <mdy><![CDATA[{{m}}&#160;{{d}}&#160;{{y}}]]></mdy>
+    </date>
+    <time>
+      <alone><![CDATA[{{h}}&#160;:&#160;{{mn}}]]></alone>
+      <ampm><![CDATA[{{h}}&#160;:&#160;{{mn}}&#160;{{am}}&#160;<label id="{{id_am}}_label" for="{{id_am}}">{{text_am}}</label>&#160;{{pm}}&#160;<label id="{{id_pm}}_label" for="{{id_pm}}">{{text_pm}}</label>]]></ampm>
+      <tz><![CDATA[{{h}}&#160;:&#160;{{mn}}&#160;{{tz}}]]></tz>
+      <ampm_tz><![CDATA[{{h}}&#160;:&#160;{{mn}}&#160;{{am}}&#160;<label id="{{id_am}}_label" for="{{id_am}}">{{text_am}}</label>&#160;{{pm}}&#160;<label id="{{id_pm}}_label" for="{{id_pm}}">{{text_pm}}</label>&#160;{{tz}}]]></ampm_tz>
+    </time>
+    <geotag>
+      <alone><![CDATA['{{map}}']]></alone>
+      <latlng><![CDATA[{{map}}lat:{{lat}}&#160;lng:{{lng}}]]></latlng>
+      <geocode><![CDATA[{{map}}{{geocode}}&#160;{{geocode_button}}]]></geocode>
+      <latlng_geocode><![CDATA[{{map}}lat:{{lat}}&#160;lng:{{lng}}<br />{{geocode}}&#160;{{geocode_button}}]]></latlng_geocode>
+    </geotag>
+  </composite>
+  <message>
+    <ok><![CDATA[<h2 id="comments-title">{{message}}</h2>]]></ok>
+    <ko><![CDATA[<h2 id="comments-title" style='color:red;'>{{message}}</h2>]]></ko>
+  </message>
+  <form><![CDATA[<div id='comments'>{{message}}<div id='respond'><h3 id='reply-title' style='letter-spacing:normal;text-transform:none;'>{{label}}</h3><div id='commentform'><p class='comment-notes'>Your email address will not be published. Required fields are marked <span class='required'>*</span></p>{{form}}</div></div></div>]]></form>
+</templates>

@@ -1,0 +1,34 @@
+#dashboard-widgets-wrap table {
+	border-spacing:0;
+	padding : 0;
+}
+
+.num {
+	text-align:right;
+}
+
+.mp_scroll {
+	max-height:16em;
+	overflow-x:hidden;
+	overflow-y:auto;
+}
+
+#tracking_mp_m007 td, #tracking_mp_m007 th {
+	font-size:11px;
+}
+#tracking_mp_m007 th {
+	width:75px;
+}
+#tracking_mp_m007 td.number {
+	font-weight:bold;
+	text-align:right;
+}
+
+table#tracking_mp_010, #tracking_mp_010 table {
+	width:100%;
+}
+
+#tracking_mp_010 th.border, #tracking_mp_010 td.border {
+	vertical-align:top;
+	border: silver 1px solid;
+}

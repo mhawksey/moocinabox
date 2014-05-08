@@ -1,0 +1,121 @@
+<?php /* captcha_gd1 */
+
+$root = dirname(__FILE__) . '/captcha/cfg/';
+$xform_img_style['random'] = __('random choice', MP_TXTDOM);
+if (is_dir($root)) 
+{
+	$dir  = @opendir($root);
+	if ($dir) while (($file = readdir($dir)) !== false) if ($file[0] != '.') $xform_img_style[$file] = $file;
+	@closedir($dir);
+}
+?>
+<settings>
+	<attributes>
+		<items>
+			<type>
+				<radio>
+					<text>type=</text>
+					<values><![CDATA[<?php echo serialize(array('text' => '"text"')); ?>]]></values>
+					<disabled><![CDATA[<?php echo serialize(array('text')); ?>]]></disabled>
+					<default>text</default>
+				</radio>
+				<hidden>
+					<value>text</value>
+				</hidden>
+			</type>
+		</items>
+		<items>
+			<size>
+				<select_num>
+					<text>size=</text>
+					<min>1</min>
+					<max>100</max>
+					<default>22</default>
+				</select_num>
+			</size>
+		</items>
+		<items>
+			<value><text></text></value>
+		</items>
+		<items>
+			<class><text></text></class>
+		</items>
+		<items>
+			<style><text></text></style>
+		</items>
+		<items>
+			<is>
+				<is>
+					<values><![CDATA[<?php echo serialize(array('disabled', 'readonly')); ?>]]></values>
+					<disabled><![CDATA[<?php echo serialize( array() ); ?>]]></disabled>
+				</is>
+			</is>
+		</items>
+		<items>
+			<misc><misc><![CDATA[<?php _e("other attributes except 'name' & 'id'", MP_TXTDOM); ?>]]></misc></misc>
+		</items>
+	</attributes>
+	<controls>
+		<items>
+			<required>
+				<checkbox>
+					<text><![CDATA[<?php _e('Required', MP_TXTDOM); ?>]]></text>
+					<value>1</value>
+					<disabled>1</disabled>
+					<class>controls</class>
+					<forced>1</forced>
+				</checkbox>
+			</required>
+		</items>
+	</controls>
+	<options>
+		<items>
+			<only_text>
+				<only_text><![CDATA[<?php _e('Format in form :', MP_TXTDOM); ?>]]></only_text>
+			</only_text>
+		</items>
+		<items>
+			<form_img_style>
+				<select_opt>
+					<text><![CDATA[<?php _e('Style : ', MP_TXTDOM); ?>]]></text>
+					<values><![CDATA[<?php echo serialize($xform_img_style); ?>]]></values>
+					<default>default</default>
+				</select_opt>
+			</form_img_style>
+		</items>
+<?php if ($this->field->form_incopy) : ?>
+		<items>
+			<incopy>
+				<checkbox>
+					<text><![CDATA[<?php _e('In copy', MP_TXTDOM); ?>]]></text>
+					<value>1</value>
+					<disabled>0</disabled>
+				</checkbox>
+			</incopy>
+		</items>
+<?php endif; ?>
+	</options>
+	<captcha>
+		<items>
+			<only_text>
+				<only_text><![CDATA[<?php if (!isset($field->id)) $field->id = 0; echo "<img src='" . esc_url(MP_Action_url . '?id=' . $field->id . '&action=1ahctpac') . "' alt='' />"; ?>]]></only_text>
+			</only_text>
+		</items>
+	</captcha>
+	<hiddens>
+		<controls>
+			<required>1</required>
+		</controls>
+<?php if ($protected) : ?>
+		<options>
+			<protected></protected>
+		</options>
+<?php endif; ?>
+	</hiddens>
+	<tabs>
+		<attributes><![CDATA[<?php _e('Attributes', MP_TXTDOM); ?>]]></attributes>
+		<controls><![CDATA[<?php _e('Controls', MP_TXTDOM); ?>]]></controls>
+		<options><![CDATA[<?php _e('Options', MP_TXTDOM); ?>]]></options>
+		<captcha><![CDATA[<?php _e('Captcha', MP_TXTDOM); ?>]]></captcha>
+	</tabs>
+</settings>

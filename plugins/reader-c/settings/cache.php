@@ -23,14 +23,14 @@ class Reader_C_Settings_Cache {
 			'reader',
 			"Caching/Settings",
 			"Caching/Settings",
-			'hypothesis_admin',
+			'manage_options',
 			'reader_c_cache',
 			array(&$this, 'page')
 		);
 	}
 	
 	function page() {
-		if (!current_user_can('hypothesis_admin')) wp_die("You do not have sufficient permissions to access this page.");
+		if (!current_user_can('manage_options')) wp_die("You do not have sufficient permissions to access this page.");
 		
 		$caching = get_option('reader_c_caching');
 		$cache = Reader_C_Shortcode::get_all_cache();
@@ -150,6 +150,8 @@ class Reader_C_Settings_Cache {
 	
 	function save() {
 		register_setting('reader_c_settings', 'display_cookie_notice');
+		register_setting('reader_c_settings', 'custom_profile_filter');
+		register_setting('reader_c_settings', 'mailpress');
 		// add your settings section
 		add_settings_section(
 			'reader_c_template-section', 
@@ -173,6 +175,30 @@ class Reader_C_Settings_Cache {
 			)
 		);
 		
+		add_settings_field(
+			'reader_c_settings-custom_profile_filter', 
+			'Custom Buddypress Profile Filter', 
+			array(&$this, 'settings_field_input_radio'), 
+			'reader_c_template', 
+			'reader_c_template-section',
+			array(  'name' => 'custom_profile_filter',
+					'choices' => array( 'yes' => 'Enable',
+										'no' => 'Disable'),
+					'description' => 'Enable or Disable Custom Buddypress Profile Filter',
+			)
+		);
+		add_settings_field(
+			'reader_c_settings-mailpress', 
+			'MailPress', 
+			array(&$this, 'settings_field_input_radio'), 
+			'reader_c_template', 
+			'reader_c_template-section',
+			array(  'name' => 'mailpress',
+					'choices' => array( 'yes' => 'Enable',
+										'no' => 'Disable'),
+					'description' => 'Enable or Disable MailPress',
+			)
+		);
 		
 		if (isset($_POST['reader_c_cache_settings']) && check_admin_referer('nonce_reader_c_cache')) {
 			if (isset($_POST['reader_c_disable_cache'])) {

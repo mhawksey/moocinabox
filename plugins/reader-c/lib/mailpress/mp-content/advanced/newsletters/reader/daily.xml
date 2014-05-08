@@ -1,0 +1,39 @@
+﻿<newsletter id='daily_<?php echo $post_type; ?>'>
+
+	<descriptions>
+		<admin><![CDATA[<?php printf(__('Daily %1$s', MP_TXTDOM), 		$_post_type->labels->name); ?>]]></admin>
+		<blog><![CDATA[<?php  printf(__('Daily %1$s newsletter', MP_TXTDOM), 	$_post_type->labels->name); ?>]]></blog>
+	</descriptions>
+
+	<mail>
+		<Template><![CDATA[<?php echo $Template; ?>]]></Template>
+		<subject><![CDATA[<?php printf( __('[%1$s] Daily {{the_post_types}} newsletter', MP_TXTDOM), get_bloginfo('name')); ?>]]></subject>
+		<the_post_types><![CDATA[<?php echo $_post_type->labels->name; ?>]]></the_post_types>
+		<the_post_type><![CDATA[<?php echo $_post_type->labels->singular_name; ?>]]></the_post_type>
+	</mail>
+
+	<processor>
+		<id>day-1</id>
+		<threshold><![CDATA[MailPress_daily_<?php echo $post_type; ?>]]></threshold><!-- stored on wordpress options table -->
+		<args>            <!-- start of the day -->
+			<hour>00</hour>		<!-- [00 to 23] -->
+			<minute>00</minute>	<!-- [00 to 59] -->
+		</args>
+		<query_posts>
+			<post_type><![CDATA[<?php echo $post_type; ?>]]></post_type>
+		</query_posts>
+	</processor>
+
+	<scheduler>
+		<id>day</id>
+		<args>            <!-- release the newsletter -->
+			<hour>00</hour>		<!-- [00 to 23] -->
+			<minute>00</minute>	<!-- [00 to 59] -->
+		</args>
+	</scheduler>
+
+	<params>
+		<post_type><![CDATA[<?php echo $post_type; ?>]]></post_type>
+	</params>
+
+</newsletter>

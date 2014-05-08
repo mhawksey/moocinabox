@@ -19,7 +19,7 @@
 			?>
 			<h3 class="pagetitle">Course Reader</h3>
             
-			<p>The Reader is searching and displaying content related to the course. If you have a blog <?php echo $blog_reminder; ?> and include the text #ocTEL in the title or post content for it to appear in the Reader (<a href="http://octel.alt.ac.uk/help/reader-help-and-information/">Help</a>). <?php echo $log_reminder; ?></p>
+			<p>The Reader is searching and displaying content related to the course. If you have a blog <?php echo $blog_reminder; ?> and include the text #ocTEL in the title or post content for it to appear in the Reader (<a href="http://octel.alt.ac.uk/2014/help/reader-help-and-information/">Help</a>). <?php echo $log_reminder; ?></p>
             <?php if (is_category('Newsletter Archive')):?>
              
             <?php if (!is_user_logged_in()){ ?>

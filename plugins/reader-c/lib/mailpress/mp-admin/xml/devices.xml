@@ -1,0 +1,369 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<devices>
+
+<!-- Apple -->
+	 <device>
+		<name><![CDATA[iPad]]></name>
+		<link><![CDATA[http://www.apple.com/ipad]]></link>
+		<icon><![CDATA[ipad.png]]></icon>
+		<pattern><![CDATA[/iPad/i]]></pattern>
+		<versions pattern="1"><![CDATA[#iPad\ OS\ ([.\_0-9a-zA-Z]+)#i]]></versions>
+	 </device>
+	 <device>
+		<name><![CDATA[iPhone]]></name>
+		<link><![CDATA[http://www.apple.com/iphone]]></link>
+		<icon><![CDATA[iphone.png]]></icon>
+		<pattern><![CDATA[/iPhone/i]]></pattern>
+		<versions pattern="1"><![CDATA[#iPhone\ OS\ ([.\_0-9a-zA-Z]+)#i]]></versions>
+	 </device>
+	 <device>
+		<name><![CDATA[iPod]]></name>
+		<link><![CDATA[http://www.apple.com/itunes]]></link>
+		<icon><![CDATA[iphone.png]]></icon>
+		<pattern><![CDATA[/iPod/i]]></pattern>
+		<versions pattern="1"><![CDATA[#iPhone\ OS\ ([.\_0-9a-zA-Z]+)#i]]></versions>
+	 </device>
+
+<!-- BlackBerry -->
+	 <device>
+		<name><![CDATA[BlackBerry]]></name>
+		<link><![CDATA[http://www.blackberry.com/]]></link>
+		<icon><![CDATA[blackberry.png]]></icon>
+		<pattern><![CDATA[#BlackBerry([a-zA-Z0-9. ]+)#i]]></pattern>
+		<versions pattern="1"></versions>
+	 </device>
+
+<!-- Dell -->
+	 <device>
+		<name><![CDATA[Dell]]></name>
+		<link><![CDATA[http://www.dell.com/]]></link>
+		<icon><![CDATA[dell.png]]></icon>
+		<pattern><![CDATA[/Dell/i]]></pattern>
+		<versions pattern="1"><![CDATA[#Dell ([.\_0-9a-zA-Z]+)#i]]></versions>
+	 </device>
+
+<!-- HTC -->
+ 	 <device>
+		<name><![CDATA[HTC]]></name>
+		<link><![CDATA[http://www.htc.com/]]></link>
+		<icon><![CDATA[htc.png]]></icon>
+		<pattern><![CDATA[/HTC[\ |_|-]([0-9a-zA-Z\_\ ]+)/i]]></pattern>
+		<versions pattern="1">
+			<id>
+				<name><![CDATA[Desire]]></name>
+				<pattern><![CDATA[/Desire/i]]></pattern>
+			</id>
+			<id>
+				<name><![CDATA[Touch Pro2]]></name>
+				<pattern><![CDATA[/Touch[_|\ ]Pro2/i]]></pattern>
+			</id>
+			<id>
+				<name><![CDATA[Touch Pro]]></name>
+				<pattern><![CDATA[/Touch[_|\ ]Pro/i]]></pattern>
+			</id>
+			<id>
+				<name><![CDATA[Startrek]]></name>
+				<pattern><![CDATA[/8500/i]]></pattern>
+			</id>
+			<id>
+				<name><![CDATA[Hero]]></name>
+				<pattern><![CDATA[/Hero/i]]></pattern>
+			</id>
+			<id>
+				<name><![CDATA[Legend]]></name>
+				<pattern><![CDATA[/Legend/i]]></pattern>
+			</id>
+			<id>
+				<name><![CDATA[Magic]]></name>
+				<pattern><![CDATA[/Magic/i]]></pattern>
+			</id>
+			<id>
+				<name><![CDATA[Touch]]></name>
+				<pattern><![CDATA[/P3450/i]]></pattern>
+			</id>
+			<id>
+				<name><![CDATA[Polaris]]></name>
+				<pattern><![CDATA[/P3650/i]]></pattern>
+			</id>
+			<id>
+				<name><![CDATA[S710]]></name>
+				<pattern><![CDATA[/S710/i]]></pattern>
+			</id>
+			<id>
+				<name><![CDATA[Tattoo]]></name>
+				<pattern><![CDATA[/Tattoo/i]]></pattern>
+			</id>
+		</versions>
+	 </device>
+ 	 <device>
+		<name><![CDATA[HTC Touch Pro2]]></name>
+		<link><![CDATA[http://www.htc.com/]]></link>
+		<icon><![CDATA[htc.png]]></icon>
+		<pattern><![CDATA[/(Rhodium|WMD-50433)/i]]></pattern>
+	 </device>
+ 	 <device>
+		<name><![CDATA[HTC]]></name>
+		<link><![CDATA[http://www.htc.com/]]></link>
+		<icon><![CDATA[htc.png]]></icon>
+		<pattern><![CDATA[/HTC/i]]></pattern>
+		<versions pattern="1"><![CDATA[/HTC[\ |_|-]([0-9a-zA-Z]+)/i]]></versions>
+	 </device>
+
+<!-- Kindle -->
+	 <device>
+		<name><![CDATA[Kindle]]></name>
+		<link><![CDATA[https://kindle.amazon.com/]]></link>
+		<icon><![CDATA[kindle.png]]></icon>
+		<pattern><![CDATA[/Kindle/i]]></pattern>
+		<versions pattern="1"><![CDATA[#Kindle\/([.0-9a-zA-Z]+)#i]]></versions>
+	 </device>
+
+<!-- LG -->
+	 <device>
+		<name><![CDATA[LG]]></name>
+		<link><![CDATA[http://www.lgmobile.com]]></link>
+		<icon><![CDATA[lg.png]]></icon>
+		<pattern><![CDATA[/LG/i]]></pattern>
+		<versions pattern="1"><![CDATA[/LG[E]?[\ |-|\/]([.0-9a-zA-Z]+)/i]]></versions>
+	 </device>
+
+<!-- Google -->
+ 	 <device>
+		<name><![CDATA[Nexus One]]></name>
+		<link><![CDATA[http://en.wikipedia.org/wiki/Nexus_One]]></link>
+		<icon><![CDATA[google-nexusone.png]]></icon>
+		<pattern><![CDATA[/Nexus One/i]]></pattern>
+	 </device>
+
+<!-- Microsoft -->
+ 	 <device>
+		<name><![CDATA[Windows Phone 7]]></name>
+		<link><![CDATA[http://www.microsoft.com/windowsphone/]]></link>
+		<icon><![CDATA[wp7.png]]></icon>
+		<pattern><![CDATA[/Windows Phone OS 7/i]]></pattern>
+	 </device>
+ 	 <device>
+		<name><![CDATA[Windows Phone 7]]></name>
+		<link><![CDATA[http://www.microsoft.com/windowsphone/]]></link>|ZuneWP7]
+		<icon><![CDATA[wp7.png]]></icon>
+		<pattern><![CDATA[/ZuneWP7/i]]></pattern>
+	 </device>
+
+<!-- Motorola -->
+ 	 <device>
+		<name><![CDATA[Motorola]]></name>
+		<link><![CDATA[http://www.motorola.com/]]></link>
+		<icon><![CDATA[motorola.png]]></icon>
+		<pattern><![CDATA[/\ Droid/i]]></pattern>
+		<versions pattern="0">
+			<id>
+				<name><![CDATA[Droid]]></name>
+				<pattern><![CDATA[//i]]></pattern>
+			</id>
+		</versions>
+	 </device>
+ 	 <device>
+		<name><![CDATA[Motorola]]></name>
+		<link><![CDATA[http://www.motorola.com/]]></link>
+		<icon><![CDATA[motorola.png]]></icon>
+		<pattern><![CDATA[/XT720/i]]></pattern>
+		<versions pattern="0">
+			<id>
+				<name><![CDATA[Motoroi (XT720)]]></name>
+				<pattern><![CDATA[//i]]></pattern>
+			</id>
+		</versions>
+	 </device>
+ 	 <device>
+		<name><![CDATA[Motorola]]></name>
+		<link><![CDATA[http://www.motorola.com/]]></link>
+		<icon><![CDATA[motorola.png]]></icon>
+		<pattern><![CDATA[/MOT\-/i]]></pattern>
+		<versions pattern="0">
+			<id>
+				<pattern><![CDATA[/MOTO([.0-9a-zA-Z]+)/i]]></pattern>
+			</id>
+			<id>
+				<pattern><![CDATA[/MOT-([.0-9a-zA-Z]+)/i]]></pattern>
+			</id>
+		</versions>
+	 </device>
+ 	 <device>
+		<name><![CDATA[Motorola]]></name>
+		<link><![CDATA[http://www.motorola.com/]]></link>
+		<icon><![CDATA[motorola.png]]></icon>
+		<pattern><![CDATA[/MIB/i]]></pattern>
+		<versions pattern="0">
+			<id>
+				<pattern><![CDATA[/MOTO([.0-9a-zA-Z]+)/i]]></pattern>
+			</id>
+			<id>
+				<pattern><![CDATA[/MOT-([.0-9a-zA-Z]+)/i]]></pattern>
+			</id>
+		</versions>
+	 </device>
+ 	 <device>
+		<name><![CDATA[Motorola]]></name>
+		<link><![CDATA[http://www.motorola.com/]]></link>
+		<icon><![CDATA[motorola.png]]></icon>
+		<pattern><![CDATA[/XOOM/i]]></pattern>
+		<versions pattern="0">
+			<id>
+				<name><![CDATA[Xoom]]></name>
+				<pattern><![CDATA[//i]]></pattern>
+			</id>
+		</versions>
+	 </device>
+
+<!-- Nintendo -->
+ 	 <device>
+		<name><![CDATA[Nintendo]]></name>
+		<link><![CDATA[http://www.nintendo.com/]]></link>
+		<icon><![CDATA[nintendo.png]]></icon>
+		<pattern><![CDATA[/Nintendo/i]]></pattern>
+		<versions pattern="0">
+			<id>
+				<icon><![CDATA[nintendo-dsi.png]]></icon>
+				<pattern><![CDATA[/Nintendo DSi/i]]></pattern>
+			</id>
+			<id>
+				<icon><![CDATA[nintendo-ds.png]]></icon>
+				<pattern><![CDATA[/Nintendo DS/i]]></pattern>
+			</id>
+			<id>
+				<icon><![CDATA[nintendo-wii.png]]></icon>
+				<pattern><![CDATA[/Nintendo Wii/i]]></pattern>
+			</id>
+		</versions>
+	 </device>
+
+<!-- Nokia -->
+ 	 <device>
+		<name><![CDATA[Nokia]]></name>
+		<link><![CDATA[http://www.nokia.com/]]></link>
+		<icon><![CDATA[nokia.png]]></icon>
+		<pattern><![CDATA[/S(eries)?60/i]]></pattern>
+		<versions pattern="0">
+			<id>
+				<name><![CDATA[Series60]]></name>
+				<pattern><![CDATA[//i]]></pattern>
+			</id>
+		</versions>
+	 </device>
+ 	 <device>
+		<name><![CDATA[Nokia]]></name>
+		<link><![CDATA[http://www.nokia.com/]]></link>
+		<icon><![CDATA[nokia.png]]></icon>
+		<pattern><![CDATA[/Nokia/i]]></pattern>
+		<versions pattern="1"><![CDATA[/Nokia([EN0-9]+)/i]]></versions>
+	 </device>
+
+<!-- OLPC -->
+ 	 <device>
+		<name><![CDATA[OLPC (XO)]]></name>
+		<link><![CDATA[http://www.laptop.org/]]></link>
+		<icon><![CDATA[olpc.png]]></icon>
+		<pattern><![CDATA[/OLPC/i]]></pattern>
+	 </device>
+
+<!-- Palm -->
+ 	 <device>
+		<name><![CDATA[Palm]]></name>
+		<link><![CDATA[http://www.palm.com/]]></link>
+		<icon><![CDATA[palm.png]]></icon>
+		<pattern><![CDATA[/\ Pixi\//i]]></pattern>
+		<versions pattern="0">
+			<id>
+				<name><![CDATA[Pixi]]></name>
+				<pattern><![CDATA[//i]]></pattern>
+			</id>
+		</versions>
+	 </device>
+ 	 <device>
+		<name><![CDATA[Palm]]></name>
+		<link><![CDATA[http://www.palm.com/]]></link>
+		<icon><![CDATA[palm.png]]></icon>
+		<pattern><![CDATA[/\ Pre\//i]]></pattern>
+		<versions pattern="0">
+			<id>
+				<name><![CDATA[Pre]]></name>
+				<pattern><![CDATA[//i]]></pattern>
+			</id>
+		</versions>
+	 </device>
+ 	 <device>
+		<name><![CDATA[Palm]]></name>
+		<link><![CDATA[http://www.palm.com/]]></link>
+		<icon><![CDATA[palm.png]]></icon>
+		<pattern><![CDATA[/Palm/i]]></pattern>
+	 </device>
+
+<!-- Philips -->
+ 	 <device>
+		<name><![CDATA[Philips]]></name>
+		<link><![CDATA[http://www.philips.com/]]></link>
+		<icon><![CDATA[philips.png]]></icon>
+		<pattern><![CDATA[/PHILIPS/i]]></pattern>
+		<versions pattern="1"><![CDATA[/PHILIPS[-|\ ]?([.\-0-9a-zA-Z]+)/i]]></versions>
+	 </device>
+
+<!-- Playstation -->
+ 	 <device>
+		<name><![CDATA[Playstation]]></name>
+		<link><![CDATA[http://www.us.playstation.com/]]></link>
+		<icon><![CDATA[playstation.png]]></icon>
+		<pattern><![CDATA[/Playstation/i]]></pattern>
+		<versions pattern="0">
+			<id>
+				<name><![CDATA[PS3]]></name>
+				<pattern><![CDATA[/[PS|Playstation\ ]3/i]]></pattern>
+			</id>
+			<id>
+				<name><![CDATA[PSP]]></name>
+				<pattern><![CDATA[/[Playstation Portable|PSP]/i]]></pattern>
+			</id>
+		</versions>
+	 </device>
+
+<!-- Samsung -->
+ 	 <device>
+		<name><![CDATA[Samsung]]></name>
+		<link><![CDATA[http://www.samsungmobile.com/]]></link>
+		<icon><![CDATA[samsung.png]]></icon>
+		<pattern><![CDATA[/Galaxy Nexus/i]]></pattern>
+		<versions pattern="0">
+			<id>
+				<name><![CDATA[Galaxy Nexus]]></name>
+				<pattern><![CDATA[/Galaxy Nexus/i]]></pattern>
+			</id>
+		</versions>
+	 </device>
+ 	 <device>
+		<name><![CDATA[Samsung]]></name>
+		<link><![CDATA[http://www.samsungmobile.com/]]></link>
+		<icon><![CDATA[samsung.png]]></icon>
+		<pattern><![CDATA[/Samsung/i]]></pattern>
+		<versions pattern="1"><![CDATA[/Samsung-([.\-0-9a-zA-Z]+)/i]]></versions>
+	 </device>
+
+<!-- Sony Ericsson -->
+ 	 <device>
+		<name><![CDATA[SonyEricsson]]></name>
+		<link><![CDATA[http://www.sonyericsson.com/]]></link>
+		<icon><![CDATA[sonyericsson.png]]></icon>
+		<pattern><![CDATA[/SonyEricsson/i]]></pattern>
+	 </device>
+
+<!-- Sony  -->
+ 	 <device>
+		<name><![CDATA[Sony]]></name>
+		<link><![CDATA[http://www.sony.com/]]></link>
+		<icon><![CDATA[sony.png]]></icon>
+		<pattern><![CDATA[/Sony/i]]></pattern>
+		<versions pattern="1"><![CDATA[/Cellphone\; Sony ([.\-0-9a-zA-Z]+)/i]]></versions>
+	 </device>
+
+	 <device>
+		<pattern><![CDATA[//]]></pattern>
+	 </device>
+</devices>

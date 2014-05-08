@@ -1,0 +1,137 @@
+#adminmenu #toplevel_page_mailpress_mails div.wp-menu-image,
+#adminmenu #toplevel_page_mailpress_design div.wp-menu-image,
+#adminmenu #toplevel_page_mailpress_users div.wp-menu-image,
+#adminmenu #toplevel_page_mailpress_mailinglists div.wp-menu-image,
+#adminmenu #toplevel_page_mailpress_settings div.wp-menu-image,
+#adminmenu #toplevel_page_mailpress_import div.wp-menu-image,
+#adminmenu #toplevel_page_mailpress_viewlogs div.wp-menu-image
+{
+	background:transparent url(../images/menu_vs.png) no-repeat scroll -1px -33px;
+}
+
+#adminmenu #toplevel_page_mailpress_mails:hover div.wp-menu-image,
+#adminmenu #toplevel_page_mailpress_mails.wp-has-current-submenu div.wp-menu-image,
+#adminmenu #toplevel_page_mailpress_mails.current div.wp-menu-image,
+
+#adminmenu #toplevel_page_mailpress_design:hover div.wp-menu-image,
+#adminmenu #toplevel_page_mailpress_design.wp-has-current-submenu div.wp-menu-image,
+#adminmenu #toplevel_page_mailpress_design.current div.wp-menu-image,
+
+#adminmenu #toplevel_page_mailpress_users:hover div.wp-menu-image,
+#adminmenu #toplevel_page_mailpress_users.wp-has-current-submenu div.wp-menu-image,
+#adminmenu #toplevel_page_mailpress_users.current div.wp-menu-image,
+
+#adminmenu #toplevel_page_mailpress_mailinglists:hover div.wp-menu-image,
+#adminmenu #toplevel_page_mailpress_mailinglists.wp-has-current-submenu div.wp-menu-image,
+#adminmenu #toplevel_page_mailpress_mailinglists.current div.wp-menu-image,
+
+#adminmenu #toplevel_page_mailpress_settings:hover div.wp-menu-image,
+#adminmenu #toplevel_page_mailpress_settings.wp-has-current-submenu div.wp-menu-image,
+#adminmenu #toplevel_page_mailpress_settings.current div.wp-menu-image,
+
+#adminmenu #toplevel_page_mailpress_import:hover div.wp-menu-image,
+#adminmenu #toplevel_page_mailpress_import.wp-has-current-submenu div.wp-menu-image,
+#adminmenu #toplevel_page_mailpress_import.current div.wp-menu-image,
+
+#adminmenu #toplevel_page_mailpress_viewlogs:hover div.wp-menu-image,
+#adminmenu #toplevel_page_mailpress_viewlogs.wp-has-current-submenu div.wp-menu-image,
+#adminmenu #toplevel_page_mailpress_viewlogs.current div.wp-menu-image
+{
+	background:transparent url(../images/menu_vs.png) no-repeat scroll -1px -1px;
+}
+
+#icon-mailpress-users {
+	background:transparent url(../images/icons32_vs.png) no-repeat scroll 0px 0px;
+}
+#icon-mailpress-mailnew {
+	background:transparent url(../images/icons32_vs.png) no-repeat scroll -39px 0px;
+}
+#icon-mailpress-mails {
+	background:transparent url(../images/icons32_vs.png) no-repeat scroll -78px 0px;
+}
+#icon-mailpress-themes {
+	background:transparent url(../images/icons32_vs.png) no-repeat scroll -117px 0px;
+}
+#icon-mailpress-tools {
+	background:transparent url(../images/icons32_vs.png) no-repeat scroll -156px 0px;
+}
+#icon-mailpress-addons {
+	background:transparent url(../images/icons32_vs.png) no-repeat scroll -195px 0px;
+}
+#icon-mailpress-settings {
+	background:transparent url(../images/icons32_vs.png) no-repeat scroll -234px 0px;
+}
+
+td.mp_avatar {
+	background-color:#fff;
+	text-align:center;
+	vertical-align:middle;
+}
+td.mp_avatar img.avatar  {
+	border:solid #BBD8E7 10px;
+	padding:5px;
+
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-khtml-border-radius: 5px;
+}
+h3.mp_hndle  {
+	background-position:left top;
+	background-repeat:repeat-x;
+	background-color:#EDFBFC;
+	font-size:12px;
+	font-weight:bold;
+	line-height:1;
+	margin:0;
+	padding:7px 9px;
+	text-shadow:0 1px 0 #FFFFFF;	
+
+	border-top-left-radius: 6px;
+	border-top-right-radius: 6px;
+	-moz-border-radius-topleft: 6px;
+	-moz-border-radius-topright: 6px;
+	-webkit-border-top-left-radius: 6px;
+	-webkit-border-top-right-radius: 6px;
+	-khtml-border-top-left-radius: 6px;
+	-khtml-border-top-right-radius: 6px;
+}
+.bkgndc, div.field_type_settings ul.ui-tabs-nav li.ui-state-default, div#form_settings ul.ui-tabs-nav li.ui-state-default {
+	background-color:#EDFBFC;
+}
+#the-user-list .unapproved, #the-user-list .bounced, #the-user-list .unsubscribed, .settings_html textarea {
+	background-color:#FFFFE0;
+}
+.bd1sc, .settings_form_tabs, div.field_type_settings ul.ui-tabs-nav li,  div#form_settings ul.ui-tabs-nav li {
+	border:1px solid #8CBDD5;
+}
+
+div.mp_fileupload_bar_backgrnd {
+	background-color: #21759B;
+}
+
+/* settings */
+tr.mp_sep {
+border-bottom: 2px solid #8CBDD5;
+} 
+
+/* metabox user mailinglists */
+ul#mailinglist-tabs li.tabs {
+	border-color: #dfdfdf;
+}
+
+ul#mailinglist-tabs li.tabs {
+	background-color: #f1f1f1;
+}
+
+#side-sortables #mailinglist-tabs .tabs a {
+	color: #333;
+}
+
+#post-body ul#mailinglist-tabs li.tabs a {
+	color: #333;
+}
+
+.mailinglists .notfound, .mailinglists .notfound th, .mailinglists .notfound td, .addons .inactive, .addons .inactive th, .addons .inactive td, tr.inactive + tr.addon-update-tr .addon-update {
+background-color:#EBEEEF;
+}

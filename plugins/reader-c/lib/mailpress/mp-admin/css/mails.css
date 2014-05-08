@@ -1,0 +1,60 @@
+/* autorefresh */
+div#mp_message {
+	float:right;
+	margin-right:20px;
+}
+div#mp_message div#message p {
+	padding:2px;
+	margin:0;
+}
+
+td.column-title span.icon {
+	height: 16px;
+	width: 16px;
+	padding:0;
+	margin:0 0 0 3px;
+	float:right;
+}
+td.column-title span.scheduled {
+	background:url("../images/list_icons.png") no-repeat scroll 0px 0 transparent;
+}
+td.column-title span.paused {
+	background:url("../images/list_icons.png") no-repeat scroll -160px 0 transparent;
+}
+td.column-title span.attachement {
+	background:url("../images/list_icons.png") no-repeat scroll -16px 0 transparent;
+}
+td.column-title span.autoresponder {
+	background:url("../images/list_icons.png") no-repeat scroll -32px 0 transparent;
+}
+td.column-title span.post {
+	background:url("../images/list_icons.png") no-repeat scroll -48px 0 transparent;
+}
+
+td.column-title img {
+	float:right;
+	margin:0;
+}
+
+th.column-to, td.column-to {
+	text-align:center;
+}
+
+/* tracking */
+th.column-tracking_openrate, td.column-tracking_openrate, 
+th.column-tracking_clicks, td.column-tracking_clicks, 
+th.column-tracking_unsubscribe, td.column-tracking_unsubscribe {
+	text-align:center;
+}
+.post-com-count {
+	display:inline;
+	background-image: none;
+}
+.post-com-count span {
+	font-size:14px;
+	font-family: Helvetica,Arial,sans-serif;
+}
+
+
+
+

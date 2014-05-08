@@ -1,0 +1,11 @@
+﻿
+<!-- xml files to merge for convertion -->
+	<files>
+		<file>start</file>
+		<file>tags</file>
+		<file>entities</file>
+		<file>end</file>
+	</files>
+
+<!-- Maximum width of the formatted text, in columns -->
+	<width>0</width>

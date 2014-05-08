@@ -25,13 +25,13 @@ if(!class_exists('Reader_C_Settings'))
 			add_menu_page(
 				"ReaderC",
 				"ReaderC",
-				'hypothesis_admin',
+				'manage_options',
 				'reader',
 				array(&$this, 'plugin_settings_page'),
 				READER_C_URL.'/images/icons/hub.png',
 				'29'
 			);
-			add_submenu_page('reader', 'JSON API', 'JSON API', 'hypothesis_admin', 'json-api', array( '__JSON_API__', 'admin_options' ));
+			add_submenu_page('reader', 'JSON API', 'JSON API', 'manage_options', 'json-api', array( '__JSON_API__', 'admin_options' ));
 
 
 			$GLOBALS['menu'][28] = array('', 'read', 'separator-28', '', 'wp-menu-separator');

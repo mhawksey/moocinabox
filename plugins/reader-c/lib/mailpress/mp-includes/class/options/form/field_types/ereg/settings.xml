@@ -1,0 +1,105 @@
+<?php /* ereg[i] */ ?>
+<settings>
+	<attributes>
+		<items>
+			<type>
+				<radio>
+					<text>type=</text>
+					<values><![CDATA[<?php echo serialize(array('text' => '"text"')); ?>]]></values>
+					<disabled><![CDATA[<?php echo serialize(array('text')); ?>]]></disabled>
+					<default>text</default>
+				</radio>
+				<hidden>
+					<value>text</value>
+				</hidden>
+			</type>
+		</items>
+		<items>
+			<size>
+				<select_num>
+					<text>size=</text>
+					<min>1</min>
+					<max>100</max>
+					<default>22</default>
+				</select_num>
+			</size>
+		</items>
+		<items>
+			<value><text></text></value>
+		</items>
+		<items>
+			<class><text></text></class>
+		</items>
+		<items>
+			<style><text></text></style>
+		</items>
+		<items>
+			<is>
+				<is>
+					<values><![CDATA[<?php echo serialize(array('disabled', 'readonly')); ?>]]></values>
+					<disabled><![CDATA[<?php echo serialize(array()); ?>]]></disabled>
+				</is>
+			</is>
+		</items>
+		<items>
+			<misc><misc><![CDATA[<?php _e("other attributes except 'name' & 'id'", MP_TXTDOM); ?>]]></misc></misc>
+		</items>
+	</attributes>
+	<controls>
+		<items>
+			<required>
+				<checkbox>
+					<text><![CDATA[<?php _e('Required', MP_TXTDOM); ?>]]></text>
+					<value>1</value>
+					<disabled>0</disabled>
+					<class>controls</class>
+				</checkbox>
+			</required>
+		</items>
+	</controls>
+	<options>
+		<items>
+			<ereg>
+				<checkbox>
+					<text><![CDATA[<?php _e('Case sensitive', MP_TXTDOM); ?>]]></text>
+					<value>1</value>
+					<disabled>0</disabled>
+				</checkbox>
+			</ereg>
+		</items>
+		<items>
+			<pattern>
+				<text>
+					<text><![CDATA[<?php _e('Regular expression :', MP_TXTDOM); ?>]]></text>
+					<size>38</size>
+					<default></default>
+				</text>
+			</pattern>
+		</items>
+		<items>
+		</items>
+<?php if ($this->field->form_incopy) : ?>
+		<items>
+			<incopy>
+				<checkbox>
+					<text><![CDATA[<?php _e('In copy', MP_TXTDOM); ?>]]></text>
+					<value>1</value>
+					<disabled>0</disabled>
+				</checkbox>
+			</incopy>
+		</items>
+<?php endif; ?>
+	</options>
+<?php if ($protected) : ?>
+	<hiddens>
+		<options>
+			<protected></protected>
+		</options>
+	</hiddens>
+<?php endif; ?>
+	<tabs>
+		<attributes><![CDATA[<?php _e('Attributes', MP_TXTDOM); ?>]]></attributes>
+		<controls><![CDATA[<?php _e('Controls', MP_TXTDOM); ?>]]></controls>
+		<options><![CDATA[<?php _e('Options', MP_TXTDOM); ?>]]></options>
+	</tabs>
+</settings>

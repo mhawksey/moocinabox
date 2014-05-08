@@ -1,0 +1,99 @@
+<?php /* captcha_gd2 */ ?>
+<settings>
+	<attributes>
+		<items>
+			<type>
+				<radio>
+					<text>type=</text>
+					<values><![CDATA[<?php echo serialize(array('text' => '"text"')); ?>]]></values>
+					<disabled><![CDATA[<?php echo serialize(array('text')); ?>]]></disabled>
+					<default>text</default>
+				</radio>
+				<hidden>
+					<value>text</value>
+				</hidden>
+			</type>
+		</items>
+		<items>
+			<size>
+				<select_num>
+					<text>size=</text>
+					<min>1</min>
+					<max>100</max>
+					<default>22</default>
+				</select_num>
+			</size>
+		</items>
+		<items>
+			<value><text></text></value>
+		</items>
+		<items>
+			<class><text></text></class>
+		</items>
+		<items>
+			<style><text></text></style>
+		</items>
+		<items>
+			<is>
+				<is>
+					<values><![CDATA[<?php echo serialize(array('disabled', 'readonly')); ?>]]></values>
+					<disabled><![CDATA[<?php echo serialize( array() ); ?>]]></disabled>
+				</is>
+			</is>
+		</items>
+		<items>
+			<misc><misc><![CDATA[<?php _e("other attributes except 'name' & 'id'", MP_TXTDOM); ?>]]></misc></misc>
+		</items>
+	</attributes>
+	<controls>
+		<items>
+			<required>
+				<checkbox>
+					<text><![CDATA[<?php _e('Required', MP_TXTDOM); ?>]]></text>
+					<value>1</value>
+					<disabled>1</disabled>
+					<class>controls</class>
+					<forced>1</forced>
+				</checkbox>
+			</required>
+		</items>
+	</controls>
+<?php if ($this->field->form_incopy) : ?>
+	<options>
+		<items>
+			<incopy>
+				<checkbox>
+					<text><![CDATA[<?php _e('In copy', MP_TXTDOM); ?>]]></text>
+					<value>1</value>
+					<disabled>0</disabled>
+				</checkbox>
+			</incopy>
+		</items>
+	</options>
+<?php endif; ?>
+	<captcha>
+		<items>
+			<only_text>
+				<only_text><![CDATA[<?php  if (!isset($field->id)) $field->id = 0; echo "<img src='" . esc_url(MP_Action_url . '?id=' . $field->id . '&action=2ahctpac') . "' alt='' />"; ?>]]></only_text>
+			</only_text>
+		</items>
+	</captcha>
+	<hiddens>
+		<controls>
+			<required>1</required>
+		</controls>
+<?php if ($protected) : ?>
+		<options>
+			<protected></protected>
+		</options>
+<?php endif; ?>
+	</hiddens>
+	<tabs>
+		<attributes><![CDATA[<?php _e('Attributes', MP_TXTDOM); ?>]]></attributes>
+		<controls><![CDATA[<?php _e('Controls', MP_TXTDOM); ?>]]></controls>
+<?php if ($this->field->form_incopy) : ?>
+		<options><![CDATA[<?php _e('Options', MP_TXTDOM); ?>]]></options>
+<?php endif; ?>
+		<captcha><![CDATA[<?php _e('Captcha', MP_TXTDOM); ?>]]></captcha>
+	</tabs>
+</settings>

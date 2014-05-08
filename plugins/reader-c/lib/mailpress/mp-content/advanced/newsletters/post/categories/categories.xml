@@ -1,0 +1,178 @@
+﻿<newsletter id='<?php echo $post_type; ?>_<?php echo $taxonomy; ?>_<?php echo $term->term_id; ?>'>
+
+	<descriptions>
+		<admin><![CDATA[<?php printf(__('Per %1$s "%2$s"', MP_TXTDOM), 			$_post_type->labels->singular_name, $term->name); ?>]]></admin>
+		<blog><![CDATA[<?php  printf(__('For each new %1$s in %2$s', MP_TXTDOM), 	$_post_type->labels->singular_name, $term->name); ?>]]></blog>
+	</descriptions>
+
+	<mail>
+		<Template>singlecat</Template>
+		<subject><![CDATA[<?php printf( __('[%1$s] New {{the_post_type}} in {{the_taxonomy}} : {{the_title}}', MP_TXTDOM), get_bloginfo('name')); ?>]]></subject>
+		<the_post_types><![CDATA[<?php echo $_post_type->labels->name; ?>]]></the_post_types>
+		<the_post_type><![CDATA[<?php echo $_post_type->labels->singular_name; ?>]]></the_post_type>
+		<the_taxonomy><![CDATA[<?php echo $term->name; ?>]]></the_taxonomy>
+		<the_category><![CDATA[<?php echo $category->cat_name; ?>]]></the_category>        <!-- deprecated -->
+	</mail>
+
+	<processor>
+		<id>post</id>
+		<query_posts>
+			<cat><?php echo $term->term_id; ?></cat>
+		</query_posts>
+	</processor>
+
+	<scheduler>
+		<id><![CDATA[<?php echo "{$post_type}_{$taxonomy}"; ?>]]></id>
+		<args>            <!-- release the newsletter -->
+			<hour>00</hour>		<!-- [00 to 23] -->
+			<minute>00</minute>	<!-- [00 to 59] -->
+		</args>
+	</scheduler>
+
+	<params>
+		<term_id><![CDATA[<?php echo $term->term_id; ?>]]></term_id>
+		<post_type><![CDATA[<?php echo $post_type; ?>]]></post_type>
+		<taxonomy><![CDATA[<?php echo $taxonomy; ?>]]></taxonomy>
+		<cat_id><?php echo $category->cat_ID; ?></cat_id>        <!-- deprecated -->
+	</params>
+
+</newsletter>
+
+<newsletter id='daily_<?php echo $taxonomy; ?>_<?php echo $term->term_id; ?>'>
+
+	<descriptions>
+		<admin><![CDATA[<?php printf(__('Daily %1$s "%2$s"', MP_TXTDOM), 		$_post_type->labels->name, $term->name); ?>]]></admin>
+		<blog><![CDATA[<?php  printf(__('Daily %1$s newsletter for %2$s', MP_TXTDOM), 	$_post_type->labels->name, $term->name); ?>]]></blog>
+	</descriptions>
+
+	<mail>
+		<Template>dailycat</Template>
+		<subject><![CDATA[<?php printf( __('[%1$s] Daily {{the_post_types}} newsletter for {{the_taxonomy}}', MP_TXTDOM), get_bloginfo('name')); ?>]]></subject>
+		<the_post_types><![CDATA[<?php echo $_post_type->labels->name; ?>]]></the_post_types>
+		<the_post_type><![CDATA[<?php echo $_post_type->labels->singular_name; ?>]]></the_post_type>
+		<the_taxonomy><![CDATA[<?php echo $term->name; ?>]]></the_taxonomy>
+		<the_category><![CDATA[<?php echo $category->cat_name; ?>]]></the_category>        <!-- deprecated -->
+	</mail>
+
+	<processor>
+		<id>day-1</id>
+		<threshold><![CDATA[MailPress_daily_<?php echo $taxonomy; ?>_<?php echo $term->term_id; ?>]]></threshold><!-- stored on wordpress options table -->
+		<args>            <!-- start of the day -->
+			<hour>00</hour>		<!-- [00 to 23] -->
+			<minute>00</minute>	<!-- [00 to 59] -->
+		</args>
+		<query_posts>
+			<cat><?php echo $term->term_id; ?></cat>
+		</query_posts>
+	</processor>
+
+	<scheduler>
+		<id>day</id>
+		<args>            <!-- release the newsletter -->
+			<hour>00</hour>		<!-- [00 to 23] -->
+			<minute>00</minute>	<!-- [00 to 59] -->
+		</args>
+	</scheduler>
+
+	<params>
+		<term_id><![CDATA[<?php echo $term->term_id; ?>]]></term_id>
+		<post_type><![CDATA[<?php echo $post_type; ?>]]></post_type>
+		<taxonomy><![CDATA[<?php echo $taxonomy; ?>]]></taxonomy>
+		<cat_id><?php echo $category->cat_ID; ?></cat_id>        <!-- deprecated -->
+	</params>
+
+</newsletter>
+
+<newsletter id='weekly_<?php echo $taxonomy; ?>_<?php echo $term->term_id; ?>'>
+
+	<descriptions>
+		<admin><![CDATA[<?php printf(__('Weekly %1$s "%2$s"', MP_TXTDOM), 		$_post_type->labels->name, $term->name); ?>]]></admin>
+		<blog><![CDATA[<?php printf(__('Weekly %1$s newsletter for %2$s', MP_TXTDOM), 	$_post_type->labels->name, $term->name); ?>]]></blog>
+	</descriptions>
+
+	<mail>
+		<Template>weeklycat</Template>
+		<subject><![CDATA[<?php printf( __('[%1$s] Weekly {{the_post_types}} newsletter for {{the_taxonomy}}', MP_TXTDOM), get_bloginfo('name')); ?>]]></subject>
+		<the_post_types><![CDATA[<?php echo $_post_type->labels->name; ?>]]></the_post_types>
+		<the_post_type><![CDATA[<?php echo $_post_type->labels->singular_name; ?>]]></the_post_type>
+		<the_taxonomy><![CDATA[<?php echo $term->name; ?>]]></the_taxonomy>
+		<the_category><![CDATA[<?php echo $category->cat_name; ?>]]></the_category>        <!-- deprecated -->
+	</mail>
+
+	<processor>
+		<id>week-1</id>
+		<threshold><![CDATA[MailPress_weekly_<?php echo $taxonomy; ?>_<?php echo $term->term_id; ?>]]></threshold><!-- stored on wordpress options table -->
+		<args>            <!-- start of the week -->
+			<wday>1</wday> 		<!-- [1 > Monday, ... 7 > Sunday] (default : wordpress start of week) -->
+			<hour>00</hour>		<!-- [00 to 23] -->
+			<minute>00</minute>	<!-- [00 to 59] -->
+		</args>
+		<query_posts>
+			<cat><?php echo $term->term_id; ?></cat>
+		</query_posts>
+	</processor>
+
+	<scheduler>
+		<id>week</id>
+		<args>            <!-- release the newsletter -->
+			<wday>1</wday>		<!-- [1 > Monday, ... 7 > Sunday] (default : wordpress start of week) -->
+			<hour>00</hour>		<!-- [00 to 23] -->
+			<minute>00</minute>	<!-- [00 to 59] -->
+		</args>
+	</scheduler>
+
+	<params>
+		<term_id><![CDATA[<?php echo $term->term_id; ?>]]></term_id>
+		<post_type><![CDATA[<?php echo $post_type; ?>]]></post_type>
+		<taxonomy><![CDATA[<?php echo $taxonomy; ?>]]></taxonomy>
+		<cat_id><?php echo $category->cat_ID; ?></cat_id>        <!-- deprecated -->
+	</params>
+
+</newsletter>
+
+<newsletter id='monthly_<?php echo $taxonomy; ?>_<?php echo $term->term_id; ?>'>
+
+	<descriptions>
+		<admin><![CDATA[<?php printf(__('Monthly %1$s "%2$s"', MP_TXTDOM), 		$_post_type->labels->name, $term->name); ?>]]></admin>
+		<blog><![CDATA[<?php printf(__('Monthly %1$s newsletter for %2$s', MP_TXTDOM), 	$_post_type->labels->name, $term->name); ?>]]></blog>
+	</descriptions>
+
+	<mail>
+		<Template>monthlycat</Template>
+		<subject><![CDATA[<?php printf( __('[%1$s] Monthly {{the_post_types}} newsletter for {{the_taxonomy}}', MP_TXTDOM), get_bloginfo('name')); ?>]]></subject>
+		<the_post_types><![CDATA[<?php echo $_post_type->labels->name; ?>]]></the_post_types>
+		<the_post_type><![CDATA[<?php echo $_post_type->labels->singular_name; ?>]]></the_post_type>
+		<the_taxonomy><![CDATA[<?php echo $term->name; ?>]]></the_taxonomy>
+		<the_category><![CDATA[<?php echo $category->cat_name; ?>]]></the_category>        <!-- deprecated -->
+	</mail>
+
+	<processor>
+		<id>month-1</id>
+		<threshold><![CDATA[MailPress_monthly_<?php echo $taxonomy; ?>_<?php echo $term->term_id; ?>]]></threshold><!-- stored on wordpress options table -->
+		<args>            <!-- start of the month -->
+			<day>1</day>		<!-- [1, 2, ..., 28 / 0 : end of month] (default : 1) -->
+			<hour>00</hour>		<!-- [00 to 23] -->
+			<minute>00</minute>	<!-- [00 to 59] -->
+		</args>
+		<query_posts>
+			<cat><?php echo $term->term_id; ?></cat>
+		</query_posts>
+	</processor>
+
+	<scheduler>
+		<id>month</id>
+		<args>            <!-- release the newsletter -->
+			<day>1</day>		<!-- [1, 2, ..., 28 / 0 : end of month] (default : 1) -->
+			<hour>00</hour>		<!-- [00 to 23] -->
+			<minute>00</minute>	<!-- [00 to 59] -->
+		</args>
+	</scheduler>
+
+	<params>
+		<term_id><![CDATA[<?php echo $term->term_id; ?>]]></term_id>
+		<post_type><![CDATA[<?php echo $post_type; ?>]]></post_type>
+		<taxonomy><![CDATA[<?php echo $taxonomy; ?>]]></taxonomy>
+		<cat_id><?php echo $category->cat_ID; ?></cat_id>        <!-- deprecated -->
+	</params>
+
+</newsletter>

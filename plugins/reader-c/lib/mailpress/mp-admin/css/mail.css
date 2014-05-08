@@ -1,0 +1,54 @@
+div#example {
+	margin:12px 0 0;
+}
+div#example ul.tablenav {
+	background:#fff !important;
+	padding:7px 0 0 0;
+	height:auto;
+	margin:0;
+	margin-bottom:0 !important;
+}
+div#example ul.tablenav li {
+	float:right;
+	list-style:none;
+	margin:0 5px;
+}
+.ui-tabs-nav li a {
+	text-decoration:none;
+}
+.ui-tabs-nav li a span {
+	font-size:11px;
+	font-weight:bold;
+	margin:1px 1px 0 1px;
+	padding:3px 8px;
+	color:#333;
+}
+li.ui-tabs-selected a span {
+	color:#000;
+	background:#CFEBF7;
+
+	border-bottom-left-radius: 3px;
+	border-bottom-right-radius: 3px;
+	-moz-border-radius-bottomleft: 3px;
+	-moz-border-radius-bottomright: 3px;
+	-webkit-border-bottom-left-radius: 3px;
+	-webkit-border-bottom-right-radius: 3px;
+	-khtml-border-bottom-left-radius: 3px;
+	-khtml-border-bottom-right-radius: 3px;
+}
+.ui-tabs-panel {
+	clear:both;
+	background:#fff;
+	font-family:Verdana, Arial, "Bitstream Vera Sans", sans-serif;
+	font-size:13px;
+	font-weight:400;
+}
+div.ui-tabs-panel {
+	border:none;
+	border-top: 5px solid #CFEBF7;
+	border-bottom: 5px solid #CFEBF7;
+	height:auto;
+	overflow:auto;
+	margin:0;
+	padding:0;
+}

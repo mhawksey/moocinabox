@@ -1,0 +1,13 @@
+/*
+Theme Name: MailPress Twenty Twelve
+Description: theme from TwentyTwelve wp theme 
+Version: alpha
+Author: Andre Renaut
+Author URI: http://www.mailpress.org
+Template: _template
+*/
+
+p {
+	line-height: 24px;
+	margin: 24px 0;
+}

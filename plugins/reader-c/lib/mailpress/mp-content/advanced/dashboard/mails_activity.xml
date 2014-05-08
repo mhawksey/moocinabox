@@ -1,0 +1,51 @@
+<group_templates>
+	<group>
+		<templates>
+			<template><![CDATA[moderate]]></template>
+			<template><![CDATA[new_user]]></template>
+			<template><![CDATA[changed_pwd]]></template>
+			<template><![CDATA[retrieve_pwd]]></template>
+		</templates>
+		<desc><![CDATA[<?php _e('Admin', MP_TXTDOM); ?>]]></desc>
+	</group>
+	<group>
+		<templates>
+			<template><![CDATA[comments]]></template> 
+		</templates>
+		<desc><![CDATA[<?php _e('Comments', MP_TXTDOM); ?>]]></desc>
+	</group>
+	<group>
+		<templates>
+			<template><![CDATA[form_recipient]]></template>
+			<template><![CDATA[form_visitor]]></template>
+		</templates>
+		<desc><![CDATA[<?php _e('Forms', MP_TXTDOM); ?>]]></desc>
+	</group>
+	<group>
+		<templates>
+			<template><![CDATA[manual]]></template>
+			<template><![CDATA[single]]></template>
+			<template><![CDATA[daily]]></template>
+			<template><![CDATA[weekly]]></template>
+			<template><![CDATA[monthly]]></template>
+			<template><![CDATA[singlecat]]></template>
+			<template><![CDATA[dailycat]]></template>
+			<template><![CDATA[weeklycat]]></template>
+			<template><![CDATA[monthlycat]]></template>
+		</templates>
+		<desc><![CDATA[<?php _e('Posts', MP_TXTDOM); ?>]]></desc>
+	</group>
+	<group>
+		<templates>
+			<template><![CDATA[confirmed]]></template>
+			<template><![CDATA[new_subscriber]]></template>
+		</templates>
+		<desc><![CDATA[<?php _e('Users', MP_TXTDOM); ?>]]></desc>
+	</group>
+	<group>
+		<templates>
+			<template><![CDATA[test]]></template> 
+		</templates>
+		<desc><![CDATA[<?php _e('Test', MP_TXTDOM); ?>]]></desc>
+	</group>
+</group_templates>

@@ -1,0 +1,19 @@
+.field_type_button 	{ background: url(field_types/button/icon.png) 	no-repeat center left; }
+.field_type_captcha_gd1	{ background: url(field_types/captcha_gd1/icon.png)	no-repeat center left; }
+.field_type_captcha_gd2	{ background: url(field_types/captcha_gd2/icon.png)	no-repeat center left; }
+.field_type_checkbox 	{ background: url(field_types/checkbox/icon.png) 	no-repeat center left; }
+.field_type_date 	{ background: url(field_types/date/icon.png) 	no-repeat center left; }
+.field_type_email 	{ background: url(field_types/email/icon.png) 	no-repeat center left; }
+.field_type_ereg 	{ background: url(field_types/ereg/icon.gif) 	no-repeat center left; }
+.field_type_file 	{ background: url(field_types/file/icon.png) 	no-repeat center left; }
+.field_type_geotag 	{ background: url(field_types/geotag/icon.png) 	no-repeat center left; }
+.field_type_radio 	{ background: url(field_types/radio/icon.png) 	no-repeat center left; }
+.field_type_select 	{ background: url(field_types/select/icon.png) 	no-repeat center left; }
+.field_type_text 	{ background: url(field_types/text/icon.png) 	no-repeat center left; }
+.field_type_textarea 	{ background: url(field_types/textarea/icon.png) 	no-repeat center left; }
+.field_type_time 	{ background: url(field_types/time/icon.png) 	no-repeat center left; }
+.field_type_recaptcha 	{ background: url(field_types/recaptcha/icon.png)   no-repeat center left; }
+
+.field_type_mailinglist_mailinglist 	{ background: url(field_types_mailinglist/mailinglist/icon.png) no-repeat center left; }
+
+.field_type_newsletter_newsletter 	{ background: url(field_types_newsletter/newsletter/icon.png) no-repeat center left; }

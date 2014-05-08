@@ -1,0 +1,34 @@
+﻿<newsletter id='monthly'>
+
+	<descriptions>
+		<admin><![CDATA[<?php _e('Monthly', MP_TXTDOM); ?>]]></admin>
+		<blog><![CDATA[<?php  _e('Monthly newsletter', MP_TXTDOM); ?>]]></blog>
+	</descriptions>
+
+	<mail>
+		<Template>monthly</Template>
+		<subject><![CDATA[<?php printf( __('[%1$s] Monthly newsletter', MP_TXTDOM), get_bloginfo('name')); ?>]]></subject>
+		<the_post_types><![CDATA[<?php echo $_post_type->labels->name; ?>]]></the_post_types>
+		<the_post_type><![CDATA[<?php echo $_post_type->labels->singular_name; ?>]]></the_post_type>
+	</mail>
+
+	<processor>
+		<id>month-1</id>
+		<threshold>MailPress_monthly</threshold><!-- stored on wordpress options table -->
+		<args>            <!-- start of the month -->
+			<day>1</day>		<!-- [1, 2, ..., 28 / 0 : end of month] (default : 1) -->
+			<hour>00</hour>		<!-- [00 to 23] -->
+			<minute>00</minute>	<!-- [00 to 59] -->
+		</args>
+	</processor>
+
+	<scheduler>
+		<id>month</id>
+		<args>            <!-- release the newsletter -->
+			<day>1</day>		<!-- [1, 2, ..., 28 / 0 : end of month] (default : 1) -->
+			<hour>00</hour>		<!-- [00 to 23] -->
+			<minute>00</minute>	<!-- [00 to 59] -->
+		</args>
+	</scheduler>
+
+</newsletter>

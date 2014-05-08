@@ -1,0 +1,120 @@
+This zip contains all necessary files to set up a custom post type (ad_listing) and a related taxonomy (ad_cat) for MailPress.
+
+Remember that wordpress plugin automatic upgrade process will erase any of your specific files.
+So :
+	- after install or before upgrading, back up your files.
+	- when upgrading, make it the "old" and "know what you are doing" FTP way !
+
+		!~~~~~~!		!~~~~~~!		!~~~~~~!		!~~~~~~!		!~~~~~~!
+
+I] ** For TEST purpose, in your MailPress test installation **
+
+a] MailPress 5.3 or above required
+
+b] Newsletter add-on activated required
+
+c] from zip file, copy the content of the mp-content and mp-includes in your MailPress test installation
+
+d] specific mailpress theme template (here : ad_listing) required 
+	- if you have a customized mailpress theme that is not a child theme of _template theme, 
+	  you will need to copy this template or create one in your dedicated mailpress theme 
+	  (see _template theme folder in mp-content/themes/_template).
+	- this zip file do not provide the template for your_theme/plaintext (if any required) !
+
+e] go to Plugins > MailPress add-ons
+	- activate Newsletter_ad_listing and/or Newsletter_ad_listing_ad_cat add-ons
+	- add-ons are respectively creating a custom post type (ad_listing) and its related taxonomy (ad_cat)
+
+f] go to Settings > MailPress > Subscriptions ...
+
+		!~~~~~~!		!~~~~~~!		!~~~~~~!		!~~~~~~!		!~~~~~~!
+
+II] ** HOW TO set up my specific custom post type into my MailPress installation **
+
+1] get the name of your custom post type (i call it 'cpt' in the rest of the document)
+
+2] unzip the content of this zip file in a folder (out of wordpress)
+
+3] mp-content/advanced/newsletters/
+	- rename folder 'ad_listing' in 'cpt'
+	- do not change xml file names !
+	- open 'cpt' folder and delete 'ad_cats' folder (or see section III.3 for taxonomy)
+
+4] mp-content/themes/_template   (if you have a customized mailpress theme read section I.d)
+	- rename 'ad_listing.php' file in 'cpt.php'
+	- edit 'cpt.php'
+		* change header 
+			Template Name : ad_listing
+			in
+			Template Name : cpt
+		* change content to fit your mail layout
+		* save
+
+5] mp-includes/class/options/newsletter/schedulers
+	- delete 'ad_listing_ad_cat.php' file (or see section III.5 for taxonomy)
+	- rename 'ad_listing.php' file in 'cpt.php'
+	- edit 'cpt.php' 
+		* replace string 'ad_listing' by 'cpt' (5 occurences)
+		* save
+
+6] mp-includes/class/options/newsletter/processors
+	- nothing to change or delete here
+
+7] mp-content/add-ons
+	- delete 'MailPress_newsletter_ad_listing_ad_cat.php' file (or see section III.7 for taxonomy)
+	- rename 'MailPress_newsletter_ad_listing.php' file in 'MailPress_newsletter_cpt.php'
+	- edit 'MailPress_newsletter_cpt.php'
+		* delete init() function
+		* replace string 'ad_listing' by 'cpt' (6 occurences)
+		* save
+
+8] copy modified mp-content and mp-includes folders into your mailpress installation
+
+9] go to Plugins > MailPress add-ons
+	- activate 'Newsletter_cpt' add-on
+
+10] go to Settings > MailPress > Subscriptions ...
+
+		!~~~~~~!		!~~~~~~!		!~~~~~~!		!~~~~~~!		!~~~~~~!
+
+III] ** HOW TO set up my 'cpt' related taxonomy into my MailPress installation **
+
+i hereunder keep the same steps numbers as above
+
+1] get the name of your custom post type (i call it 'tag_cpt' in the rest of the document)
+
+3] mp-content/advanced/newsletters/
+	- in 'cpt' folder, rename 'ad_cats' folder in 'tag_cpts' (remember this name, we will need it at step 7)
+	- in 'tag_cpts' folder rename 'ad_cats.xml' in 'tag_cpts.xml'
+
+4] mp-content/themes/_template (same as section II)
+
+5] mp-includes/class/options/newsletter/schedulers
+	- delete 'ad_listing.php' file (or see section II.5 for custom post type)
+	- rename 'ad_listing_ad_cat.php' file in 'cpt_tag_cpt.php'
+	- edit 'cpt_tag_cpt.php' 
+		* replace string 'ad_listing' by 'cpt' 			(5 occurences)
+		* replace string 'ad_cat' by 'tag_cpt' 			(5 occurences)
+		* save
+
+6] mp-includes/class/options/newsletter/processors
+	- still nothing to change or delete here
+
+7] mp-content/add-ons
+	- delete 'MailPress_newsletter_ad_listing.php' file (or see section II.7 for custom post type)
+	- rename 'MailPress_newsletter_ad_listing_ad_cat.php' in 'MailPress_newsletter_cpt_tag_cpt.php'
+	- edit 'MailPress_newsletter_cpt_tag_cpt.php'
+		* delete init() function
+		* replace string 'ad_cats' by 'tag_cpts' [remember step 3]	(1 occurence)
+		* replace string 'ad_listing' by 'cpt' 				(6 occurences)
+		* replace string 'ad_cat' by 'tag_cpt' 				(6 occurences)
+		* save
+
+8] copy modified mp-content and mp-includes folders into your mailpress installation
+
+
+9] go to Plugins > MailPress add-ons
+	- activate 'Newsletter_cpt_tag_cpt' add-on
+
+10] go to Settings > MailPress > Subscriptions ...
+

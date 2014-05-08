@@ -1,0 +1,24 @@
+/*
+Theme Name: MailPress Twenty Eleven
+Theme URI: 
+Description: theme from TwentyEleven wp theme  *** NOT RENDERING PROPERLY ON GMAIL ***
+Version: 1.0
+Author: Andre Renaut
+Author URI: http://www.mailpress.org
+Template: _template
+*/
+a.entry_title_a:hover, a.entry_title_a:focus, a.entry_title_a:active {
+	color:#1982D1 !important;
+}
+time.hover_underline:hover, time.hover_underline:focus, time.hover_underline:active,
+a.hover_underline:hover, a.hover_underline:focus, a.hover_underline:active,
+a.article_footer_comments:hover, a.article_footer_comments:focus, a.article_footer_comments:active {
+	text-decoration:underline !important;
+} 
+.comments-link-bubble a:hover, .comments-link-bubble a:focus, der .comments-link-bubble a:active {
+    background-color:#1982D1 !important;
+    color:rgba(255, 255, 255, 0.8) !important;
+}
+p {
+	margin-bottom:1.625em;
+}

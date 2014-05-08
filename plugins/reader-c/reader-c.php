@@ -35,6 +35,41 @@ define('READER_C_REGISTER_FILE', preg_replace('@\/var\/www\/[^\/]+@', '', __FILE
 if (!class_exists('FeedWordPress')){
    require_once(sprintf("%s/lib/feedwordpress/feedwordpress.php", READER_C_PATH));
 }
+if (get_option('custom_profile_filter') === 'yes'){
+	// Initialize Cookie Notice library
+	if (!function_exists('custom_profile_filters_for_buddypress_init')){
+		require_once(sprintf("%s/lib/custom-profile-filters-for-buddypress/custom-profile-filters-for-buddypress.php", READER_C_PATH));
+	}
+}
+function my_bp_activity_is_favorite($activity_id) {
+	global $bp, $activities_template;
+	return apply_filters( 'bp_get_activity_is_favorite', in_array( $activity_id, (array)$activities_template->my_favs ) );
+}
+
+function my_bp_activity_favorite_link($activity_id) {
+	global $activities_template;
+	echo apply_filters( 'bp_get_activity_favorite_link', wp_nonce_url( site_url( BP_ACTIVITY_SLUG . '/favorite/' . $activity_id . '/' ), 'mark_favorite' ) );
+}
+
+function my_bp_activity_unfavorite_link($activity_id) {
+	global $activities_template;
+	echo apply_filters( 'bp_get_activity_unfavorite_link', wp_nonce_url( site_url( BP_ACTIVITY_SLUG . '/unfavorite/' . $activity_id . '/' ), 'unmark_favorite' ) );
+}
+function my_bp_fav_button($post_id){
+	if ( is_user_logged_in() ) :
+		bp_has_activities();
+		$activity_id = bp_activity_get_activity_id( array(
+													'component' => 'blogs',
+													'secondary_item_id' => $post_id) );
+		if ($activity_id):					
+			if (!my_bp_activity_is_favorite($activity_id) ) : 	?>
+				<div class="fav_widget" act-id="<?php echo $activity_id;?>"><a href="<?php my_bp_activity_favorite_link($activity_id) ?>" class="fav" title="<?php _e( 'Mark as Favorite', 'buddypress' ) ?>"></a></div>
+	  <?php else : ?>
+				<div class="fav_widget" act-id="<?php echo $activity_id;?>"><a href="<?php my_bp_activity_unfavorite_link($activity_id) ?>" class="unfav" title="<?php _e( 'Remove Favorite', 'buddypress' ) ?>"></a></div>
+	  <?php endif; ?>
+  <?php endif; // eof acitivity_id
+	endif; // eof is_user_logged_in
+}
 
 if(!class_exists('Reader_C'))
 {
@@ -50,20 +85,34 @@ if(!class_exists('Reader_C'))
 		public function __construct() {			
 			add_action('init', array(&$this, 'init'));
 			// Register custom post types - reader
-			require_once(sprintf("%s/post-types/class-item.php", READER_C_PATH));		
+			//require_once(sprintf("%s/post-types/class-item.php", READER_C_PATH));		
 			
 			// include shortcodes
 			require_once(sprintf("%s/shortcodes/class-shortcode.php", READER_C_PATH));
 			require_once(sprintf("%s/shortcodes/class-reader.php", READER_C_PATH));
+			//require_once(sprintf("%s/shortcodes/class-activity-stream.php", READER_C_PATH));
+			require_once(sprintf("%s/shortcodes/class-homestream.php", READER_C_PATH));
+			require_once(sprintf("%s/shortcodes/class-mailpress.php", READER_C_PATH));
 			// Initialize JSON API library
 			if (!class_exists('JSON_API')){
 			   require_once(sprintf("%s/lib/json-api/json-api.php", READER_C_PATH));
+			}
+						// Initialize JSON API library
+			if (get_option('mailpress') === 'yes' && !class_exists('MailPress')){
+			   require_once(sprintf("%s/lib/mailpress/MailPress.php", READER_C_PATH));
+			   // prevent persistent cache of mailpress
+			   wp_cache_add_non_persistent_groups(array('mp_addons', 'mp_mail', 'mp_user', 'mp_field', 'mp_form'));  
 			}
 			// add custom JSON API controllers
 			add_filter('json_api_controllers', array(&$this,'add_hub_controller'));
 			add_filter('json_api_hub_controller_path', array(&$this,'set_hub_controller_path'));
 			
-			
+			if (get_option('display_cookie_notice') === 'yes'){
+				// Initialize Cookie Notice library
+				if (!class_exists('Cookie_Notice')){
+					require_once(sprintf("%s/lib/cookie-notice/cookie-notice.php", READER_C_PATH));
+				}
+			}
 
 			
 			// Initialize Settings pages in wp-admin

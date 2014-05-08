@@ -1,0 +1,65 @@
+<?php $visitor_mail = ( isset($this->field->settings['options']['visitor_mail']) ); /* checkbox */ ?>
+<settings>
+	<attributes>
+		<items>
+			<type>
+				<radio>
+					<text>type=</text>
+					<values><![CDATA[<?php echo serialize(array('checkbox' => '"checkbox"')); ?>]]></values>
+					<disabled><![CDATA[<?php echo serialize(array('checkbox')); ?>]]></disabled>
+					<default>checkbox</default>
+				</radio>
+				<hidden>
+					<value>checkbox</value>
+				</hidden>
+			</type>
+		</items>
+		<items>
+			<value><text></text></value>
+		</items>
+		<items>
+			<class><text></text></class>
+		</items>
+		<items>
+			<style><text></text></style>
+		</items>
+		<items>
+			<is>
+				<is>
+					<values><![CDATA[<?php echo serialize(array('checked', 'disabled', 'readonly')); ?>]]></values>
+					<disabled><![CDATA[<?php echo serialize( ($visitor_mail) ? array('disabled', 'readonly') : array() ); ?>]]></disabled>
+				</is>
+			</is>
+		</items>
+		<items>
+			<misc><misc><![CDATA[<?php _e("other attributes except 'name' & 'id'", MP_TXTDOM); ?>]]></misc></misc>
+		</items>
+	</attributes>
+<?php if ($this->field->form_incopy) : ?>
+	<options>
+		<items>
+			<incopy>
+				<checkbox>
+					<text><![CDATA[<?php _e('In copy', MP_TXTDOM); ?>]]></text>
+					<value>1</value>
+					<disabled>0</disabled>
+				</checkbox>
+			</incopy>
+		</items>
+	</options>
+<?php endif; ?>
+<?php if ($protected || $visitor_mail) : ?>
+	<hiddens>
+		<options>
+<?php if ($protected) : ?><protected></protected><?php endif; ?>
+<?php if ($visitor_mail) : ?><visitor_mail></visitor_mail><?php endif; ?>
+		</options>
+	</hiddens>
+<?php endif; ?>
+	<tabs>
+		<attributes><![CDATA[<?php _e('Attributes', MP_TXTDOM); ?>]]></attributes>
+<?php if ($this->field->form_incopy) : ?>
+		<options><![CDATA[<?php _e('Options', MP_TXTDOM); ?>]]></options>
+<?php endif; ?>
+	</tabs>
+</settings>

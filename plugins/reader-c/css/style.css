@@ -16,6 +16,12 @@
 .ui-accordion .ui-accordion-icons {
 	padding-left: 1.7em !important;
 }
+#accordion .ui-state-default, #accordion .ui-widget-content {
+border: 1px solid #D3D3D3;
+}
+#accordion .ui-widget-content {
+border-top:0;	
+}
 .collapse_title {
 	font-weight:700;
 }
@@ -29,7 +35,7 @@
 	float:left;
 }
 #post_title_block {
-	margin-left:20px;
+	margin-left:0px;
 	margin-right:20px;
 }
 .ajaxed {

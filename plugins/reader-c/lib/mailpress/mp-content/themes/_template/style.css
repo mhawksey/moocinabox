@@ -1,0 +1,37 @@
+/*
+Theme Name: MailPress template
+Description: theme used as template
+*/
+
+
+td.mp_twitter_link a.mp_twitter_date {
+text-decoration: none;
+color: #999;
+}
+td.mp_twitter_link a.mp_twitter_date:hover {
+text-decoration: underline !important;
+color: #777 !important;
+}
+
+td.mp_twitter_link ul li a b {
+text-decoration: none;
+color: #999;
+}
+td.mp_twitter_link ul li a:hover b {
+text-decoration: underline !important;
+color: #777 !important;
+}
+
+td.mp_twitter_link a {
+text-decoration: none;
+color: #666;
+}
+td.mp_twitter_link a:hover {
+text-decoration: underline !important;
+color: #444 !important;
+}
+
+a.mp_twitter_author_id:hover {
+text-decoration: underline !important;
+color: #000 !important;
+}

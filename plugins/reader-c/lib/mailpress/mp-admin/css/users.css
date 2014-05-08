@@ -1,0 +1,23 @@
+
+td.column-username span.icon {
+	height: 16px;
+	width: 16px;
+	padding:0;
+	margin:0 0 0 3px;
+	float:right;
+}
+td.column-username span.unsubscribed {
+	background:url("../images/list_icons.png") no-repeat scroll -128px 0 transparent;
+}
+td.column-username span.bounce_handling {
+	background:url("../images/list_icons.png") no-repeat scroll -144px 0 transparent;
+}
+td.column-username img.flag {
+	float:right;
+	padding : 0;
+	margin:2px 0 0 5px;
+}
+
+td.column-newsletters, td.column-mailinglists, td.column-comments {
+	max-width:200px;
+}

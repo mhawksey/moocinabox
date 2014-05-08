@@ -1,0 +1,247 @@
+.form-table td.nombp, .form-table th.nombp {
+	border:none;
+	padding:0;
+	margin:0;
+}
+.form-table th {
+	width:50px;
+}
+.form-table {
+	margin-top:0;
+}
+#fromtodiv {
+	margin-bottom:10px;
+}
+th.from {
+	color:#c0c0c0;
+	vertical-align:middle;
+}
+input.w90 {
+	width:90%;
+}
+input.TO, select.TO {
+	border-color:#f00;
+}
+#titlediv {
+	margin:10px 0;
+	position:relative;
+}
+#titlediv #title-prompt-text {
+	color:#BBBBBB;
+	font-size:1.7em;
+	padding:8px;
+	position:absolute;
+}
+#html2txt-button {
+	padding:8px 16px 0 8px;
+	float:left;
+}
+.html2txt {
+	cursor:pointer;
+	padding:0 0 5px 10px;
+}
+.html2txt img {
+	vertical-align:middle;
+}
+
+.wp-media-buttons span.mp-media-buttons-icon {
+    background: url("../images/html2txt-button.png") no-repeat scroll left top transparent;
+    display: inline-block;
+    height: 16px;
+    margin: 0 2px;
+    vertical-align: text-top;
+    width: 16px;
+}
+
+
+img#html2txt_loading {
+	display:none;
+	margin:-4px 0;
+	padding:0;
+}
+div#plaintextbox div.inside {
+	margin:0;
+}
+
+#plaintext {
+	font-family:"Courier",serif;
+	height:10em;
+	margin:0;
+	padding:0;
+	width:100%;
+}
+#view {
+	font-size-adjust:none;
+	font-style:normal;
+	font-variant:normal;
+	line-height:normal;
+	font-family:Verdana, Arial, "Bitstream Vera Sans", sans-serif;
+	border:none;
+	font-size:14px;
+	font-weight:normal;
+	padding:5px;	
+	text-decoration:none;
+	background-color:#EBEBEB;
+	color:#264761;
+	margin:1px;
+
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-khtml-border-radius: 3px;
+}
+input#view.submit:hover  {
+	color:#D54E21;
+	cursor:pointer;
+}
+
+/*upload*/
+div.mp_fileupload_cb_anim {
+	border:1px solid #000;
+	margin:1px;
+	width:11px;
+	height:11px;
+}
+
+/* swfupload */
+div.mp_fileupload_bar_foregrnd {
+	position: relative; 
+	height: 100%; 
+	width: 100%; 
+	background-color: #F9F9F9;
+}
+div.mp_fileupload_bar_backgrnd {
+	position:absolute;
+	height:11px;
+	width:11px;
+	margin:0px;
+	background-color:#8CBDD5;
+}
+
+/* htmupload */
+div.mp_fileupload_txt {
+	margin:5px 0 19px 12px;
+	position:absolute;
+}
+span.mp_fileupload_txt {
+	color:#21759B;
+	text-decoration:underline;
+}
+div.mp_fileupload_file {
+	position:relative;
+	margin:5px 10px;
+	height:24px;
+	width:132px;
+}
+.SI-FILES-STYLIZED label.mp_fileupload_file {
+	height:24px;
+	width:132px;
+	display:block;
+	overflow:hidden;
+background:transparent url(../images/space.png) repeat;
+	cursor:pointer;
+}
+.SI-FILES-STYLIZED label.mp_fileupload_file input{
+	height:24px;
+	width:132px;
+	margin:0;
+	opacity: 0;
+	-moz-opacity: 0;
+	filter:progid:DXImageTransform.Microsoft.Alpha(opacity=0);
+	position:relative;
+}
+
+/* custom fields */
+#side-sortables #mp_mailcustom #postcustomstuff td.left input, #side-sortables #pagecustomdiv #postcustomstuff td.left input {
+	margin:3px 3px 0;
+}
+#side-sortables #mp_mailcustom #postcustomstuff #the-list textarea {
+	height:85px;
+	margin:3px;
+}
+#side-sortables #mp_mailcustom #postcustomstuff .submit, #side-sortables #pagecustomdiv #postcustomstuff .submit {
+	padding:0 5px;
+}
+#mp_mailcustom #postcustomstuff .submit, #pagecustomdiv #postcustomstuff .submit {
+	border:0 none;
+	float:none;
+	padding:5px 8px;
+}
+#postcustomstuff .updatemailmeta, #postcustomstuff .deletemailmeta {
+	margin:auto;
+}
+#postcustomstuff #newmeta .submit {
+	padding:0 8px;
+}
+
+#to_list optgroup option {
+	padding-left:15px;
+}
+#customfieldsdiv #postcustomstuff .submit {
+    border: 0 none;
+    float: none;
+    padding: 0 8px 8px;
+}
+
+/* mail formats */
+
+
+.mail-format-tip {
+    color: #999999;
+    float: right;
+    font-size: 14px;
+    padding: 6px 10px;
+    text-transform: capitalize;
+}
+
+.mail-format-options {
+    background: none repeat scroll 0 0 #F9F9F9;
+    border: 1px solid #DFDFDF;
+    border-radius: 3px 3px 3px 3px;
+    height: 29px;
+    margin: 0 0 9px 1px;
+    padding: 0;
+}
+
+.mail-format-options a {
+    border-right: 1px solid #EBEBEB;
+    display: inline-block;
+    height: 16px;
+    padding: 6px;
+    position: relative;
+    text-decoration: none;
+    width: 16px;
+}
+
+.mail-format-options a.active, .mail-format-options a:focus, .mail-format-options a:hover {
+    background: none repeat scroll 0 0 #EEEEEE;
+    box-shadow: 0 0 10px #DDDDDD inset;
+    opacity: 1;
+    outline: medium none;
+}
+
+.mail-format-options a div {
+    height: 16px;
+    opacity: 0.4;
+    width: 16px;
+}
+
+.mail-format-options a.active div, .mail-format-options a:focus div, .mail-format-options a:hover div {
+    opacity: 1;
+}
+
+.mail-format-options .standard {
+    background: url("../images/mail-formats.png") no-repeat scroll transparent;
+}
+
+.mail-format-options .plaintext {
+    background: url("../images/mail-formats.png") no-repeat scroll -16px  transparent;
+}
+
+.mp-format-plaintext .mail-formats-fields {
+    display: block;
+}
+.mail-formats-fields .field {
+    margin-bottom: 10px;
+    overflow: hidden;
+}

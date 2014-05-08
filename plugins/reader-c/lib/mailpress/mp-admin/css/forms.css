@@ -1,0 +1,94 @@
+.mask {
+	display:none;
+}
+
+.conf_template {
+	margin:8px 0 2px 0;
+}
+
+.form_attributes span.description small {
+	font-family:"Courier new", serif;
+	font-size:11px;
+	font-style:normal;
+	color:#222;
+}
+
+div#form_settings ul.ui-tabs-nav li {
+	display:inline;
+	padding:3px 3px 2px;
+}
+
+div#form_settings ul.ui-tabs-nav li a {
+	text-decoration:none;
+}
+
+div#form_settings ul.ui-tabs-nav li.ui-state-default a {
+	color:#9a9a9a;
+}
+
+div#form_settings ul.ui-tabs-nav li.ui-state-active {
+	background-color:#fff;
+	border-bottom-color:#fff;
+}
+
+div#form_settings ul.ui-tabs-nav li.ui-state-active a {
+	color:#333;
+}
+
+div#form_settings ul.ui-tabs-nav li a:hover {
+	color:#333;
+}
+
+.settings_attributes span.description small {
+	font-family:"Courier new", serif;
+	font-size:11px;
+	font-style:normal;
+	color:#222;
+}
+
+.settings_options span.description small {
+	font-family:font-family:Verdana, Arial, "Bitstream Vera Sans", sans-serif;
+	font-size:11px;
+	font-style:normal;
+	color:#222;
+}
+
+.settings_html textarea {
+	font-family:"Courier new", serif;
+	font-size:11px;
+	font-style:normal;
+	color:#222;
+	width:99.5%;
+}
+
+label.inline {
+	display:inline;
+}
+
+div#form_settings ul.ui-tabs-nav li.ui-corner-top { 
+	border-top-left-radius: 4px;
+	border-top-right-radius: 4px;
+	-moz-border-radius-topleft: 4px;
+	-moz-border-radius-topright: 4px;
+	-webkit-border-top-left-radius: 4px;
+	-webkit-border-top-right-radius: 4px;
+	-khtml-border-top-left-radius: 4px;
+	-khtml-border-top-right-radius: 4px;
+}
+
+.settings_form_tabs {
+	padding:5px;
+
+	border-top-right-radius: 5px;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+	-moz-border-radius-topright: 5px;
+	-moz-border-radius-bottomleft: 5px;
+	-moz-border-radius-bottomright: 5px;
+	-webkit-border-top-right-radius: 5px;
+	-webkit-border-bottom-left-radius: 5px;
+	-webkit-border-bottom-right-radius: 5px;
+	-khtml-border-top-right-radius: 5px;
+	-khtml-border-bottom-left-radius: 5px;
+	-khtml-border-bottom-right-radius: 5px;
+}

@@ -42,17 +42,25 @@ function ajaxFeedSearch() {
 }
 
 
-// clone subscriber role for unlisted subscriber
+// clone subscriber role for unlisted subscriber and tutor
 function cloneRole(){
     global $wp_roles;
     if ( ! isset( $wp_roles ) )
         $wp_roles = new WP_Roles();
 
-    $adm = $wp_roles->get_role('subscriber');
+    $adm_sub = $wp_roles->get_role('subscriber');
     //Adding a 'new_role' with all admin caps
-    $wp_roles->add_role('subscriber-unlisted', 'Subscriber Unlisted', $adm->capabilities);
+    $wp_roles->add_role('subscriber-unlisted', 'Subscriber Unlisted', $adm_sub->capabilities);
+	
+	$adm_ed = $wp_roles->get_role('editor');
+    //Adding a 'new_role' with all editor caps
+    $wp_roles->add_role('tutor', 'Tutor', $adm_ed->capabilities);
+	
+    //Adding a 'new_role' with all editor caps
+    $wp_roles->add_role('tutor-lead', 'Lead Tutor', $adm_ed->capabilities);
 }
 add_action('init', 'cloneRole');
+
 
 // Handle what's linked in user profile https://gist.github.com/modemlooper/4574785
 function bp_select_links_in_profile() {
@@ -101,20 +109,34 @@ function update_extra_profile_fields($user_id, $posted_field_ids, $errors) {
     if ( empty( $errors ) ) {
         // Reset the errors var
         $errors = false;
-        // Now we've checked for required fields, lets save the values.
+        // Now we've checked for required fields, lets save the values and sync some data to WP_User for FeedWordPress.
         foreach ( (array) $posted_field_ids as $field_id ) {
 			$field = new BP_XProfile_Field($field_id);
-			//print_r($field);
-			if ($field->name == 'Blog'){
-				$blogurl = $_POST['field_'.$field_id];
+			switch ($field->name) {
+				case('Blog'):
+					$blogurl = $_POST['field_'.$field_id];
+					update_user_meta($user_id, 'blog', $blogurl);
+					break;
+				case('Blog RSS'):
+					$blogrss = $_POST['field_'.$field_id];
+					update_user_meta($user_id, 'blogrss', $blogrss);
+					break;
+				case('Searchable on members list'):
+					$onlist = $_POST['field_'.$field_id];
+					break;
+				case('Twitter'):
+					update_user_meta($user_id, 'fwp_twitter', $_POST['field_'.$field_id]);
+					break;
+				case('Delicious ID'):
+					update_user_meta($user_id, 'fwp_delicious', $_POST['field_'.$field_id]);
+					break;
+				case('Diigo ID'):
+					update_user_meta($user_id, 'fwp_diigo', $_POST['field_'.$field_id]);
+					break;
+				case('Slideshare ID'):
+					update_user_meta($user_id, 'fwp_slideshare', $_POST['field_'.$field_id]);
+					break;
 			}
-			if ($field->name == 'Blog RSS'){
-				$blogrss = $_POST['field_'.$field_id];
-			}
-			if ($field->name == 'Searchable on members list'){
-				$onlist = $_POST['field_'.$field_id];
-			}
-	
 		}
 	}
 	if (!$onlist && subscriber_type($user_id) == "subscriber"){
@@ -130,11 +152,11 @@ function update_extra_profile_fields($user_id, $posted_field_ids, $errors) {
 		$u->add_role( 'subscriber' );
 	}
 	
-	$linkid = get_user_meta($user_id, 'link_id', true);
+	$linkid = get_user_meta($user_id, 'fwp_link_id_'.get_current_blog_id(), true);
 	if ($blogrss != "" && $blogurl == "") $blogurl = $blogrss;
 	if ($blogrss != "" && $blogurl != ""){ 
 		$newid = make_link($user_id, $blogurl, $blogrss, $linkid);
-		update_user_meta($user_id, 'link_id', $newid);
+		update_user_meta($user_id, 'fwp_link_id_'.get_current_blog_id(), $newid);
 	}
 }
 // handle checkbox for listing subscribers
@@ -168,24 +190,25 @@ function make_link($user_id, $blogurl, $blogrss, $linkid = false) {
 			'link_category' => $contrib_cat,
 			'link_rss' => $blogrss
 			);
-	if( !function_exists( 'wp_insert_link' ) )
+	if( !function_exists( 'wp_insert_link' ) ) {
 		include_once( ABSPATH . '/wp-admin/includes/bookmark.php' );	
-			
+	}
 	if (!($linkid)) { // if no link insert new link
 		$linkid = wp_insert_link($new_link);
 		// update new link with notes
-		global $wpdb;
-		$esc_link_notes = $wpdb->escape($link_notes);
-		$result = $wpdb->query("
-			UPDATE $wpdb->links
-			SET link_notes = \"".$esc_link_notes."\" 
-			WHERE link_id='$linkid'
-		");
 	} else {
 		//update existing link
 		$new_link['link_id'] = $linkid;
 		$linkid = wp_insert_link($new_link);
 	}
+	// update notes in db as wp_insert_link escapes serialisation
+	global $wpdb;
+	$esc_link_notes = $wpdb->escape($link_notes);
+	$result = $wpdb->query("
+		UPDATE $wpdb->links
+		SET link_notes = \"".$esc_link_notes."\" 
+		WHERE link_id='$linkid'
+	");
 	return $linkid;
 }
 add_action( 'xprofile_updated_profile', 'update_extra_profile_fields',10, 3 );
@@ -197,6 +220,9 @@ function add_hide_profile_fields( $contactmethods ) {
 	unset($contactmethods['jabber']);
 	unset($contactmethods['yim']);
 	$contactmethods['fwp_twitter'] = 'Twitter';
+	$contactmethods['fwp_delicious'] = 'Delicious ID';
+	$contactmethods['fwp_diigo'] = 'Diigo ID';
+	$contactmethods['fwp_slideshare'] = 'Slideshare ID';
 	$contactmethods['blog'] = 'Blog';
 	$contactmethods['blogrss'] = 'Blog RSS Feed';
 return $contactmethods;

@@ -1,0 +1,247 @@
+<?php /* geotag */ 
+
+$xmap_types = 	array('NORMAL' 	=> __('Normal', MP_TXTDOM),
+				'SATELLITE' => __('Satellite', MP_TXTDOM),
+				'HYBRID' 	=> __('Hybrid', MP_TXTDOM),
+				'PHYSICAL' 	=> __('Physical', MP_TXTDOM)
+			);
+
+$ip = $_SERVER['REMOTE_ADDR'];
+$xlatlng = MP_Ip::get_latlng($ip);
+if (!$xlatlng || !isset($xlatlng['lat'])) $xlatlng = array('lat' => 48.8352, 'lng' => 2.4718);
+?>
+<settings>
+	<attributes>
+		<items>
+			<class><text></text></class>
+		</items>
+		<items>
+			<style><text></text></style>
+		</items>
+		<items>
+			<is>
+				<is>
+					<values><![CDATA[<?php echo serialize(array('disabled', 'readonly')); ?>]]></values>
+					<disabled><![CDATA[<?php echo serialize(array()); ?>]]></disabled>
+				</is>
+			</is>
+		</items>
+		<items>
+			<misc><misc><![CDATA[<?php _e("other attributes except 'name' & 'id'", MP_TXTDOM); ?>]]></misc></misc>
+		</items>
+	</attributes>
+	<controls>
+		<items>
+			<required>
+				<checkbox>
+					<text><![CDATA[<?php _e('Required', MP_TXTDOM); ?>]]></text>
+					<value>1</value>
+					<disabled>0</disabled>
+					<class>controls</class>
+				</checkbox>
+			</required>
+		</items>
+	</controls>
+<?php if ($this->field->form_incopy) : ?>
+	<options>
+		<items>
+			<incopy>
+				<checkbox>
+					<text><![CDATA[<?php _e('In copy', MP_TXTDOM); ?>]]></text>
+					<value>1</value>
+					<disabled>0</disabled>
+				</checkbox>
+			</incopy>
+		</items>
+	</options>
+<?php endif; ?>
+	<googlemap>
+		<items>
+			<only_text>
+				<only_text><![CDATA[<?php _e('<b>Map</b>', MP_TXTDOM); ?>]]></only_text>
+			</only_text>
+		</items>
+		<items>
+			<only_text>
+				<only_text><![CDATA[<?php _e('size : ', MP_TXTDOM); ?>]]></only_text>
+			</only_text>
+			<width>
+				<text>
+					<text><![CDATA[<?php _e('width ', MP_TXTDOM); ?>]]></text>
+					<size>8</size>
+					<default>435px</default>
+				</text>
+			</width>
+			<height>
+				<text>
+					<text><![CDATA[<?php _e('height ', MP_TXTDOM); ?>]]></text>
+					<size>8</size>
+					<default>200px</default>
+				</text>
+			</height>
+		</items>
+		<items>
+			<only_text>
+				<only_text><![CDATA[<?php _e('defaults : ', MP_TXTDOM); ?>]]></only_text>
+			</only_text>
+			<zoomlevel>
+				<select_num>
+					<text><![CDATA[<?php _e('zoom level ', MP_TXTDOM); ?>]]></text>
+					<min>1</min>
+					<max>16</max>
+					<default>7</default>
+				</select_num>
+			</zoomlevel>
+			<maptype>
+				<select_opt>
+					<text><![CDATA[<?php _e('map type ', MP_TXTDOM); ?>]]></text>
+					<values><![CDATA[<?php echo serialize($xmap_types); ?>]]></values>
+					<default>default</default>
+				</select_opt>
+			</maptype>
+		</items>
+		<items>
+			<lat>
+				<text>
+					<text><![CDATA[<?php _e('lat ', MP_TXTDOM); ?>]]></text>
+					<size>8</size>
+					<default><![CDATA[<?php echo $xlatlng['lat']; ?>]]></default>
+				</text>
+			</lat>
+			<lng>
+				<text>
+					<text><![CDATA[<?php _e('lng ', MP_TXTDOM); ?>]]></text>
+					<size>8</size>
+					<default><![CDATA[<?php echo $xlatlng['lng']; ?>]]></default>
+				</text>
+			</lng>
+		</items>
+		<items>
+			<only_text>
+				<only_text><![CDATA[<?php _e('controls : ', MP_TXTDOM); ?>]]></only_text>
+			</only_text>
+			<zoom>
+				<checkbox>
+					<text><![CDATA[<?php _e('zoom', MP_TXTDOM); ?>]]></text>
+					<value>1</value>
+					<disabled>0</disabled>
+				</checkbox>
+			</zoom>
+			<changemap>
+				<checkbox>
+					<text><![CDATA[<?php _e('change map', MP_TXTDOM); ?>]]></text>
+					<value>1</value>
+					<disabled>0</disabled>
+				</checkbox>
+			</changemap>
+			<center>
+				<checkbox>
+					<text><![CDATA[<?php _e('center', MP_TXTDOM); ?>]]></text>
+					<value>1</value>
+					<disabled>0</disabled>
+				</checkbox>
+			</center>
+			<rgeocode>
+				<checkbox>
+					<text><![CDATA[<?php _e('find place', MP_TXTDOM); ?>]]></text>
+					<value>1</value>
+					<disabled>0</disabled>
+				</checkbox>
+			</rgeocode>
+		</items>
+		<items>
+			<only_text>
+				<only_text><![CDATA[<?php _e('<b>Lat/Lng</b>', MP_TXTDOM); ?>]]></only_text>
+			</only_text>
+		</items>
+		<items>
+			<lat_lng>
+				<checkbox>
+					<text><![CDATA[<?php _e('show', MP_TXTDOM); ?>]]></text>
+					<value>1</value>
+					<disabled>0</disabled>
+				</checkbox>
+			</lat_lng>
+			<lat_lng_size>
+				<text>
+					<text><![CDATA[<?php _e('size', MP_TXTDOM); ?>]]></text>
+					<size>4</size>
+					<default><![CDATA[8]]></default>
+				</text>
+			</lat_lng_size>
+			<lat_lng_disabled>
+				<checkbox>
+					<text><![CDATA[<?php _e('disabled', MP_TXTDOM); ?>]]></text>
+					<value>1</value>
+					<disabled>0</disabled>
+				</checkbox>
+			</lat_lng_disabled>
+		</items>
+		<items>
+			<only_text>
+				<only_text><![CDATA[<?php _e('<b>Geocoding</b>', MP_TXTDOM); ?>]]></only_text>
+			</only_text>
+		</items>
+		<items>
+			<geocode>
+				<checkbox>
+					<text><![CDATA[<?php _e('show', MP_TXTDOM); ?>]]></text>
+					<value>1</value>
+					<disabled>0</disabled>
+				</checkbox>
+			</geocode>
+			<geocode_size>
+				<text>
+					<text><![CDATA[<?php _e('size', MP_TXTDOM); ?>]]></text>
+					<size>4</size>
+					<default><![CDATA[30]]></default>
+				</text>
+			</geocode_size>
+			<geocode_button>
+				<text>
+					<text><![CDATA[&#160;<?php _e('button ', MP_TXTDOM); ?>]]></text>
+					<size>8</size>
+					<default><![CDATA[<?php _e('Find', MP_TXTDOM); ?>]]></default>
+				</text>
+			</geocode_button>
+		</items>
+		<items>
+		</items>
+		<items>
+			<only_text>
+				<only_text><![CDATA[<?php _e('Already loaded : ', MP_TXTDOM); ?>]]></only_text>
+			</only_text>
+			<jQuery>
+				<checkbox>
+					<text><![CDATA[<?php _e('jQuery', MP_TXTDOM); ?>]]></text>
+					<value>1</value>
+					<disabled>0</disabled>
+				</checkbox>
+			</jQuery>
+			<gmap>
+				<checkbox>
+					<text><![CDATA[<?php _e('Google map api', MP_TXTDOM); ?>]]></text>
+					<value>1</value>
+					<disabled>0</disabled>
+				</checkbox>
+			</gmap>
+		</items>
+		<items>
+		</items>
+	</googlemap>
+<?php if ($protected) : ?>
+	<hiddens>
+		<options>
+			<protected></protected>
+		</options>
+	</hiddens>
+<?php endif; ?>
+	<tabs>
+		<attributes><![CDATA[<?php _e('Attributes', MP_TXTDOM); ?>]]></attributes>
+		<controls><![CDATA[<?php _e('Controls', MP_TXTDOM); ?>]]></controls>
+<?php if ($this->field->form_incopy) : ?>
+		<options><![CDATA[<?php _e('Options', MP_TXTDOM); ?>]]></options>
+<?php endif; ?>
+		<googlemap><![CDATA[<?php _e('GMap', MP_TXTDOM); ?>]]></googlemap>
+	</tabs>
+</settings>

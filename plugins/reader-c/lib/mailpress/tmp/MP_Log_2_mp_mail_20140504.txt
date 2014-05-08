@@ -1,0 +1,282 @@
+
+2014-05-04 23:07:54 000000 --  **** Start logging **** mp_mail *** level : 8191 **** (5.4) **** /2014/wp-admin/admin-ajax.php
+2014-05-04 23:07:54 000000 -- PHP [E_NOTICE] 8 : Undefined index: CoursePress (ocTEL) in /home/octel/wordpress-3.8/wp-content/plugins/mailpress/mp-includes/class/MP_Mail.class.php at line 86 
+2014-05-04 23:07:54 000000 -- PHP [E_NOTICE] 8 : Undefined index: CoursePress (ocTEL) in /home/octel/wordpress-3.8/wp-content/plugins/mailpress/mp-includes/class/MP_Themes.class.php at line 112 
+2014-05-04 23:07:54 000000 -- PHP [E_NOTICE] 8 : Undefined index: CoursePress (ocTEL) in /home/octel/wordpress-3.8/wp-content/plugins/mailpress/mp-includes/class/MP_Themes.class.php at line 112 
+2014-05-04 23:07:54 000000 -- PHP [E_NOTICE] 8 : Undefined index: CoursePress (ocTEL) in /home/octel/wordpress-3.8/wp-content/plugins/mailpress/mp-includes/class/MP_Mail.class.php at line 481 
+2014-05-04 23:07:54 000000 -- PHP [E_NOTICE] 8 : Undefined index: CoursePress (ocTEL) in /home/octel/wordpress-3.8/wp-content/plugins/mailpress/mp-includes/class/MP_Mail.class.php at line 482 
+2014-05-04 23:07:54 000000 -- PHP [E_NOTICE] 8 : Undefined index: CoursePress (ocTEL) in /home/octel/wordpress-3.8/wp-content/plugins/mailpress/mp-includes/class/MP_Themes.class.php at line 112 
+2014-05-04 23:07:54 000000 -- PHP [E_NOTICE] 8 : Undefined index: CoursePress (ocTEL) in /home/octel/wordpress-3.8/wp-content/plugins/mailpress/mp-includes/class/MP_Mail.class.php at line 500 
+2014-05-04 23:07:54 000000 -- PHP [E_NOTICE] 8 : Undefined index: CoursePress (ocTEL) in /home/octel/wordpress-3.8/wp-content/plugins/mailpress/mp-includes/class/MP_Mail.class.php at line 501 
+2014-05-04 23:07:54 000000 -- MAILPRESS [NOTICE] - Missing template : >> default.php << Folder : /home/octel/wordpress-3.8// 
+2014-05-04 23:07:54 000000 -- MAILPRESS [NOTICE] - Missing template : >> header.php << Folder : /home/octel/wordpress-3.8// 
+2014-05-04 23:07:54 000000 -- MAILPRESS [NOTICE] - Missing template : >> footer.php << Folder : /home/octel/wordpress-3.8// 
+2014-05-04 23:07:54 000000 -- PHP [E_NOTICE] 8 : Undefined index: CoursePress (ocTEL) in /home/octel/wordpress-3.8/wp-content/plugins/mailpress/mp-includes/class/MP_Mail.class.php at line 481 
+2014-05-04 23:07:54 000000 -- PHP [E_NOTICE] 8 : Undefined index: CoursePress (ocTEL) in /home/octel/wordpress-3.8/wp-content/plugins/mailpress/mp-includes/class/MP_Mail.class.php at line 482 
+2014-05-04 23:07:54 000000 -- PHP [E_NOTICE] 8 : Undefined index: CoursePress (ocTEL) in /home/octel/wordpress-3.8/wp-content/plugins/mailpress/mp-includes/class/MP_Themes.class.php at line 112 
+2014-05-04 23:07:54 000000 -- PHP [E_NOTICE] 8 : Undefined index: CoursePress (ocTEL) in /home/octel/wordpress-3.8/wp-content/plugins/mailpress/mp-includes/class/MP_Mail.class.php at line 500 
+2014-05-04 23:07:54 000000 -- PHP [E_NOTICE] 8 : Undefined index: CoursePress (ocTEL) in /home/octel/wordpress-3.8/wp-content/plugins/mailpress/mp-includes/class/MP_Mail.class.php at line 501 
+2014-05-04 23:07:54 000000 --  
+
+ ------------------- start of mail -------------------   
+ From : ocTEL Newsletter <octel@alt.ac.uk>  
+ To   : Maren Deepwell <maren.deepwell@alt.ac.uk>  
+ Subject : [ocTEL 2014] Comment: "Quest Badges" 
+   ------------------- plaintext -------------------  
+ ocTEL 2014
+Open Course in Technology Enhanced Learning
+
+* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ *
+! [ocTEL 2014] Comment: "Quest Badges" !
+* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ *
+May 4, 2014
+
+
+
+	New comment on your post “Quest Badges”
+Author : Belinda (IP: 127.0.0.1 , localhost)
+E-mail : belinda.green@northampton.ac.uk
+URL : 
+Whois : http://ws.arin.net/cgi-bin/whois.pl?queryinput=127.0.0.1
+Comment: 
+
+	Hi. I’ve completed 3 of the Week 0 badges so far…… Do I have to submit anything, for the week 0 Quest badge please, or will it automatically be added to my profile once the week has ended? 
+
+	You can see all comments on this post here: 
+http://octel.alt.ac.uk/2014/digital-badges/quest-badges/#comments 
+
+	Permalink: http://octel.alt.ac.uk/2014/digital-badges/quest-badges/#comments
+Trash it: http://octel.alt.ac.uk/2014/wp-admin/comment.php?action=trash&c=89
+Spam it: http://octel.alt.ac.uk/2014/wp-admin/comment.php?action=spam&c=89 
+
+							this mail is brought to you by MailPress
+
+View [http://octel.alt.ac.uk/2014/newsletter-subscriptions/?view=730d5f80305d659ced2e2f1a0c54c41b&id=30]
+Unsubscribe [http://octel.alt.ac.uk/2014/newsletter-subscriptions/?del=730d5f80305d659ced2e2f1a0c54c41b] 
+
+ ------------------- text/html -------------------  
+ <p>New comment on your post &#8220;Quest Badges&#8221;<br />
+Author : Belinda (IP: 127.0.0.1 , localhost)<br />
+E-mail : belinda.green@northampton.ac.uk<br />
+URL    : <br />
+Whois  : http://ws.arin.net/cgi-bin/whois.pl?queryinput=127.0.0.1<br />
+Comment: </p>
+<p>Hi. I&#8217;ve completed 3 of the Week 0 badges so far&#8230;&#8230;  Do I have to submit anything, for the week 0 Quest badge please, or will it automatically be added to my profile once the week has ended?</p>
+<p>You can see all comments on this post here: <br />
+http://octel.alt.ac.uk/2014/digital-badges/quest-badges/#comments</p>
+<p>Permalink: http://octel.alt.ac.uk/2014/digital-badges/quest-badges/#comments<br />
+Trash it: http://octel.alt.ac.uk/2014/wp-admin/comment.php?action=trash&#038;c=89<br />
+Spam it: http://octel.alt.ac.uk/2014/wp-admin/comment.php?action=spam&#038;c=89</p> 
+
+ ------------------ end of mail ------------------  
+
+
+2014-05-04 23:07:54 000000 -- MAILPRESS [NOTICE] - Disconnecting from octel (MP_Mail)
+2014-05-04 23:07:54 000000 -- MAILPRESS [NOTICE] - Disconnected (MP_Mail)
+2014-05-04 23:07:56 000000 -- MAILPRESS [NOTICE] - Connecting to octel (MP_Mail)
+2014-05-04 23:07:56 000000 -- MAILPRESS [NOTICE] - Connected (MP_Mail)
+2014-05-04 23:07:56 000000 -- MAILPRESS [NOTICE] - :::: MAIL SAVED ::::
+2014-05-04 23:07:56 000000 --  **** End   logging **** mp_mail *** level : 8191 **** status : TRUE 
+
+2014-05-04 23:11:55 000000 --  **** Start logging **** mp_mail *** level : 8191 **** (5.4) **** /2014/wp-admin/admin-ajax.php
+2014-05-04 23:11:55 000000 -- PHP [E_NOTICE] 8 : Undefined index: CoursePress (ocTEL) in /home/octel/wordpress-3.8/wp-content/plugins/mailpress/mp-includes/class/MP_Mail.class.php at line 86 
+2014-05-04 23:11:55 000000 -- PHP [E_NOTICE] 8 : Undefined index: CoursePress (ocTEL) in /home/octel/wordpress-3.8/wp-content/plugins/mailpress/mp-includes/class/MP_Themes.class.php at line 112 
+2014-05-04 23:11:55 000000 -- PHP [E_NOTICE] 8 : Undefined index: CoursePress (ocTEL) in /home/octel/wordpress-3.8/wp-content/plugins/mailpress/mp-includes/class/MP_Themes.class.php at line 112 
+2014-05-04 23:11:55 000000 -- PHP [E_NOTICE] 8 : Undefined index: CoursePress (ocTEL) in /home/octel/wordpress-3.8/wp-content/plugins/mailpress/mp-includes/class/MP_Mail.class.php at line 481 
+2014-05-04 23:11:55 000000 -- PHP [E_NOTICE] 8 : Undefined index: CoursePress (ocTEL) in /home/octel/wordpress-3.8/wp-content/plugins/mailpress/mp-includes/class/MP_Mail.class.php at line 482 
+2014-05-04 23:11:55 000000 -- PHP [E_NOTICE] 8 : Undefined index: CoursePress (ocTEL) in /home/octel/wordpress-3.8/wp-content/plugins/mailpress/mp-includes/class/MP_Themes.class.php at line 112 
+2014-05-04 23:11:55 000000 -- PHP [E_NOTICE] 8 : Undefined index: CoursePress (ocTEL) in /home/octel/wordpress-3.8/wp-content/plugins/mailpress/mp-includes/class/MP_Mail.class.php at line 500 
+2014-05-04 23:11:55 000000 -- PHP [E_NOTICE] 8 : Undefined index: CoursePress (ocTEL) in /home/octel/wordpress-3.8/wp-content/plugins/mailpress/mp-includes/class/MP_Mail.class.php at line 501 
+2014-05-04 23:11:55 000000 -- MAILPRESS [NOTICE] - Missing template : >> default.php << Folder : /home/octel/wordpress-3.8// 
+2014-05-04 23:11:55 000000 -- MAILPRESS [NOTICE] - Missing template : >> header.php << Folder : /home/octel/wordpress-3.8// 
+2014-05-04 23:11:55 000000 -- MAILPRESS [NOTICE] - Missing template : >> footer.php << Folder : /home/octel/wordpress-3.8// 
+2014-05-04 23:11:55 000000 -- PHP [E_NOTICE] 8 : Undefined index: CoursePress (ocTEL) in /home/octel/wordpress-3.8/wp-content/plugins/mailpress/mp-includes/class/MP_Mail.class.php at line 481 
+2014-05-04 23:11:55 000000 -- PHP [E_NOTICE] 8 : Undefined index: CoursePress (ocTEL) in /home/octel/wordpress-3.8/wp-content/plugins/mailpress/mp-includes/class/MP_Mail.class.php at line 482 
+2014-05-04 23:11:55 000000 -- PHP [E_NOTICE] 8 : Undefined index: CoursePress (ocTEL) in /home/octel/wordpress-3.8/wp-content/plugins/mailpress/mp-includes/class/MP_Themes.class.php at line 112 
+2014-05-04 23:11:55 000000 -- PHP [E_NOTICE] 8 : Undefined index: CoursePress (ocTEL) in /home/octel/wordpress-3.8/wp-content/plugins/mailpress/mp-includes/class/MP_Mail.class.php at line 500 
+2014-05-04 23:11:55 000000 -- PHP [E_NOTICE] 8 : Undefined index: CoursePress (ocTEL) in /home/octel/wordpress-3.8/wp-content/plugins/mailpress/mp-includes/class/MP_Mail.class.php at line 501 
+2014-05-04 23:11:55 000000 --  
+
+ ------------------- start of mail -------------------   
+ From : ocTEL Newsletter <octel@alt.ac.uk>  
+ To   : Maren Deepwell <maren.deepwell@alt.ac.uk>  
+ Subject : [ocTEL 2014] Comment: "Quest Badges" 
+   ------------------- plaintext -------------------  
+ ocTEL 2014
+Open Course in Technology Enhanced Learning
+
+* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ *
+! [ocTEL 2014] Comment: "Quest Badges" !
+* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ *
+May 4, 2014
+
+
+
+	New comment on your post “Quest Badges”
+Author : Martin Hawksey (IP: 127.0.0.1 , localhost)
+E-mail : m.hawksey@gmail.com
+URL : http://mashe.hawksey.info
+Whois : http://ws.arin.net/cgi-bin/whois.pl?queryinput=127.0.0.1
+Comment: 
+
+	Hi Belinda – you should have automatically received this – if you haven’t please contact octel-tech@alt.ac.uk [mailto:octel-tech@alt.ac.uk] 
+
+	You can see all comments on this post here: 
+http://octel.alt.ac.uk/2014/digital-badges/quest-badges/#comments 
+
+	Permalink: http://octel.alt.ac.uk/2014/digital-badges/quest-badges/#comments
+Trash it: http://octel.alt.ac.uk/2014/wp-admin/comment.php?action=trash&c=104
+Spam it: http://octel.alt.ac.uk/2014/wp-admin/comment.php?action=spam&c=104 
+
+							this mail is brought to you by MailPress
+
+View [http://octel.alt.ac.uk/2014/newsletter-subscriptions/?view=730d5f80305d659ced2e2f1a0c54c41b&id=31]
+Unsubscribe [http://octel.alt.ac.uk/2014/newsletter-subscriptions/?del=730d5f80305d659ced2e2f1a0c54c41b] 
+
+ ------------------- text/html -------------------  
+ <p>New comment on your post &#8220;Quest Badges&#8221;<br />
+Author : Martin Hawksey (IP: 127.0.0.1 , localhost)<br />
+E-mail : m.hawksey@gmail.com<br />
+URL    : http://mashe.hawksey.info<br />
+Whois  : http://ws.arin.net/cgi-bin/whois.pl?queryinput=127.0.0.1<br />
+Comment: </p>
+<p>Hi Belinda &#8211; you should have automatically received this &#8211; if you haven&#8217;t please contact <span title="mailto:octel-tech@alt.ac.uk" class="comment-link"><a href="mailto:octel-tech@alt.ac.uk"  class="comment-link">octel-tech@alt.ac.uk</a></span></p>
+<p>You can see all comments on this post here: <br />
+http://octel.alt.ac.uk/2014/digital-badges/quest-badges/#comments</p>
+<p>Permalink: http://octel.alt.ac.uk/2014/digital-badges/quest-badges/#comments<br />
+Trash it: http://octel.alt.ac.uk/2014/wp-admin/comment.php?action=trash&#038;c=104<br />
+Spam it: http://octel.alt.ac.uk/2014/wp-admin/comment.php?action=spam&#038;c=104</p> 
+
+ ------------------ end of mail ------------------  
+
+
+2014-05-04 23:11:55 000000 -- MAILPRESS [NOTICE] - Disconnecting from octel (MP_Mail)
+2014-05-04 23:11:55 000000 -- MAILPRESS [NOTICE] - Disconnected (MP_Mail)
+2014-05-04 23:11:57 000000 -- MAILPRESS [NOTICE] - Connecting to octel (MP_Mail)
+2014-05-04 23:11:57 000000 -- MAILPRESS [NOTICE] - Connected (MP_Mail)
+2014-05-04 23:11:57 000000 -- MAILPRESS [NOTICE] - :::: MAIL SAVED ::::
+2014-05-04 23:11:57 000000 --  **** End   logging **** mp_mail *** level : 8191 **** status : TRUE 
+
+2014-05-04 23:19:43 000000 --  **** Start logging **** mp_mail *** level : 8191 **** (5.4) **** /2014/wp-admin/admin.php?page=reader-c%2Flib%2Ffeedwordpress%2Fposts-page.php
+2014-05-04 23:19:43 000000 -- PHP [E_NOTICE] 8 : Undefined index: CoursePress (ocTEL) in /home/octel/wordpress-3.8/wp-content/plugins/mailpress/mp-includes/class/MP_Mail.class.php at line 481 
+2014-05-04 23:19:43 000000 -- PHP [E_NOTICE] 8 : Undefined index: CoursePress (ocTEL) in /home/octel/wordpress-3.8/wp-content/plugins/mailpress/mp-includes/class/MP_Mail.class.php at line 482 
+2014-05-04 23:19:43 000000 -- PHP [E_NOTICE] 8 : Undefined index: CoursePress (ocTEL) in /home/octel/wordpress-3.8/wp-content/plugins/mailpress/mp-includes/class/MP_Themes.class.php at line 112 
+2014-05-04 23:19:43 000000 -- PHP [E_NOTICE] 8 : Undefined index: CoursePress (ocTEL) in /home/octel/wordpress-3.8/wp-content/plugins/mailpress/mp-includes/class/MP_Mail.class.php at line 500 
+2014-05-04 23:19:43 000000 -- PHP [E_NOTICE] 8 : Undefined index: CoursePress (ocTEL) in /home/octel/wordpress-3.8/wp-content/plugins/mailpress/mp-includes/class/MP_Mail.class.php at line 501 
+2014-05-04 23:19:43 000000 -- MAILPRESS [NOTICE] - Missing template : >> default.php << Folder : /home/octel/wordpress-3.8// 
+2014-05-04 23:19:43 000000 -- MAILPRESS [NOTICE] - Missing template : >> header.php << Folder : /home/octel/wordpress-3.8// 
+2014-05-04 23:19:43 000000 -- MAILPRESS [NOTICE] - Missing template : >> footer.php << Folder : /home/octel/wordpress-3.8// 
+2014-05-04 23:19:43 000000 -- PHP [E_NOTICE] 8 : Undefined index: CoursePress (ocTEL) in /home/octel/wordpress-3.8/wp-content/plugins/mailpress/mp-includes/class/MP_Mail.class.php at line 481 
+2014-05-04 23:19:43 000000 -- PHP [E_NOTICE] 8 : Undefined index: CoursePress (ocTEL) in /home/octel/wordpress-3.8/wp-content/plugins/mailpress/mp-includes/class/MP_Mail.class.php at line 482 
+2014-05-04 23:19:43 000000 -- PHP [E_NOTICE] 8 : Undefined index: CoursePress (ocTEL) in /home/octel/wordpress-3.8/wp-content/plugins/mailpress/mp-includes/class/MP_Themes.class.php at line 112 
+2014-05-04 23:19:43 000000 -- PHP [E_NOTICE] 8 : Undefined index: CoursePress (ocTEL) in /home/octel/wordpress-3.8/wp-content/plugins/mailpress/mp-includes/class/MP_Mail.class.php at line 500 
+2014-05-04 23:19:43 000000 -- PHP [E_NOTICE] 8 : Undefined index: CoursePress (ocTEL) in /home/octel/wordpress-3.8/wp-content/plugins/mailpress/mp-includes/class/MP_Mail.class.php at line 501 
+2014-05-04 23:19:43 000000 --  
+
+ ------------------- start of mail -------------------   
+ From : ocTEL Newsletter <octel@alt.ac.uk>  
+ To   : msars <msars@imperial.ac.uk>  
+ Subject : [ocTEL 2014] #octel - App.net mentioned you in an update 
+   ------------------- plaintext -------------------  
+ ocTEL 2014
+Open Course in Technology Enhanced Learning
+
+* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ *
+! [ocTEL 2014] #octel - App.net mentioned you in an update !
+* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ *
+May 4, 2014
+
+
+
+	#octel – App.net mentioned you in an update: 
+
+	“ @msars [http://octel.alt.ac.uk/2014/members/msars/?utm_source=mailpress&utm_medium=email_link&utm_content=__32&utm_campaign=2014-05-04T22:19:43+00:00] …and don’t forget to vote on my badges survey https://polls.abrah.am/polls/5361f7cf1afb580002a3f892 #octel” 
+
+	To view and respond to the message, log in and visit: http://octel.alt.ac.uk/2014/?p=9747 
+
+	———————
+To disable these notifications please log in and go to: http://octel.alt.ac.uk/2014/members/msars/?utm_source=mailpress&utm_medium=email_link&utm_content=__32&utm_campaign=2014-05-04T22:19:43+00:00settings/notifications/ 
+
+							this mail is brought to you by MailPress
+
+View [http://octel.alt.ac.uk/2014/newsletter-subscriptions/?view=cdd7910381856edb212dc6980660677b&id=32]
+Unsubscribe [http://octel.alt.ac.uk/2014/newsletter-subscriptions/?del=cdd7910381856edb212dc6980660677b] 
+
+ ------------------- text/html -------------------  
+ <p>#octel &#8211; App.net mentioned you in an update:</p>
+<p>&#8220;<a href='http://octel.alt.ac.uk/2014/members/msars/?utm_source=mailpress&utm_medium=email_link&utm_content=__32&utm_campaign=2014-05-04T22:19:43+00:00' rel='nofollow'>@msars</a> &#8230;and don&#8217;t forget to vote on my badges survey https://polls.abrah.am/polls/5361f7cf1afb580002a3f892 #octel&#8221;</p>
+<p>To view and respond to the message, log in and visit: http://octel.alt.ac.uk/2014/?p=9747</p>
+<p>&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;<br />
+To disable these notifications please log in and go to: http://octel.alt.ac.uk/2014/members/msars/settings/notifications/</p> 
+
+ ------------------ end of mail ------------------  
+
+
+2014-05-04 23:19:43 000000 -- MAILPRESS [NOTICE] - Disconnecting from octel (MP_Mail)
+2014-05-04 23:19:43 000000 -- MAILPRESS [NOTICE] - Disconnected (MP_Mail)
+2014-05-04 23:19:45 000000 -- MAILPRESS [NOTICE] - Connecting to octel (MP_Mail)
+2014-05-04 23:19:45 000000 -- MAILPRESS [NOTICE] - Connected (MP_Mail)
+2014-05-04 23:19:45 000000 -- MAILPRESS [NOTICE] - :::: MAIL SAVED ::::
+2014-05-04 23:19:45 000000 --  **** End   logging **** mp_mail *** level : 8191 **** status : TRUE 
+
+2014-05-04 23:19:50 000000 --  **** Start logging **** mp_mail *** level : 8191 **** (5.4) **** /2014/wp-admin/admin.php?page=reader-c%2Flib%2Ffeedwordpress%2Fposts-page.php
+2014-05-04 23:19:50 000000 -- PHP [E_NOTICE] 8 : Undefined index: CoursePress (ocTEL) in /home/octel/wordpress-3.8/wp-content/plugins/mailpress/mp-includes/class/MP_Mail.class.php at line 481 
+2014-05-04 23:19:50 000000 -- PHP [E_NOTICE] 8 : Undefined index: CoursePress (ocTEL) in /home/octel/wordpress-3.8/wp-content/plugins/mailpress/mp-includes/class/MP_Mail.class.php at line 482 
+2014-05-04 23:19:50 000000 -- PHP [E_NOTICE] 8 : Undefined index: CoursePress (ocTEL) in /home/octel/wordpress-3.8/wp-content/plugins/mailpress/mp-includes/class/MP_Themes.class.php at line 112 
+2014-05-04 23:19:50 000000 -- PHP [E_NOTICE] 8 : Undefined index: CoursePress (ocTEL) in /home/octel/wordpress-3.8/wp-content/plugins/mailpress/mp-includes/class/MP_Mail.class.php at line 500 
+2014-05-04 23:19:50 000000 -- PHP [E_NOTICE] 8 : Undefined index: CoursePress (ocTEL) in /home/octel/wordpress-3.8/wp-content/plugins/mailpress/mp-includes/class/MP_Mail.class.php at line 501 
+2014-05-04 23:19:50 000000 -- MAILPRESS [NOTICE] - Missing template : >> default.php << Folder : /home/octel/wordpress-3.8// 
+2014-05-04 23:19:50 000000 -- MAILPRESS [NOTICE] - Missing template : >> header.php << Folder : /home/octel/wordpress-3.8// 
+2014-05-04 23:19:50 000000 -- MAILPRESS [NOTICE] - Missing template : >> footer.php << Folder : /home/octel/wordpress-3.8// 
+2014-05-04 23:19:50 000000 -- PHP [E_NOTICE] 8 : Undefined index: CoursePress (ocTEL) in /home/octel/wordpress-3.8/wp-content/plugins/mailpress/mp-includes/class/MP_Mail.class.php at line 481 
+2014-05-04 23:19:50 000000 -- PHP [E_NOTICE] 8 : Undefined index: CoursePress (ocTEL) in /home/octel/wordpress-3.8/wp-content/plugins/mailpress/mp-includes/class/MP_Mail.class.php at line 482 
+2014-05-04 23:19:50 000000 -- PHP [E_NOTICE] 8 : Undefined index: CoursePress (ocTEL) in /home/octel/wordpress-3.8/wp-content/plugins/mailpress/mp-includes/class/MP_Themes.class.php at line 112 
+2014-05-04 23:19:50 000000 -- PHP [E_NOTICE] 8 : Undefined index: CoursePress (ocTEL) in /home/octel/wordpress-3.8/wp-content/plugins/mailpress/mp-includes/class/MP_Mail.class.php at line 500 
+2014-05-04 23:19:50 000000 -- PHP [E_NOTICE] 8 : Undefined index: CoursePress (ocTEL) in /home/octel/wordpress-3.8/wp-content/plugins/mailpress/mp-includes/class/MP_Mail.class.php at line 501 
+2014-05-04 23:19:50 000000 --  
+
+ ------------------- start of mail -------------------   
+ From : ocTEL Newsletter <octel@alt.ac.uk>  
+ To   : msars <msars@imperial.ac.uk>  
+ Subject : [ocTEL 2014] #octel - App.net mentioned you in an update 
+   ------------------- plaintext -------------------  
+ ocTEL 2014
+Open Course in Technology Enhanced Learning
+
+* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ *
+! [ocTEL 2014] #octel - App.net mentioned you in an update !
+* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ *
+May 4, 2014
+
+
+
+	#octel – App.net mentioned you in an update: 
+
+	“ @msars [http://octel.alt.ac.uk/2014/members/msars/?utm_source=mailpress&utm_medium=email_link&utm_content=__33&utm_campaign=2014-05-04T22:19:50+00:00] You can checkout the #octel public room — go to http://patter-app.net/, authorise, click Public Rooms, search for ocTEL2014 under All Public Rooms, click Chat and you’re in. You can chat locally or […]“ 
+
+	To view and respond to the message, log in and visit: http://octel.alt.ac.uk/2014/?p=9749 
+
+	———————
+To disable these notifications please log in and go to: http://octel.alt.ac.uk/2014/members/msars/?utm_source=mailpress&utm_medium=email_link&utm_content=__33&utm_campaign=2014-05-04T22:19:50+00:00settings/notifications/ 
+
+							this mail is brought to you by MailPress
+
+View [http://octel.alt.ac.uk/2014/newsletter-subscriptions/?view=cdd7910381856edb212dc6980660677b&id=33]
+Unsubscribe [http://octel.alt.ac.uk/2014/newsletter-subscriptions/?del=cdd7910381856edb212dc6980660677b] 
+
+ ------------------- text/html -------------------  
+ <p>#octel &#8211; App.net mentioned you in an update:</p>
+<p>&#8220;<a href='http://octel.alt.ac.uk/2014/members/msars/?utm_source=mailpress&utm_medium=email_link&utm_content=__33&utm_campaign=2014-05-04T22:19:50+00:00' rel='nofollow'>@msars</a> You can checkout the #octel public room &#8212; go to http://patter-app.net/, authorise, click Public Rooms, search for ocTEL2014 under All Public Rooms, click Chat and you&#8217;re in. You can chat locally or [&hellip;]&#8220;</p>
+<p>To view and respond to the message, log in and visit: http://octel.alt.ac.uk/2014/?p=9749</p>
+<p>&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;<br />
+To disable these notifications please log in and go to: http://octel.alt.ac.uk/2014/members/msars/settings/notifications/</p> 
+
+ ------------------ end of mail ------------------  
+
+
+2014-05-04 23:19:50 000000 -- MAILPRESS [NOTICE] - Disconnecting from octel (MP_Mail)
+2014-05-04 23:19:50 000000 -- MAILPRESS [NOTICE] - Disconnected (MP_Mail)
+2014-05-04 23:19:52 000000 -- MAILPRESS [NOTICE] - Connecting to octel (MP_Mail)
+2014-05-04 23:19:52 000000 -- MAILPRESS [NOTICE] - Connected (MP_Mail)
+2014-05-04 23:19:52 000000 -- MAILPRESS [NOTICE] - :::: MAIL SAVED ::::
+2014-05-04 23:19:52 000000 --  **** End   logging **** mp_mail *** level : 8191 **** status : TRUE 

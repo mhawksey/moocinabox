@@ -24,7 +24,7 @@ class Reader_C_Item {
 	*/
 	public function create_post_type() {
 		$labels = array(
-			'name'                => _x( 'Items', 'Post Type General Name', 'reader_c' ),
+			'name'                => _x( 'Reader Items', 'Post Type General Name', 'reader_c' ),
 			'singular_name'       => _x( 'Item', 'Post Type Singular Name', 'reader_c' ),
 			'menu_name'           => __( 'Items', 'reader_c' ),
 			'parent_item_colon'   => __( 'Parent Item:', 'reader_c' ),
@@ -58,6 +58,6 @@ class Reader_C_Item {
 			'publicly_queryable'  => true,
 			'capability_type'     => 'post',
 		);
-		register_post_type( 'item', $args );
+		register_post_type( 'reader', $args );
 	}
 } // END class Post_Type_Template

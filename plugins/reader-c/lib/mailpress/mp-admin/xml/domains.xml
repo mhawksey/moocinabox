@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<domains>
+
+<!-- .com -->
+<!-- Aol -->
+	 <domain>
+		<name><![CDATA[Aol]]></name>
+		<link><![CDATA[http://www.aol.com/]]></link>
+		<icon><![CDATA[aol.png]]></icon>
+		<pattern><![CDATA[/@aol.com/i]]></pattern>
+	 </domain>
+
+<!-- GMail -->
+	 <domain>
+		<name><![CDATA[GMail]]></name>
+		<link><![CDATA[http://www.gmail.com/]]></link>
+		<icon><![CDATA[gmail.png]]></icon>
+		<pattern><![CDATA[/(@gmail.com|@googlemail.com)/i]]></pattern>
+	 </domain>
+
+<!-- Hotmail/Msn -->
+	 <domain>
+		<name><![CDATA[Hotmail]]></name>
+		<link><![CDATA[http://www.hotmail.com/]]></link>
+		<icon><![CDATA[hotmail.png]]></icon>
+		<pattern><![CDATA[/(@hotmail.com|@msn.com|@live.com)/i]]></pattern>
+	 </domain>
+
+<!-- Mobileme -->
+	 <domain>
+		<name><![CDATA[Mobileme]]></name>
+		<link><![CDATA[http://www.me.com/]]></link>
+		<icon><![CDATA[mobileme.png]]></icon>
+		<pattern><![CDATA[/@me.com/i]]></pattern>
+	 </domain>
+
+<!-- Yahoo -->
+	 <domain>
+		<name><![CDATA[Yahoo]]></name>
+		<link><![CDATA[http://www.yahoo.com/]]></link>
+		<icon><![CDATA[yahoo.png]]></icon>
+		<pattern><![CDATA[#(@yahoo.com|rocketmail.com)#i]]></pattern>
+	 </domain>
+
+<!-- .net -->
+	 <domain>
+		<name><![CDATA[La Poste]]></name>
+		<link><![CDATA[http://www.laposte.net/]]></link>
+		<icon><![CDATA[laposte.net.png]]></icon>
+		<pattern><![CDATA[/@laposte.net/i]]></pattern>
+	 </domain>
+	 <domain>
+		<name><![CDATA[Taltalk]]></name>
+		<link><![CDATA[http://www.taltalk.net/]]></link>
+		<icon><![CDATA[taltalk.net.png]]></icon>
+		<pattern><![CDATA[/@taltalk.net/i]]></pattern>
+	 </domain>
+
+<!-- France -->
+<!-- Wanadoo -->
+	 <domain>
+		<name><![CDATA[Orange]]></name>
+		<link><![CDATA[http://www.orange.fr/]]></link>
+		<icon><![CDATA[orange.fr.png]]></icon>
+		<pattern><![CDATA[/@wanadoo.fr/i]]></pattern>
+	 </domain>
+
+<!-- Italia -->
+<!-- Virgilio -->
+	 <domain>
+		<name><![CDATA[Virgilio]]></name>
+		<link><![CDATA[http://www.virgilio.it/]]></link>
+		<icon><![CDATA[virgilio.it.png]]></icon>
+		<pattern><![CDATA[/(@tin.it|@virgilio.it)/i]]></pattern>
+	 </domain>
+
+<!-- Libero -->
+	 <domain>
+		<name><![CDATA[Libero]]></name>
+		<link><![CDATA[http://www.libero.it/]]></link>
+		<icon><![CDATA[libero.it.png]]></icon>
+		<pattern><![CDATA[/@libero.it/i]]></pattern>
+	 </domain>
+
+<!-- Telecom italia -->
+	 <domain>
+		<name><![CDATA[Telecom italia]]></name>
+		<link><![CDATA[http://www.telecomitalia.it/]]></link>
+		<icon><![CDATA[telecomitalia.it.png]]></icon>
+		<pattern><![CDATA[/@alice.it/i]]></pattern>
+	 </domain>
+
+<!-- Deutchland -->
+<!-- Web.de -->
+	 <domain>
+		<name><![CDATA[Web.de]]></name>
+		<link><![CDATA[http://www.web.de/]]></link>
+		<icon><![CDATA[web.de.png]]></icon>
+		<pattern><![CDATA[/@web.de/i]]></pattern>
+	 </domain>
+
+
+	 <domain>
+		<pattern><![CDATA[//]]></pattern>
+	 </domain>
+</domains>

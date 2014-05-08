@@ -1,0 +1,13 @@
+﻿
+<!-- PRE-HANDLING -->
+
+	<!-- carriage return / line feed / tab -->
+		<item>
+			<s><![CDATA[/[\x0A|\x0D|\x09]+/i]]></s>
+			<r><![CDATA[ ]]></r>
+		</item>
+	<!-- Runs of spaces -->
+		<item>
+			<s><![CDATA[/[ ]{2,}/]]></s>
+			<r><![CDATA[ ]]></r>
+		</item>

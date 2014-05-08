@@ -1,0 +1,57 @@
+td.avatar {
+	text-align:center;
+	vertical-align:middle;
+}
+.form-table th.h1em, .form-table td.h1em {
+	height:1em;
+}
+.checklist {
+	vertical-align:top;
+}
+
+/* custom fields */
+
+#side-sortables #mp_usercustom #postcustomstuff td.left input, #side-sortables #pagecustomdiv #postcustomstuff td.left input {
+	margin:3px 3px 0;
+}
+#side-sortables #mp_usercustom #postcustomstuff #the-list textarea {
+	height:85px;
+	margin:3px;
+}
+#side-sortables #mp_usercustom #postcustomstuff .submit, #side-sortables #pagecustomdiv #postcustomstuff .submit {
+	padding:0 5px;
+}
+#mp_usercustom #postcustomstuff .submit, #pagecustomdiv #postcustomstuff .submit {
+	border:0 none;
+	float:none;
+	padding:5px 8px;
+}
+#postcustomstuff .updateusermeta, #postcustomstuff .deleteusermeta {
+	margin:auto;
+}
+#postcustomstuff #newmeta .submit {
+	padding:0 8px;
+}
+#customfieldsdiv #postcustomstuff .submit {
+    border: 0 none;
+    float: none;
+    padding: 0 8px 8px;
+}
+
+/* IP_info */
+
+div#IP_info div.inside div#meta_box_IP_info_map {
+	width:auto;
+	height:250px;
+	overflow:hidden;
+}
+
+/* mp_message */
+div#mp_message {
+	float:right;
+	margin-right:20px;
+}
+div#mp_message div#message p {
+	padding:2px;
+	margin:0;
+}

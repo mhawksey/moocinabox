@@ -1,0 +1,1283 @@
+
+<!-- HTML ENTITIES -->
+
+	<!-- Specials -->
+	<!-- 39 - ' -->
+		<item>
+			<s><![CDATA[/&(#39|#039|apos);/i]]></s>
+			<r><![CDATA[']]></r>
+		</item>
+
+	<!--  as listed in http://www.w3.org/TR/html4/sgml/entities.html -->
+    
+	<!-- Character entity references for ISO 8859-1 characters -->
+	<!-- 160 -   -->
+		<item>
+			<s><![CDATA[/&(#160|nbsp);/i]]></s>
+			<r><![CDATA[ ]]></r>
+		</item>
+	<!-- 161 - ¡ -->
+		<item>
+			<s><![CDATA[/&(#161|iexcl);/i]]></s>
+			<r><![CDATA[¡]]></r>
+		</item>
+	<!-- 162 - ¢ -->
+		<item>
+			<s><![CDATA[/&(#162|cent);/i]]></s>
+			<r><![CDATA[¢]]></r>
+		</item>
+	<!-- 163 - £ -->
+		<item>
+			<s><![CDATA[/&(#163|pound);/i]]></s>
+			<r><![CDATA[£]]></r>
+		</item>
+	<!-- 164 - ¤ -->
+		<item>
+			<s><![CDATA[/&(#164|curren);/i]]></s>
+			<r><![CDATA[¤]]></r>
+		</item>
+	<!-- 165 - ¥ -->
+		<item>
+			<s><![CDATA[/&(#165|yen);/i]]></s>
+			<r><![CDATA[¥]]></r>
+		</item>
+	<!-- 166 - ¦ -->
+		<item>
+			<s><![CDATA[/&(#166|brvbar);/i]]></s>
+			<r><![CDATA[¦]]></r>
+		</item>
+	<!-- 167 - § -->
+		<item>
+			<s><![CDATA[/&(#167|sect);/i]]></s>
+			<r><![CDATA[§]]></r>
+		</item>
+	<!-- 168 - ¨ -->
+		<item>
+			<s><![CDATA[/&(#168|uml);/i]]></s>
+			<r><![CDATA[¨]]></r>
+		</item>
+	<!-- 169 - © -->
+		<item>
+			<s><![CDATA[/&(#169|copy);/i]]></s>
+			<r><![CDATA[©]]></r>
+		</item>
+	<!-- 170 - ª -->
+		<item>
+			<s><![CDATA[/&(#170|ordf);/i]]></s>
+			<r><![CDATA[ª]]></r>
+		</item>
+	<!-- 171 - « -->
+		<item>
+			<s><![CDATA[/&(#171|laquo);/i]]></s>
+			<r><![CDATA[«]]></r>
+		</item>
+	<!-- 172 - ¬ -->
+		<item>
+			<s><![CDATA[/&(#172|not);/i]]></s>
+			<r><![CDATA[¬]]></r>
+		</item>
+	<!-- 173 - ­ -->
+		<item>
+			<s><![CDATA[/&(#173|shy);/i]]></s>
+			<r><![CDATA[­]]></r>
+		</item>
+	<!-- 174 - ® -->
+		<item>
+			<s><![CDATA[/&(#174|reg);/i]]></s>
+			<r><![CDATA[®]]></r>
+		</item>
+	<!-- 175 - ¯ -->
+		<item>
+			<s><![CDATA[/&(#175|macr);/i]]></s>
+			<r><![CDATA[¯]]></r>
+		</item>
+	<!-- 176 - ° -->
+		<item>
+			<s><![CDATA[/&(#176|deg);/i]]></s>
+			<r><![CDATA[°]]></r>
+		</item>
+	<!-- 177 - ± -->
+		<item>
+			<s><![CDATA[/&(#177|plusmn);/i]]></s>
+			<r><![CDATA[±]]></r>
+		</item>
+	<!-- 178 - ² -->
+		<item>
+			<s><![CDATA[/&(#178|sup2);/i]]></s>
+			<r><![CDATA[²]]></r>
+		</item>
+	<!-- 179 - ³ -->
+		<item>
+			<s><![CDATA[/&(#179|sup3);/i]]></s>
+			<r><![CDATA[³]]></r>
+		</item>
+	<!-- 180 - ´ -->
+		<item>
+			<s><![CDATA[/&(#180|acute);/i]]></s>
+			<r><![CDATA[´]]></r>
+		</item>
+	<!-- 181 - µ -->
+		<item>
+			<s><![CDATA[/&(#181|micro);/i]]></s>
+			<r><![CDATA[µ]]></r>
+		</item>
+	<!-- 182 - ¶ -->
+		<item>
+			<s><![CDATA[/&(#182|para);/i]]></s>
+			<r><![CDATA[¶]]></r>
+		</item>
+	<!-- 183 - · -->
+		<item>
+			<s><![CDATA[/&(#183|middot);/i]]></s>
+			<r><![CDATA[·]]></r>
+		</item>
+	<!-- 184 - ¸ -->
+		<item>
+			<s><![CDATA[/&(#184|cedil);/i]]></s>
+			<r><![CDATA[¸]]></r>
+		</item>
+	<!-- 185 - ¹ -->
+		<item>
+			<s><![CDATA[/&(#185|sup1);/i]]></s>
+			<r><![CDATA[¹]]></r>
+		</item>
+	<!-- 186 - º -->
+		<item>
+			<s><![CDATA[/&(#186|ordm);/i]]></s>
+			<r><![CDATA[º]]></r>
+		</item>
+	<!-- 187 - » -->
+		<item>
+			<s><![CDATA[/&(#187|raquo);/i]]></s>
+			<r><![CDATA[»]]></r>
+		</item>
+	<!-- 188 - ¼ -->
+		<item>
+			<s><![CDATA[/&(#188|frac14);/i]]></s>
+			<r><![CDATA[¼]]></r>
+		</item>
+	<!-- 189 - ½ -->
+		<item>
+			<s><![CDATA[/&(#189|frac12);/i]]></s>
+			<r><![CDATA[½]]></r>
+		</item>
+	<!-- 190 - ¾ -->
+		<item>
+			<s><![CDATA[/&(#190|frac34);/i]]></s>
+			<r><![CDATA[¾]]></r>
+		</item>
+	<!-- 191 - ¿ -->
+		<item>
+			<s><![CDATA[/&(#191|iquest);/i]]></s>
+			<r><![CDATA[¿]]></r>
+		</item>
+	<!-- 192 - À -->
+		<item>
+			<s><![CDATA[/&(#192|Agrave);/i]]></s>
+			<r><![CDATA[À]]></r>
+		</item>
+	<!-- 193 - Á -->
+		<item>
+			<s><![CDATA[/&(#193|Aacute);/i]]></s>
+			<r><![CDATA[Á]]></r>
+		</item>
+	<!-- 194 - Â -->
+		<item>
+			<s><![CDATA[/&(#194|Acirc);/i]]></s>
+			<r><![CDATA[Â]]></r>
+		</item>
+	<!-- 195 - Ã -->
+		<item>
+			<s><![CDATA[/&(#195|Atilde);/i]]></s>
+			<r><![CDATA[Ã]]></r>
+		</item>
+	<!-- 196 - Ä -->
+		<item>
+			<s><![CDATA[/&(#196|Auml);/i]]></s>
+			<r><![CDATA[Ä]]></r>
+		</item>
+	<!-- 197 - Å -->
+		<item>
+			<s><![CDATA[/&(#197|Aring);/i]]></s>
+			<r><![CDATA[Å]]></r>
+		</item>
+	<!-- 198 - Æ -->
+		<item>
+			<s><![CDATA[/&(#198|AElig);/i]]></s>
+			<r><![CDATA[Æ]]></r>
+		</item>
+	<!-- 199 - Ç -->
+		<item>
+			<s><![CDATA[/&(#199|Ccedil);/i]]></s>
+			<r><![CDATA[Ç]]></r>
+		</item>
+	<!-- 200 - È -->
+		<item>
+			<s><![CDATA[/&(#200|Egrave);/i]]></s>
+			<r><![CDATA[È]]></r>
+		</item>
+	<!-- 201 - É -->
+		<item>
+			<s><![CDATA[/&(#201|Eacute);/i]]></s>
+			<r><![CDATA[É]]></r>
+		</item>
+	<!-- 202 - Ê -->
+		<item>
+			<s><![CDATA[/&(#202|Ecirc);/i]]></s>
+			<r><![CDATA[Ê]]></r>
+		</item>
+	<!-- 203 - Ë -->
+		<item>
+			<s><![CDATA[/&(#203|Euml);/i]]></s>
+			<r><![CDATA[Ë]]></r>
+		</item>
+	<!-- 204 - Ì -->
+		<item>
+			<s><![CDATA[/&(#204|Igrave);/i]]></s>
+			<r><![CDATA[Ì]]></r>
+		</item>
+	<!-- 205 - Í -->
+		<item>
+			<s><![CDATA[/&(#205|Iacute);/i]]></s>
+			<r><![CDATA[Í]]></r>
+		</item>
+	<!-- 206 - Î -->
+		<item>
+			<s><![CDATA[/&(#206|Icirc);/i]]></s>
+			<r><![CDATA[Î]]></r>
+		</item>
+	<!-- 207 - Ï -->
+		<item>
+			<s><![CDATA[/&(#207|Iuml);/i]]></s>
+			<r><![CDATA[Ï]]></r>
+		</item>
+	<!-- 208 - Ð -->
+		<item>
+			<s><![CDATA[/&(#208|ETH);/i]]></s>
+			<r><![CDATA[Ð]]></r>
+		</item>
+	<!-- 209 - Ñ -->
+		<item>
+			<s><![CDATA[/&(#209|Ntilde);/i]]></s>
+			<r><![CDATA[Ñ]]></r>
+		</item>
+	<!-- 210 - Ò -->
+		<item>
+			<s><![CDATA[/&(#210|Ograve);/i]]></s>
+			<r><![CDATA[Ò]]></r>
+		</item>
+	<!-- 211 - Ó -->
+		<item>
+			<s><![CDATA[/&(#211|Oacute);/i]]></s>
+			<r><![CDATA[Ó]]></r>
+		</item>
+	<!-- 212 - Ô -->
+		<item>
+			<s><![CDATA[/&(#212|Ocirc);/i]]></s>
+			<r><![CDATA[Ô]]></r>
+		</item>
+	<!-- 213 - Õ -->
+		<item>
+			<s><![CDATA[/&(#213|Otilde);/i]]></s>
+			<r><![CDATA[Õ]]></r>
+		</item>
+	<!-- 214 - Ö -->
+		<item>
+			<s><![CDATA[/&(#214|Ouml);/i]]></s>
+			<r><![CDATA[Ö]]></r>
+		</item>
+	<!-- 215 - × -->
+		<item>
+			<s><![CDATA[/&(#215|times);/i]]></s>
+			<r><![CDATA[×]]></r>
+		</item>
+	<!-- 216 - Ø -->
+		<item>
+			<s><![CDATA[/&(#216|Oslash);/i]]></s>
+			<r><![CDATA[Ø]]></r>
+		</item>
+	<!-- 217 - Ù -->
+		<item>
+			<s><![CDATA[/&(#217|Ugrave);/i]]></s>
+			<r><![CDATA[Ù]]></r>
+		</item>
+	<!-- 218 - Ú -->
+		<item>
+			<s><![CDATA[/&(#218|Uacute);/i]]></s>
+			<r><![CDATA[Ú]]></r>
+		</item>
+	<!-- 219 - Û -->
+		<item>
+			<s><![CDATA[/&(#219|Ucirc);/i]]></s>
+			<r><![CDATA[Û]]></r>
+		</item>
+	<!-- 220 - Ü -->
+		<item>
+			<s><![CDATA[/&(#220|Uuml);/i]]></s>
+			<r><![CDATA[Ü]]></r>
+		</item>
+	<!-- 221 - Ý -->
+		<item>
+			<s><![CDATA[/&(#221|Yacute);/i]]></s>
+			<r><![CDATA[Ý]]></r>
+		</item>
+	<!-- 222 - Þ -->
+		<item>
+			<s><![CDATA[/&(#222|THORN);/i]]></s>
+			<r><![CDATA[Þ]]></r>
+		</item>
+	<!-- 223 - ß -->
+		<item>
+			<s><![CDATA[/&(#223|szlig);/i]]></s>
+			<r><![CDATA[ß]]></r>
+		</item>
+	<!-- 224 - à -->
+		<item>
+			<s><![CDATA[/&(#224|agrave);/i]]></s>
+			<r><![CDATA[à]]></r>
+		</item>
+	<!-- 225 - á -->
+		<item>
+			<s><![CDATA[/&(#225|aacute);/i]]></s>
+			<r><![CDATA[á]]></r>
+		</item>
+	<!-- 226 - â -->
+		<item>
+			<s><![CDATA[/&(#226|acirc);/i]]></s>
+			<r><![CDATA[â]]></r>
+		</item>
+	<!-- 227 - ã -->
+		<item>
+			<s><![CDATA[/&(#227|atilde);/i]]></s>
+			<r><![CDATA[ã]]></r>
+		</item>
+	<!-- 228 - ä -->
+		<item>
+			<s><![CDATA[/&(#228|auml);/i]]></s>
+			<r><![CDATA[ä]]></r>
+		</item>
+	<!-- 229 - å -->
+		<item>
+			<s><![CDATA[/&(#229|aring);/i]]></s>
+			<r><![CDATA[å]]></r>
+		</item>
+	<!-- 230 - æ -->
+		<item>
+			<s><![CDATA[/&(#230|aelig);/i]]></s>
+			<r><![CDATA[æ]]></r>
+		</item>
+	<!-- 231 - ç -->
+		<item>
+			<s><![CDATA[/&(#231|ccedil);/i]]></s>
+			<r><![CDATA[ç]]></r>
+		</item>
+	<!-- 232 - è -->
+		<item>
+			<s><![CDATA[/&(#232|egrave);/i]]></s>
+			<r><![CDATA[è]]></r>
+		</item>
+	<!-- 233 - é -->
+		<item>
+			<s><![CDATA[/&(#233|eacute);/i]]></s>
+			<r><![CDATA[é]]></r>
+		</item>
+	<!-- 234 - ê -->
+		<item>
+			<s><![CDATA[/&(#234|ecirc);/i]]></s>
+			<r><![CDATA[ê]]></r>
+		</item>
+	<!-- 235 - ë -->
+		<item>
+			<s><![CDATA[/&(#235|euml);/i]]></s>
+			<r><![CDATA[ë]]></r>
+		</item>
+	<!-- 236 - ì -->
+		<item>
+			<s><![CDATA[/&(#236|igrave);/i]]></s>
+			<r><![CDATA[ì]]></r>
+		</item>
+	<!-- 237 - í -->
+		<item>
+			<s><![CDATA[/&(#237|iacute);/i]]></s>
+			<r><![CDATA[í]]></r>
+		</item>
+	<!-- 238 - î -->
+		<item>
+			<s><![CDATA[/&(#238|icirc);/i]]></s>
+			<r><![CDATA[î]]></r>
+		</item>
+	<!-- 239 - ï -->
+		<item>
+			<s><![CDATA[/&(#239|iuml);/i]]></s>
+			<r><![CDATA[ï]]></r>
+		</item>
+	<!-- 240 - ð -->
+		<item>
+			<s><![CDATA[/&(#240|eth);/i]]></s>
+			<r><![CDATA[ð]]></r>
+		</item>
+	<!-- 241 - ñ -->
+		<item>
+			<s><![CDATA[/&(#241|ntilde);/i]]></s>
+			<r><![CDATA[ñ]]></r>
+		</item>
+	<!-- 242 - ò -->
+		<item>
+			<s><![CDATA[/&(#242|ograve);/i]]></s>
+			<r><![CDATA[ò]]></r>
+		</item>
+	<!-- 243 - ó -->
+		<item>
+			<s><![CDATA[/&(#243|oacute);/i]]></s>
+			<r><![CDATA[ó]]></r>
+		</item>
+	<!-- 244 - ô -->
+		<item>
+			<s><![CDATA[/&(#244|ocirc);/i]]></s>
+			<r><![CDATA[ô]]></r>
+		</item>
+	<!-- 245 - õ -->
+		<item>
+			<s><![CDATA[/&(#245|otilde);/i]]></s>
+			<r><![CDATA[õ]]></r>
+		</item>
+	<!-- 246 - ö -->
+		<item>
+			<s><![CDATA[/&(#246|ouml);/i]]></s>
+			<r><![CDATA[ö]]></r>
+		</item>
+	<!-- 247 - ÷ -->
+		<item>
+			<s><![CDATA[/&(#247|divide);/i]]></s>
+			<r><![CDATA[÷]]></r>
+		</item>
+	<!-- 248 - ø -->
+		<item>
+			<s><![CDATA[/&(#248|oslash);/i]]></s>
+			<r><![CDATA[ø]]></r>
+		</item>
+	<!-- 249 - ù -->
+		<item>
+			<s><![CDATA[/&(#249|ugrave);/i]]></s>
+			<r><![CDATA[ù]]></r>
+		</item>
+	<!-- 250 - ú -->
+		<item>
+			<s><![CDATA[/&(#250|uacute);/i]]></s>
+			<r><![CDATA[ú]]></r>
+		</item>
+	<!-- 251 - û -->
+		<item>
+			<s><![CDATA[/&(#251|ucirc);/i]]></s>
+			<r><![CDATA[û]]></r>
+		</item>
+	<!-- 252 - ü -->
+		<item>
+			<s><![CDATA[/&(#252|uuml);/i]]></s>
+			<r><![CDATA[ü]]></r>
+		</item>
+	<!-- 253 - ý -->
+		<item>
+			<s><![CDATA[/&(#253|yacute);/i]]></s>
+			<r><![CDATA[ý]]></r>
+		</item>
+	<!-- 254 - þ -->
+		<item>
+			<s><![CDATA[/&(#254|thorn);/i]]></s>
+			<r><![CDATA[þ]]></r>
+		</item>
+	<!-- 255 - ÿ -->
+		<item>
+			<s><![CDATA[/&(#255|yuml);/i]]></s>
+			<r><![CDATA[ÿ]]></r>
+		</item>
+
+	<!-- Character entity references for symbols, mathematical symbols, and Greek letters -->
+	<!-- 402 - ƒ -->
+		<item>
+			<s><![CDATA[/&(#402|fnof);/i]]></s>
+			<r><![CDATA[ƒ]]></r>
+		</item>
+	<!-- 913 - Α -->
+		<item>
+			<s><![CDATA[/&(#913|Alpha);/i]]></s>
+			<r><![CDATA[Α]]></r>
+		</item>
+	<!-- 914 - Β -->
+		<item>
+			<s><![CDATA[/&(#914|Beta);/i]]></s>
+			<r><![CDATA[Β]]></r>
+		</item>
+	<!-- 915 - Γ -->
+		<item>
+			<s><![CDATA[/&(#915|Gamma);/i]]></s>
+			<r><![CDATA[Γ]]></r>
+		</item>
+	<!-- 916 - Δ -->
+		<item>
+			<s><![CDATA[/&(#916|Delta);/i]]></s>
+			<r><![CDATA[Δ]]></r>
+		</item>
+	<!-- 917 - Ε -->
+		<item>
+			<s><![CDATA[/&(#917|Epsilon);/i]]></s>
+			<r><![CDATA[Ε]]></r>
+		</item>
+	<!-- 918 - Ζ -->
+		<item>
+			<s><![CDATA[/&(#918|Zeta);/i]]></s>
+			<r><![CDATA[Ζ]]></r>
+		</item>
+	<!-- 919 - Η -->
+		<item>
+			<s><![CDATA[/&(#919|Eta);/i]]></s>
+			<r><![CDATA[Η]]></r>
+		</item>
+	<!-- 920 - Θ -->
+		<item>
+			<s><![CDATA[/&(#920|Theta);/i]]></s>
+			<r><![CDATA[Θ]]></r>
+		</item>
+	<!-- 921 - Ι -->
+		<item>
+			<s><![CDATA[/&(#921|Iota);/i]]></s>
+			<r><![CDATA[Ι]]></r>
+		</item>
+	<!-- 922 - Κ -->
+		<item>
+			<s><![CDATA[/&(#922|Kappa);/i]]></s>
+			<r><![CDATA[Κ]]></r>
+		</item>
+	<!-- 923 - Λ -->
+		<item>
+			<s><![CDATA[/&(#923|Lambda);/i]]></s>
+			<r><![CDATA[Λ]]></r>
+		</item>
+	<!-- 924 - Μ -->
+		<item>
+			<s><![CDATA[/&(#924|Mu);/i]]></s>
+			<r><![CDATA[Μ]]></r>
+		</item>
+	<!-- 925 - Ν -->
+		<item>
+			<s><![CDATA[/&(#925|Nu);/i]]></s>
+			<r><![CDATA[Ν]]></r>
+		</item>
+	<!-- 926 - Ξ -->
+		<item>
+			<s><![CDATA[/&(#926|Xi);/i]]></s>
+			<r><![CDATA[Ξ]]></r>
+		</item>
+	<!-- 927 - Ο -->
+		<item>
+			<s><![CDATA[/&(#927|Omicron);/i]]></s>
+			<r><![CDATA[Ο]]></r>
+		</item>
+	<!-- 928 - Π -->
+		<item>
+			<s><![CDATA[/&(#928|Pi);/i]]></s>
+			<r><![CDATA[Π]]></r>
+		</item>
+	<!-- 929 - Ρ -->
+		<item>
+			<s><![CDATA[/&(#929|Rho);/i]]></s>
+			<r><![CDATA[Ρ]]></r>
+		</item>
+	<!-- 931 - Σ -->
+		<item>
+			<s><![CDATA[/&(#931|Sigma);/i]]></s>
+			<r><![CDATA[Σ]]></r>
+		</item>
+	<!-- 932 - Τ -->
+		<item>
+			<s><![CDATA[/&(#932|Tau);/i]]></s>
+			<r><![CDATA[Τ]]></r>
+		</item>
+	<!-- 933 - Υ -->
+		<item>
+			<s><![CDATA[/&(#933|Upsilon);/i]]></s>
+			<r><![CDATA[Υ]]></r>
+		</item>
+	<!-- 934 - Φ -->
+		<item>
+			<s><![CDATA[/&(#934|Phi);/i]]></s>
+			<r><![CDATA[Φ]]></r>
+		</item>
+	<!-- 935 - Χ -->
+		<item>
+			<s><![CDATA[/&(#935|Chi);/i]]></s>
+			<r><![CDATA[Χ]]></r>
+		</item>
+	<!-- 936 - Ψ -->
+		<item>
+			<s><![CDATA[/&(#936|Psi);/i]]></s>
+			<r><![CDATA[Ψ]]></r>
+		</item>
+	<!-- 937 - Ω -->
+		<item>
+			<s><![CDATA[/&(#937|Omega);/i]]></s>
+			<r><![CDATA[Ω]]></r>
+		</item>
+	<!-- 945 - α -->
+		<item>
+			<s><![CDATA[/&(#945|alpha);/i]]></s>
+			<r><![CDATA[α]]></r>
+		</item>
+	<!-- 946 - β -->
+		<item>
+			<s><![CDATA[/&(#946|beta);/i]]></s>
+			<r><![CDATA[β]]></r>
+		</item>
+	<!-- 947 - γ -->
+		<item>
+			<s><![CDATA[/&(#947|gamma);/i]]></s>
+			<r><![CDATA[γ]]></r>
+		</item>
+	<!-- 948 - δ -->
+		<item>
+			<s><![CDATA[/&(#948|delta);/i]]></s>
+			<r><![CDATA[δ]]></r>
+		</item>
+	<!-- 949 - ε -->
+		<item>
+			<s><![CDATA[/&(#949|epsilon);/i]]></s>
+			<r><![CDATA[ε]]></r>
+		</item>
+	<!-- 950 - ζ -->
+		<item>
+			<s><![CDATA[/&(#950|zeta);/i]]></s>
+			<r><![CDATA[ζ]]></r>
+		</item>
+	<!-- 951 - η -->
+		<item>
+			<s><![CDATA[/&(#951|eta);/i]]></s>
+			<r><![CDATA[η]]></r>
+		</item>
+	<!-- 952 - θ -->
+		<item>
+			<s><![CDATA[/&(#952|theta);/i]]></s>
+			<r><![CDATA[θ]]></r>
+		</item>
+	<!-- 953 - ι -->
+		<item>
+			<s><![CDATA[/&(#953|iota);/i]]></s>
+			<r><![CDATA[ι]]></r>
+		</item>
+	<!-- 954 - κ -->
+		<item>
+			<s><![CDATA[/&(#954|kappa);/i]]></s>
+			<r><![CDATA[κ]]></r>
+		</item>
+	<!-- 955 - λ -->
+		<item>
+			<s><![CDATA[/&(#955|lambda);/i]]></s>
+			<r><![CDATA[λ]]></r>
+		</item>
+	<!-- 956 - μ -->
+		<item>
+			<s><![CDATA[/&(#956|mu);/i]]></s>
+			<r><![CDATA[μ]]></r>
+		</item>
+	<!-- 957 - ν -->
+		<item>
+			<s><![CDATA[/&(#957|nu);/i]]></s>
+			<r><![CDATA[ν]]></r>
+		</item>
+	<!-- 958 - ξ -->
+		<item>
+			<s><![CDATA[/&(#958|xi);/i]]></s>
+			<r><![CDATA[ξ]]></r>
+		</item>
+	<!-- 959 - ο -->
+		<item>
+			<s><![CDATA[/&(#959|omicron);/i]]></s>
+			<r><![CDATA[ο]]></r>
+		</item>
+	<!-- 960 - π -->
+		<item>
+			<s><![CDATA[/&(#960|pi);/i]]></s>
+			<r><![CDATA[π]]></r>
+		</item>
+	<!-- 961 - ρ -->
+		<item>
+			<s><![CDATA[/&(#961|rho);/i]]></s>
+			<r><![CDATA[ρ]]></r>
+		</item>
+	<!-- 962 - ς -->
+		<item>
+			<s><![CDATA[/&(#962|sigmaf);/i]]></s>
+			<r><![CDATA[ς]]></r>
+		</item>
+	<!-- 963 - σ -->
+		<item>
+			<s><![CDATA[/&(#963|sigma);/i]]></s>
+			<r><![CDATA[σ]]></r>
+		</item>
+	<!-- 964 - τ -->
+		<item>
+			<s><![CDATA[/&(#964|tau);/i]]></s>
+			<r><![CDATA[τ]]></r>
+		</item>
+	<!-- 965 - υ -->
+		<item>
+			<s><![CDATA[/&(#965|upsilon);/i]]></s>
+			<r><![CDATA[υ]]></r>
+		</item>
+	<!-- 966 - φ -->
+		<item>
+			<s><![CDATA[/&(#966|phi);/i]]></s>
+			<r><![CDATA[φ]]></r>
+		</item>
+	<!-- 967 - χ -->
+		<item>
+			<s><![CDATA[/&(#967|chi);/i]]></s>
+			<r><![CDATA[χ]]></r>
+		</item>
+	<!-- 968 - ψ -->
+		<item>
+			<s><![CDATA[/&(#968|psi);/i]]></s>
+			<r><![CDATA[ψ]]></r>
+		</item>
+	<!-- 969 - ω -->
+		<item>
+			<s><![CDATA[/&(#969|omega);/i]]></s>
+			<r><![CDATA[ω]]></r>
+		</item>
+	<!-- 977 - ϑ -->
+		<item>
+			<s><![CDATA[/&(#977|thetasym);/i]]></s>
+			<r><![CDATA[ϑ]]></r>
+		</item>
+	<!-- 978 - ϒ -->
+		<item>
+			<s><![CDATA[/&(#978|upsih);/i]]></s>
+			<r><![CDATA[ϒ]]></r>
+		</item>
+	<!-- 982 - ϖ -->
+		<item>
+			<s><![CDATA[/&(#982|piv);/i]]></s>
+			<r><![CDATA[ϖ]]></r>
+		</item>
+	<!-- 8226 - • -->
+		<item>
+			<s><![CDATA[/&(#8226|bull);/i]]></s>
+			<r><![CDATA[•]]></r>
+		</item>
+	<!-- 8230 - … -->
+		<item>
+			<s><![CDATA[/&(#8230|hellip);/i]]></s>
+			<r><![CDATA[…]]></r>
+		</item>
+	<!-- 8242 - ′ -->
+		<item>
+			<s><![CDATA[/&(#8242|prime);/i]]></s>
+			<r><![CDATA[′]]></r>
+		</item>
+	<!-- 8243 - ″ -->
+		<item>
+			<s><![CDATA[/&(#8243|Prime);/i]]></s>
+			<r><![CDATA[″]]></r>
+		</item>
+	<!-- 8254 - ‾ -->
+		<item>
+			<s><![CDATA[/&(#8254|oline);/i]]></s>
+			<r><![CDATA[‾]]></r>
+		</item>
+	<!-- 8260 - ⁄ -->
+		<item>
+			<s><![CDATA[/&(#8260|frasl);/i]]></s>
+			<r><![CDATA[⁄]]></r>
+		</item>
+	<!-- 8465 - ℑ -->
+		<item>
+			<s><![CDATA[/&(#8465|image);/i]]></s>
+			<r><![CDATA[ℑ]]></r>
+		</item>
+	<!-- 8472 - ℘ -->
+		<item>
+			<s><![CDATA[/&(#8472|weierp);/i]]></s>
+			<r><![CDATA[℘]]></r>
+		</item>
+	<!-- 8476 - ℜ -->
+		<item>
+			<s><![CDATA[/&(#8476|real);/i]]></s>
+			<r><![CDATA[ℜ]]></r>
+		</item>
+	<!-- 8482 - ™ -->
+		<item>
+			<s><![CDATA[/&(#8482|trade);/i]]></s>
+			<r><![CDATA[™]]></r>
+		</item>
+	<!-- 8501 - ℵ -->
+		<item>
+			<s><![CDATA[/&(#8501|alefsym);/i]]></s>
+			<r><![CDATA[ℵ]]></r>
+		</item>
+	<!-- 8592 - ← -->
+		<item>
+			<s><![CDATA[/&(#8592|larr);/i]]></s>
+			<r><![CDATA[←]]></r>
+		</item>
+	<!-- 8593 - ↑ -->
+		<item>
+			<s><![CDATA[/&(#8593|uarr);/i]]></s>
+			<r><![CDATA[↑]]></r>
+		</item>
+	<!-- 8594 - → -->
+		<item>
+			<s><![CDATA[/&(#8594|rarr);/i]]></s>
+			<r><![CDATA[→]]></r>
+		</item>
+	<!-- 8595 - ↓ -->
+		<item>
+			<s><![CDATA[/&(#8595|darr);/i]]></s>
+			<r><![CDATA[↓]]></r>
+		</item>
+	<!-- 8596 - ↔ -->
+		<item>
+			<s><![CDATA[/&(#8596|harr);/i]]></s>
+			<r><![CDATA[↔]]></r>
+		</item>
+	<!-- 8629 - ↵ -->
+		<item>
+			<s><![CDATA[/&(#8629|crarr);/i]]></s>
+			<r><![CDATA[↵]]></r>
+		</item>
+	<!-- 8656 - ⇐ -->
+		<item>
+			<s><![CDATA[/&(#8656|lArr);/i]]></s>
+			<r><![CDATA[⇐]]></r>
+		</item>
+	<!-- 8657 - ⇑ -->
+		<item>
+			<s><![CDATA[/&(#8657|uArr);/i]]></s>
+			<r><![CDATA[⇑]]></r>
+		</item>
+	<!-- 8658 - ⇒ -->
+		<item>
+			<s><![CDATA[/&(#8658|rArr);/i]]></s>
+			<r><![CDATA[⇒]]></r>
+		</item>
+	<!-- 8659 - ⇓ -->
+		<item>
+			<s><![CDATA[/&(#8659|dArr);/i]]></s>
+			<r><![CDATA[⇓]]></r>
+		</item>
+	<!-- 8660 - ⇔ -->
+		<item>
+			<s><![CDATA[/&(#8660|hArr);/i]]></s>
+			<r><![CDATA[⇔]]></r>
+		</item>
+	<!-- 8704 - ∀ -->
+		<item>
+			<s><![CDATA[/&(#8704|forall);/i]]></s>
+			<r><![CDATA[∀]]></r>
+		</item>
+	<!-- 8706 - ∂ -->
+		<item>
+			<s><![CDATA[/&(#8706|part);/i]]></s>
+			<r><![CDATA[∂]]></r>
+		</item>
+	<!-- 8707 - ∃ -->
+		<item>
+			<s><![CDATA[/&(#8707|exist);/i]]></s>
+			<r><![CDATA[∃]]></r>
+		</item>
+	<!-- 8709 - ∅ -->
+		<item>
+			<s><![CDATA[/&(#8709|empty);/i]]></s>
+			<r><![CDATA[∅]]></r>
+		</item>
+	<!-- 8711 - ∇ -->
+		<item>
+			<s><![CDATA[/&(#8711|nabla);/i]]></s>
+			<r><![CDATA[∇]]></r>
+		</item>
+	<!-- 8712 - ∈ -->
+		<item>
+			<s><![CDATA[/&(#8712|isin);/i]]></s>
+			<r><![CDATA[∈]]></r>
+		</item>
+	<!-- 8713 - ∉ -->
+		<item>
+			<s><![CDATA[/&(#8713|notin);/i]]></s>
+			<r><![CDATA[∉]]></r>
+		</item>
+	<!-- 8715 - ∋ -->
+		<item>
+			<s><![CDATA[/&(#8715|ni);/i]]></s>
+			<r><![CDATA[∋]]></r>
+		</item>
+	<!-- 8719 - ∏ -->
+		<item>
+			<s><![CDATA[/&(#8719|prod);/i]]></s>
+			<r><![CDATA[∏]]></r>
+		</item>
+	<!-- 8721 - ∑ -->
+		<item>
+			<s><![CDATA[/&(#8721|sum);/i]]></s>
+			<r><![CDATA[∑]]></r>
+		</item>
+	<!-- 8722 - − -->
+		<item>
+			<s><![CDATA[/&(#8722|minus);/i]]></s>
+			<r><![CDATA[−]]></r>
+		</item>
+	<!-- 8727 - ∗ -->
+		<item>
+			<s><![CDATA[/&(#8727|lowast);/i]]></s>
+			<r><![CDATA[∗]]></r>
+		</item>
+	<!-- 8730 - √ -->
+		<item>
+			<s><![CDATA[/&(#8730|radic);/i]]></s>
+			<r><![CDATA[√]]></r>
+		</item>
+	<!-- 8733 - ∝ -->
+		<item>
+			<s><![CDATA[/&(#8733|prop);/i]]></s>
+			<r><![CDATA[∝]]></r>
+		</item>
+	<!-- 8734 - ∞ -->
+		<item>
+			<s><![CDATA[/&(#8734|infin);/i]]></s>
+			<r><![CDATA[∞]]></r>
+		</item>
+	<!-- 8736 - ∠ -->
+		<item>
+			<s><![CDATA[/&(#8736|ang);/i]]></s>
+			<r><![CDATA[∠]]></r>
+		</item>
+	<!-- 8743 - ∧ -->
+		<item>
+			<s><![CDATA[/&(#8743|and);/i]]></s>
+			<r><![CDATA[∧]]></r>
+		</item>
+	<!-- 8744 - ∨ -->
+		<item>
+			<s><![CDATA[/&(#8744|or);/i]]></s>
+			<r><![CDATA[∨]]></r>
+		</item>
+	<!-- 8745 - ∩ -->
+		<item>
+			<s><![CDATA[/&(#8745|cap);/i]]></s>
+			<r><![CDATA[∩]]></r>
+		</item>
+	<!-- 8746 - ∪ -->
+		<item>
+			<s><![CDATA[/&(#8746|cup);/i]]></s>
+			<r><![CDATA[∪]]></r>
+		</item>
+	<!-- 8747 - ∫ -->
+		<item>
+			<s><![CDATA[/&(#8747|int);/i]]></s>
+			<r><![CDATA[∫]]></r>
+		</item>
+	<!-- 8756 - ∴ -->
+		<item>
+			<s><![CDATA[/&(#8756|there4);/i]]></s>
+			<r><![CDATA[∴]]></r>
+		</item>
+	<!-- 8764 - ∼ -->
+		<item>
+			<s><![CDATA[/&(#8764|sim);/i]]></s>
+			<r><![CDATA[∼]]></r>
+		</item>
+	<!-- 8773 - ≅ -->
+		<item>
+			<s><![CDATA[/&(#8773|cong);/i]]></s>
+			<r><![CDATA[≅]]></r>
+		</item>
+	<!-- 8776 - ≈ -->
+		<item>
+			<s><![CDATA[/&(#8776|asymp);/i]]></s>
+			<r><![CDATA[≈]]></r>
+		</item>
+	<!-- 8800 - ≠ -->
+		<item>
+			<s><![CDATA[/&(#8800|ne);/i]]></s>
+			<r><![CDATA[≠]]></r>
+		</item>
+	<!-- 8801 - ≡ -->
+		<item>
+			<s><![CDATA[/&(#8801|equiv);/i]]></s>
+			<r><![CDATA[≡]]></r>
+		</item>
+	<!-- 8804 - ≤ -->
+		<item>
+			<s><![CDATA[/&(#8804|le);/i]]></s>
+			<r><![CDATA[≤]]></r>
+		</item>
+	<!-- 8805 - ≥ -->
+		<item>
+			<s><![CDATA[/&(#8805|ge);/i]]></s>
+			<r><![CDATA[≥]]></r>
+		</item>
+	<!-- 8834 - ⊂ -->
+		<item>
+			<s><![CDATA[/&(#8834|sub);/i]]></s>
+			<r><![CDATA[⊂]]></r>
+		</item>
+	<!-- 8835 - ⊃ -->
+		<item>
+			<s><![CDATA[/&(#8835|sup);/i]]></s>
+			<r><![CDATA[⊃]]></r>
+		</item>
+	<!-- 8836 - ⊄ -->
+		<item>
+			<s><![CDATA[/&(#8836|nsub);/i]]></s>
+			<r><![CDATA[⊄]]></r>
+		</item>
+	<!-- 8838 - ⊆ -->
+		<item>
+			<s><![CDATA[/&(#8838|sube);/i]]></s>
+			<r><![CDATA[⊆]]></r>
+		</item>
+	<!-- 8839 - ⊇ -->
+		<item>
+			<s><![CDATA[/&(#8839|supe);/i]]></s>
+			<r><![CDATA[⊇]]></r>
+		</item>
+	<!-- 8853 - ⊕ -->
+		<item>
+			<s><![CDATA[/&(#8853|oplus);/i]]></s>
+			<r><![CDATA[⊕]]></r>
+		</item>
+	<!-- 8855 - ⊗ -->
+		<item>
+			<s><![CDATA[/&(#8855|otimes);/i]]></s>
+			<r><![CDATA[⊗]]></r>
+		</item>
+	<!-- 8869 - ⊥ -->
+		<item>
+			<s><![CDATA[/&(#8869|perp);/i]]></s>
+			<r><![CDATA[⊥]]></r>
+		</item>
+	<!-- 8901 - ⋅ -->
+		<item>
+			<s><![CDATA[/&(#8901|sdot);/i]]></s>
+			<r><![CDATA[⋅]]></r>
+		</item>
+	<!-- 8968 - ⌈ -->
+		<item>
+			<s><![CDATA[/&(#8968|lceil);/i]]></s>
+			<r><![CDATA[⌈]]></r>
+		</item>
+	<!-- 8969 - ⌉ -->
+		<item>
+			<s><![CDATA[/&(#8969|rceil);/i]]></s>
+			<r><![CDATA[⌉]]></r>
+		</item>
+	<!-- 8970 - ⌊ -->
+		<item>
+			<s><![CDATA[/&(#8970|lfloor);/i]]></s>
+			<r><![CDATA[⌊]]></r>
+		</item>
+	<!-- 8971 - ⌋ -->
+		<item>
+			<s><![CDATA[/&(#8971|rfloor);/i]]></s>
+			<r><![CDATA[⌋]]></r>
+		</item>
+	<!-- 9001 - 〈 -->
+		<item>
+			<s><![CDATA[/&(#9001|lang);/i]]></s>
+			<r><![CDATA[〈]]></r>
+		</item>
+	<!-- 9002 - 〉 -->
+		<item>
+			<s><![CDATA[/&(#9002|rang);/i]]></s>
+			<r><![CDATA[〉]]></r>
+		</item>
+	<!-- 9674 - ◊ -->
+		<item>
+			<s><![CDATA[/&(#9674|loz);/i]]></s>
+			<r><![CDATA[◊]]></r>
+		</item>
+	<!-- 9824 - ♠ -->
+		<item>
+			<s><![CDATA[/&(#9824|spades);/i]]></s>
+			<r><![CDATA[♠]]></r>
+		</item>
+	<!-- 9827 - ♣ -->
+		<item>
+			<s><![CDATA[/&(#9827|clubs);/i]]></s>
+			<r><![CDATA[♣]]></r>
+		</item>
+	<!-- 9829 - ♥ -->
+		<item>
+			<s><![CDATA[/&(#9829|hearts);/i]]></s>
+			<r><![CDATA[♥]]></r>
+		</item>
+	<!-- 9830 - ♦ -->
+		<item>
+			<s><![CDATA[/&(#9830|diams);/i]]></s>
+			<r><![CDATA[♦]]></r>
+		</item>
+
+	<!-- Character entity references for markup-significant and internationalization characters -->
+	<!-- 34 - " -->
+		<item>
+			<s><![CDATA[/&(#34|#034|quot);/i]]></s>
+			<r><![CDATA["]]></r>
+		</item>
+	<!-- 38 - & -->
+		<item>
+			<s><![CDATA[/&(#38|#038|amp);/i]]></s>
+			<r><![CDATA[&]]></r>
+		</item>
+	<!-- 60 - < -->
+		<item>
+			<s><![CDATA[/&(#60|#060|lt);/i]]></s>
+			<r><![CDATA[<]]></r>
+		</item>
+	<!-- 62 - > -->
+		<item>
+			<s><![CDATA[/&(#62|#062|gt);/i]]></s>
+			<r><![CDATA[>]]></r>
+		</item>
+	<!-- 338 - Œ -->
+		<item>
+			<s><![CDATA[/&(#338|OElig);/i]]></s>
+			<r><![CDATA[Œ]]></r>
+		</item>
+	<!-- 339 - œ -->
+		<item>
+			<s><![CDATA[/&(#339|oelig);/i]]></s>
+			<r><![CDATA[œ]]></r>
+		</item>
+	<!-- 352 - Š -->
+		<item>
+			<s><![CDATA[/&(#352|Scaron);/i]]></s>
+			<r><![CDATA[Š]]></r>
+		</item>
+	<!-- 353 - š -->
+		<item>
+			<s><![CDATA[/&(#353|scaron);/i]]></s>
+			<r><![CDATA[š]]></r>
+		</item>
+	<!-- 376 - Ÿ -->
+		<item>
+			<s><![CDATA[/&(#376|Yuml);/i]]></s>
+			<r><![CDATA[Ÿ]]></r>
+		</item>
+	<!-- 710 - ˆ -->
+		<item>
+			<s><![CDATA[/&(#710|circ);/i]]></s>
+			<r><![CDATA[ˆ]]></r>
+		</item>
+	<!-- 732 - ˜ -->
+		<item>
+			<s><![CDATA[/&(#732|tilde);/i]]></s>
+			<r><![CDATA[˜]]></r>
+		</item>
+	<!-- 8194 -   -->
+		<item>
+			<s><![CDATA[/&(#8194|ensp);/i]]></s>
+			<r><![CDATA[ ]]></r>
+		</item>
+	<!-- 8195 -   -->
+		<item>
+			<s><![CDATA[/&(#8195|emsp);/i]]></s>
+			<r><![CDATA[ ]]></r>
+		</item>
+	<!-- 8201 -   -->
+		<item>
+			<s><![CDATA[/&(#8201|thinsp);/i]]></s>
+			<r><![CDATA[ ]]></r>
+		</item>
+	<!-- 8204 - ‌ -->
+		<item>
+			<s><![CDATA[/&(#8204|zwnj);/i]]></s>
+			<r><![CDATA[‌]]></r>
+		</item>
+	<!-- 8205 - ‍ -->
+		<item>
+			<s><![CDATA[/&(#8205|zwj);/i]]></s>
+			<r><![CDATA[‍]]></r>
+		</item>
+	<!-- 8206 - ‎ -->
+		<item>
+			<s><![CDATA[/&(#8206|lrm);/i]]></s>
+			<r><![CDATA[‎]]></r>
+		</item>
+	<!-- 8207 - ‏ -->
+		<item>
+			<s><![CDATA[/&(#8207|rlm);/i]]></s>
+			<r><![CDATA[‏]]></r>
+		</item>
+	<!-- 8211 - – -->
+		<item>
+			<s><![CDATA[/&(#8211|ndash);/i]]></s>
+			<r><![CDATA[–]]></r>
+		</item>
+	<!-- 8212 - — -->
+		<item>
+			<s><![CDATA[/&(#8212|mdash);/i]]></s>
+			<r><![CDATA[—]]></r>
+		</item>
+	<!-- 8216 - ‘ -->
+		<item>
+			<s><![CDATA[/&(#8216|lsquo);/i]]></s>
+			<r><![CDATA[‘]]></r>
+		</item>
+	<!-- 8217 - ’ -->
+		<item>
+			<s><![CDATA[/&(#8217|rsquo);/i]]></s>
+			<r><![CDATA[’]]></r>
+		</item>
+	<!-- 8218 - ‚ -->
+		<item>
+			<s><![CDATA[/&(#8218|sbquo);/i]]></s>
+			<r><![CDATA[‚]]></r>
+		</item>
+	<!-- 8220 - “ -->
+		<item>
+			<s><![CDATA[/&(#8220|ldquo);/i]]></s>
+			<r><![CDATA[“]]></r>
+		</item>
+	<!-- 8221 - ” -->
+		<item>
+			<s><![CDATA[/&(#8221|rdquo);/i]]></s>
+			<r><![CDATA[”]]></r>
+		</item>
+	<!-- 8222 - „ -->
+		<item>
+			<s><![CDATA[/&(#8222|bdquo);/i]]></s>
+			<r><![CDATA[„]]></r>
+		</item>
+	<!-- 8224 - † -->
+		<item>
+			<s><![CDATA[/&(#8224|dagger);/i]]></s>
+			<r><![CDATA[†]]></r>
+		</item>
+	<!-- 8225 - ‡ -->
+		<item>
+			<s><![CDATA[/&(#8225|Dagger);/i]]></s>
+			<r><![CDATA[‡]]></r>
+		</item>
+	<!-- 8240 - ‰ -->
+		<item>
+			<s><![CDATA[/&(#8240|permil);/i]]></s>
+			<r><![CDATA[‰]]></r>
+		</item>
+	<!-- 8249 - ‹ -->
+		<item>
+			<s><![CDATA[/&(#8249|lsaquo);/i]]></s>
+			<r><![CDATA[‹]]></r>
+		</item>
+	<!-- 8250 - › -->
+		<item>
+			<s><![CDATA[/&(#8250|rsaquo);/i]]></s>
+			<r><![CDATA[›]]></r>
+		</item>
+	<!-- 8364 - € -->
+		<item>
+			<s><![CDATA[/&(#8364|euro);/i]]></s>
+			<r><![CDATA[€]]></r>
+		</item>
+
+	<!-- Runs of spaces -->
+		<item>
+			<s><![CDATA[/[ ]{2,}/]]></s>
+			<r><![CDATA[ ]]></r>
+		</item>

@@ -13,7 +13,9 @@ Parent Author URI: http://buddypress.org
 License: GNU General Public License
 License URI: license.txt
 */
-
+body{
+font-size:13px;	
+}
 #header-widget-area{
 text-align:right;
 padding: 5px 5px 10px 5px;
@@ -64,6 +66,10 @@ background-color:#079948;
 border-radius:5px;
 -webkit-border-radius:5px;
 border:1px solid #ccc;
+width:200px;
+}
+#nav ul.sub-menu li {
+width:100%;	
 }
 #nav ul.sub-menu li a {
 background-image:none;
@@ -75,6 +81,10 @@ border-top:1px solid #ccc;
 background: #079948;
 color:#fff;
 }
+#message.updated p {
+background-color:#079948 !important;
+color:#fff !important;
+}
 div#container {
 border:none;
 border-radius:0px;
@@ -84,7 +94,7 @@ border-top:1px solid #079948;
 #homestream{
 	width:48%;
 	float:left;
-	margin-top:0px;
+	margin-top:20px;
 	
 }
 #homestream.r{
@@ -169,4 +179,37 @@ background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8
 background-image: -moz-linear-gradient(top, rgba(0,0,0,.05) -17%, rgba(255,255,255,.05) 117%);
 background-image: -o-linear-gradient(top, rgba(0,0,0,.05) -17%, rgba(255,255,255,.05) 117%);
 background-image: -webkit-linear-gradient(top, rgba(0,0,0,.05) -17%, rgba(255,255,255,.05) 117%);
+}
+#accordion{
+font-size:90%!important;	
+}
+.badgeos-achievements-list-item .badgeos-item-image img {
+	max-width:120px;
+}
+.badgeos-feedback-response.success, .badgeos-achievement-earned p {
+	background:#079948;
+}
+.mce-container-body button:hover {
+border:none;	
+}
+.course-material td {
+border-right:1px solid #EEE;	
+}
+.course-material .week0{
+background:#D9D9D9;
+}
+.course-material .week1-2{
+background:#6FA8DC;
+}
+.course-material .week3-4{
+background:#93C47D;
+}
+.course-material .week5-6{
+background:#EA9999;
+}
+#bbpress-forums div.wp-editor-container{
+border: 1px solid #F5F5F5;
+}
+ul.badgeos-achievement-earners-list li {
+list-style-type: none;
 }

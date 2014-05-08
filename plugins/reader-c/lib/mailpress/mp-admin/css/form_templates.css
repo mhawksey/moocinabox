@@ -1,0 +1,31 @@
+.fileedit-sub {
+	line-height:180%;
+	padding:10px 0 8px;
+}
+
+.CodeMirror-line-numbers {
+				// class .editbox in xmlcolors.css
+	margin: 0;
+	padding: .4em;
+	font-family: monospace;
+	font-size: 10pt;
+	color: black;
+	line-height:1.2em;
+
+				// body style inline
+	border-width:0pt;
+	white-space:nowrap;
+
+	background-color: #eee;
+}
+
+.CodeMirror-line-numbers div {
+
+	font-family: monospace;
+	font-size: 10pt;
+	line-height:1.2em;
+
+// specific to line numbers
+	color: #aaa;
+	text-align: right;
+}
